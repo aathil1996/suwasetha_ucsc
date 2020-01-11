@@ -108,28 +108,35 @@
                     <p class="card-category">Complete your profile</p>
                 </div>
                 <div class="card-body">
-                    <form class="create-form" #systemUsersform="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+
+                    <form class="create-form"  [formGroup]="sysUsersForm" novalidate (ngSubmit)="onSubmit(sysUsersForm.value)">
                         <div class="row">
                           <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">  <i class="material-icons">close</i></button>
                         </div>
+
                         <div class="row">
                             <div class="col-md-6">
-                              <input type="hidden" name="id" #id="ngModel" [(ngModel)]="firebaseService.dataSource.id">
+                             
                               <div class="form-group">
+                                <input matInput type="hidden" formControlName="id" class="form-control">
                                 <mat-form-field class="input-style">
-                                  <input matInput name="username" #username="ngModel" [(ngModel)]="firebaseService.dataSource.username" placeholder="User Name" class="form-control" formControlName="username" required>
+                                  <input matInput placeholder="User Name" class="form-control" formControlName="username">
+                                 
                                 </mat-form-field>
-                                <div *ngIf="username.invalid && username.touched" class="validation-error">This field is required.</div>
-                               
+                                <ng-container *ngFor="let validation of validation_messages.username">
+                                  <mat-error *ngIf="sysUsersForm.get('username').hasError(validation.type) && (sysUsersForm.get('username').dirty || sysUsersForm.get('username').touched)">{{validation}}</mat-error>
+                                </ng-container>
                               </div>
                             </div>
 
                             <div class="col-md-6">
                               <div class="form-group">
                                 <mat-form-field class="input-style">
-                                  <input matInput name="fullName" #fullName="ngModel" [(ngModel)]="firebaseService.dataSource.fullName"  placeholder="Full Name" class="form-control" formControlName="fullName" required>
+                                  <input matInput placeholder="User Name" class="form-control" formControlName="fullName">
                                 </mat-form-field>
-                                <div *ngIf="fullName.invalid && fullName.touched" class="validation-error">This field is required.</div>
+                                <ng-container *ngFor="let validation of validation_messages.username">
+                                  <mat-error *ngIf="sysUsersForm.get('fullName').hasError(validation.type) && (sysUsersForm.get('fullName').dirty || sysUsersForm.get('fullName').touched)">{{validation}}</mat-error>
+                                </ng-container>
                               </div>
                             </div>
 
@@ -139,40 +146,48 @@
                           <div class="col-md-4">
                             <div class="form-group">
                               <mat-form-field class="input-style">
-                                <input matInput name="nic" #nic="ngModel" [(ngModel)]="firebaseService.dataSource.nic" placeholder="NIC" class="form-control" formControlName="nic" required>
+                                <input matInput placeholder="NIC" class="form-control" formControlName="nic">
                               </mat-form-field>
-                              <ng-container>
-                                <div >This field is required.</div>
+                              <ng-container *ngFor="let validation of validation_messages.username">
+                                <mat-error *ngIf="sysUsersForm.get('nic').hasError(validation.type) && (sysUsersForm.get('nic').dirty || sysUsersForm.get('nic').touched)">{{validation}}</mat-error>
                               </ng-container>
+              
                             </div>
                           </div>
 
                           <div class="col-md-4">
                             <div class="form-group">
                               <mat-form-field class="input-style">
-                                <input matInput name="telNo" #telNo="ngModel" [(ngModel)]="firebaseService.dataSource.telNo" placeholder="Contact Number" class="form-control" formControlName="telNo" required>
+                                <input matInput placeholder="Contact Number" class="form-control" formControlName="telNo">
                               </mat-form-field>
-                              <ng-container>
-                                <mat-error *ngIf="nic.invalid && nic.touched" class="validation-error">This field is required.</mat-error>
+                              <ng-container *ngFor="let validation of validation_messages.username">
+                                <mat-error *ngIf="sysUsersForm.get('telNo').hasError(validation.type) && (sysUsersForm.get('telNo').dirty || sysUsersForm.get('telNo').touched)">{{validation}}</mat-error>
                               </ng-container>
+
                             </div>
                           </div>
 
 
                           <div class="col-md-4">
                             <div class="form-group">
+                              <mat-form-field class="input-style">
+                                <input matInput placeholder="Contact Number" class="form-control" formControlName="telNo">
+                              </mat-form-field>
+                              <ng-container *ngFor="let validation of validation_messages.username">
+                                <mat-error *ngIf="sysUsersForm.get('telNo').hasError(validation.type) && (sysUsersForm.get('telNo').dirty || sysUsersForm.get('telNo').touched)">{{validation}}</mat-error>
+                              </ng-container>
                               
-                              <mat-form-field>
+                              <mat-form-field class="input-style">
                                 <mat-label>User Role</mat-label>
-                                <select matNativeControl name="role" #role="ngModel" [(ngModel)]="firebaseService.dataSource.role" class="form-control" formControlName="role" required>
+                                <select matNativeControl placeholder="User Role" class="form-control" formControlName="role">
                                   <option value="0">System Admin</option>
                                   <option value="1">Editor</option>
                                   <option value="2">Hospital Admin</option>
                                   <option value="3">Admin</option>
                                 </select>
                               </mat-form-field>
-                             <ng-container>
-                                <mat-error *ngIf="nic.invalid && nic.touched" class="validation-error">This field is required.</mat-error>
+                              <ng-container *ngFor="let validation of validation_messages.role">
+                                <mat-error *ngIf="sysUsersForm.get('role').hasError(validation.type) && (sysUsersForm.get('role').dirty || sysUsersForm.get('role').touched)">{{validation}}</mat-error>
                               </ng-container>
                             </div>
                           </div>
