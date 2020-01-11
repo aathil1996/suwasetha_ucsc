@@ -15,11 +15,11 @@
         <div class="mat-elevation-z8">
           <table mat-table [dataSource]="dataSource" matSort>
         
-            <!-- ID Column -->
+            <!-- ID Column
             <ng-container matColumnDef="id">
               <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
               <td mat-cell *matCellDef="let row"> {{row.id}} </td>
-            </ng-container>
+            </ng-container> -->
         
             <!-- Full Name Column -->
             <ng-container matColumnDef="fullName">
@@ -104,21 +104,18 @@
               <!-- form to add System Users-->
               <div class="card">
                 <div class="card-header card-header-danger">
-                    <h4 class="card-title">Edit Profile</h4>
-                    <p class="card-category">Complete your profile</p>
+                    <h4 class="card-title">Add New System User</h4>
+                    <!-- <p class="card-category">Complete your profile</p> -->
                 </div>
                 <div class="card-body">
 
                     <form class="create-form"  [formGroup]="sysUsersForm" novalidate (ngSubmit)="onSubmit(sysUsersForm.value)">
-                        <div class="row">
-                          <button mat-button type="button" class="close" data-dismiss="alert" aria-label="Close">  <i class="material-icons">close</i></button>
-                        </div>
-
+                        
                         <div class="row">
                             <div class="col-md-6">
                              
                               <div class="form-group">
-                                <input matInput type="hidden" formControlName="id" class="form-control">
+                                <!-- <input matInput type="hidden" formControlName="id" class="form-control"> -->
                                 <mat-form-field class="input-style">
                                   <input matInput placeholder="User Name" class="form-control" formControlName="username">
                                  
@@ -143,7 +140,7 @@
                         </div>
                         <div class="row">
 
-                          <div class="col-md-4">
+                          <div class="col-md-6">
                             <div class="form-group">
                               <mat-form-field class="input-style">
                                 <input matInput placeholder="NIC" class="form-control" formControlName="nic">
@@ -155,7 +152,7 @@
                             </div>
                           </div>
 
-                          <div class="col-md-4">
+                          <div class="col-md-6">
                             <div class="form-group">
                               <mat-form-field class="input-style">
                                 <input matInput placeholder="Contact Number" class="form-control" formControlName="telNo">
@@ -167,15 +164,11 @@
                             </div>
                           </div>
 
-
-                          <div class="col-md-4">
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
                             <div class="form-group">
-                              <mat-form-field class="input-style">
-                                <input matInput placeholder="Contact Number" class="form-control" formControlName="telNo">
-                              </mat-form-field>
-                              <ng-container *ngFor="let validation of validation_messages.username">
-                                <mat-error *ngIf="sysUsersForm.get('telNo').hasError(validation.type) && (sysUsersForm.get('telNo').dirty || sysUsersForm.get('telNo').touched)">{{validation}}</mat-error>
-                              </ng-container>
+              
                               
                               <mat-form-field class="input-style">
                                 <mat-label>User Role</mat-label>
@@ -189,6 +182,18 @@
                               <ng-container *ngFor="let validation of validation_messages.role">
                                 <mat-error *ngIf="sysUsersForm.get('role').hasError(validation.type) && (sysUsersForm.get('role').dirty || sysUsersForm.get('role').touched)">{{validation}}</mat-error>
                               </ng-container>
+                            </div>
+                          </div>
+
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <mat-form-field class="input-style">
+                                <input matInput placeholder="Password" type="password" class="form-control" formControlName="password">
+                              </mat-form-field>
+                              <ng-container *ngFor="let validation of validation_messages.password">
+                                <mat-error *ngIf="sysUsersForm.get('password').hasError(validation.type) && (sysUsersForm.get('password').dirty || sysUsersForm.get('password').touched)">{{validation}}</mat-error>
+                              </ng-container>
+              
                             </div>
                           </div>
 

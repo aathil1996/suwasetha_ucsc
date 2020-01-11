@@ -14,12 +14,13 @@ import { Observable } from 'rxjs/Observable';
 
 
 export interface UserData{
-  id: number;
+  // id: number;
   username: string;
   fullName: string;
   nic: string;
   telNo: string;
   role: string;
+  password: string;
  
 }
 
@@ -54,6 +55,9 @@ export class SystemUsersComponent implements OnInit {
     ],
     'role':[
       { type:'required', message: "Please fill this"}
+    ],
+    'password':[
+      { type:'required', message: "Please fill this"}
     ]
   };
 
@@ -62,7 +66,7 @@ export class SystemUsersComponent implements OnInit {
 
   //systemUserList: AngularFirestoreCollection<UserData>;
   dataSource: MatTableDataSource<UserData>;
-  displayedColumns: string[] = ['id', 'fullName', 'username', 'role','nic', 'telNo','action'];
+  displayedColumns: string[] = ['fullName', 'username', 'role','nic', 'telNo','action'];
  
   constructor(
     private fb: FormBuilder,
@@ -70,20 +74,20 @@ export class SystemUsersComponent implements OnInit {
     private router: Router,
     public firebaseService: FirebaseService,
     public systemUsersService: SystemUsersService,
-    private afs: AngularFirestore
+    private firestore: AngularFirestore
   ) { 
     // Create 100 users
     //const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
 
     // Assign the data to the data source for the table to render
-    //this.systemUserList = this.afs.collection<UserData>('System Users');
+    //this.systemUserList = this.firestore.collection<UserData>('System Users');
     //this.dataSource = this.systemUserList.valueChanges();
 
     
   }
 
   ngAfterViewInit(){
-    this.afs.collection<UserData>('System Users').valueChanges().subscribe(data => {
+    this.firestore.collection<UserData>('System Users').valueChanges().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
@@ -91,7 +95,7 @@ export class SystemUsersComponent implements OnInit {
   }
 
   ngOnInit() {
-   
+    // this.resetFields();
     this.addSystemUser();
   }
 
@@ -101,8 +105,10 @@ export class SystemUsersComponent implements OnInit {
       username: ['',Validators.required],
       nic: ['',Validators.required],
       role: ['',Validators.required],
-      telNo: ['',Validators.required]
+      telNo: ['',Validators.required],
+      password: ['',Validators.required]
     });
+   
   }
 
  
@@ -114,6 +120,7 @@ export class SystemUsersComponent implements OnInit {
       nic:  new FormControl('', Validators.required),
       role:  new FormControl('', Validators.required),
       telNo:  new FormControl('', Validators.required),
+      password:  new FormControl('', Validators.required),
       
     });
   }

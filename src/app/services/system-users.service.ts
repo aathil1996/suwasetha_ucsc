@@ -17,7 +17,8 @@ export class SystemUsersService {
       fullName: value.fullName,
       nic: value.nic,
       telNo: value.telNo,
-      role: value.role
+      role: value.role,
+      password: value.password
     })
   }
   delete_systemUser(record_id) {
