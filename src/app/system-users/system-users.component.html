@@ -54,10 +54,10 @@
             <ng-container matColumnDef="action">
               <mat-header-cell *matHeaderCellDef>Actions </mat-header-cell>
               <mat-cell *matCellDef="let row">
-                <button mat-icon-button matTooltip="Click to Edit" class="iconbutton" color="primary" (click)="RemoveRecord(row.id)">
+                <button mat-icon-button matTooltip="Click to Edit" class="iconbutton" color="primary"  >
                   <i class="material-icons">edit</i>
                   </button>
-                <button mat-icon-button matTooltip="Click to Delete" class="iconbutton" color="warn">
+                <button mat-icon-button matTooltip="Click to Delete" class="iconbutton" color="warn" (click)="deleteSystemUsers(sysUsersForm.value)">
                   <i class="material-icons">close</i>
                   </button>
               </mat-cell>

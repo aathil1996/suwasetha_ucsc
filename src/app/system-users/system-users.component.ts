@@ -2,14 +2,13 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
-import { Action } from 'rxjs/internal/scheduler/Action';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material';
 import { Router } from '@angular/router';
 import { FirebaseService } from 'app/services/firebase.service';
 import { SystemUsersService } from 'app/services/system-users.service';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { Observable } from 'rxjs/Observable';
+
 
 
 
@@ -76,18 +75,13 @@ export class SystemUsersComponent implements OnInit {
     public systemUsersService: SystemUsersService,
     private firestore: AngularFirestore
   ) { 
-    // Create 100 users
-    //const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
-
-    // Assign the data to the data source for the table to render
-    //this.systemUserList = this.firestore.collection<UserData>('System Users');
-    //this.dataSource = this.systemUserList.valueChanges();
+   
 
     
   }
 
   ngAfterViewInit(){
-    this.firestore.collection<UserData>('System Users').valueChanges().subscribe(data => {
+    this.firestore.collection<UserData>('system_users').valueChanges().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
@@ -125,8 +119,15 @@ export class SystemUsersComponent implements OnInit {
     });
   }
 
-  //show Alert Message
+
+  deleteSystemUsers(value){
+    const response = confirm("Are you sure want to delete?");
+    if(response){
+      this.systemUsersService.deleteSystemUsers(value);
+    }
+  }
   showMessage : boolean = false;
+
   onSubmit(value){
     this.systemUsersService.createSystemUser(value)
     .then(
@@ -150,29 +151,3 @@ export class SystemUsersComponent implements OnInit {
 
 }
 
-/** Builds and returns a new User. 
-function createNewUser(id: number): UserData {
-  const username = NAMES[Math.round(Math.random() * (NAMES.length - 1))];
-
-  const fullName = NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
-      NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
-
-  const nic = NIC[Math.round(Math.random() * (NIC.length -1))] + 'V';
-  const role = ROLE[Math.round(Math.random() * (ROLE.length - 1))];
-  const telNo = NIC[Math.round(Math.random() * (ROLE.length - 1))];
-
-
-
-  return {
-    //id: id.toString(),
-    id: id,
-    username: username,
-    fullName: fullName,
-    nic: nic,
-    role: role,
-    telNo: telNo
-    
-   
-  };
-}
-*/
