@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
 
-import { DashboardComponent } from '../../dashboard/dashboard.component';
-import { UserProfileComponent } from '../../user-profile/user-profile.component';
-import { SystemUsersComponent } from '../../system-users/system-users.component';
-import { HospitalsComponent } from '../../hospitals/hospitals.component';
-import { BlogPostsComponent } from '../../blog-posts/blog-posts.component';
-import { OtherUsersComponent } from '../../other-users/other-users.component';
+import { DashboardComponent } from '../adminComponents/dashboard/dashboard.component';
+import { UserProfileComponent } from '../adminComponents/user-profile/user-profile.component';
+
+import { HospitalsComponent } from '../adminComponents/hospitals/hospitals.component';
+import { BlogPostsComponent } from '../adminComponents/blog-posts/blog-posts.component';
+import { SystemUsersListComponent } from 'app/systemUsers/system-users-list/system-users-list.component';
 /*import { TableListComponent } from '../../table-list/table-list.component';
 import { TypographyComponent } from '../../typography/typography.component';
 import { IconsComponent } from '../../icons/icons.component';
@@ -58,12 +58,11 @@ export const AdminLayoutRoutes: Routes = [
     //     }]
     // }
     { path: 'dashboard',      component: DashboardComponent },
-    { path: 'system-users',   component: SystemUsersComponent },
-    { path: 'user-profile',   component: UserProfileComponent },
+    {path: 'system-users-list', component:SystemUsersListComponent},
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'hospitals',   component: HospitalsComponent },
     { path: 'blog-posts',   component: BlogPostsComponent },
-    { path: 'other-users',   component: OtherUsersComponent },
+   
    
     /*{ path: 'table-list',     component: TableListComponent },
     { path: 'typography',     component: TypographyComponent },

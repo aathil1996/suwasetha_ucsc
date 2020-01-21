@@ -3,15 +3,9 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminLayoutRoutes } from './admin-layout.routing';
-import { DashboardComponent } from '../../dashboard/dashboard.component';
-import { UserProfileComponent } from '../../user-profile/user-profile.component';
-/*import { TableListComponent } from '../../table-list/table-list.component';
-import { TypographyComponent } from '../../typography/typography.component';
-import { IconsComponent } from '../../icons/icons.component';
-import { MapsComponent } from '../../maps/maps.component';
-import { NotificationsComponent } from '../../notifications/notifications.component';
-import { UpgradeComponent } from '../../upgrade/upgrade.component';
-*/
+import { DashboardComponent } from '../adminComponents/dashboard/dashboard.component';
+import { UserProfileComponent } from '../adminComponents/user-profile/user-profile.component';
+
 
 import {
   MatButtonModule,
@@ -23,10 +17,12 @@ import {
   MatTableModule,
   MatPaginatorModule
 } from '@angular/material';
-import { SystemUsersComponent } from 'app/system-users/system-users.component';
-import { HospitalsComponent } from 'app/hospitals/hospitals.component';
-import { BlogPostsComponent } from 'app/blog-posts/blog-posts.component';
-import { OtherUsersComponent } from 'app/other-users/other-users.component';
+
+import { HospitalsComponent } from 'app/layouts/adminComponents/hospitals/hospitals.component';
+import { BlogPostsComponent } from 'app/layouts/adminComponents/blog-posts/blog-posts.component';
+import { MaterialModule } from 'app/shared/material/material.module';
+import { SystemUsersListComponent } from 'app/systemUsers/system-users-list/system-users-list.component';
+import { SystemUsersComponent } from 'app/systemUsers/system-users/system-users.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -40,15 +36,16 @@ import { OtherUsersComponent } from 'app/other-users/other-users.component';
     MatSelectModule,
     MatTooltipModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MaterialModule
   ],
   declarations: [
     DashboardComponent,
-    SystemUsersComponent,
     HospitalsComponent,
     UserProfileComponent,
     BlogPostsComponent,
-    OtherUsersComponent
+    SystemUsersListComponent,
+    SystemUsersComponent
 
    /* TableListComponent,
     TypographyComponent,
@@ -56,7 +53,9 @@ import { OtherUsersComponent } from 'app/other-users/other-users.component';
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,*/
-  ]
+  ],
+  entryComponents: [SystemUsersComponent]
+  
 })
 
 export class AdminLayoutModule {}
