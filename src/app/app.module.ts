@@ -38,6 +38,7 @@ import { MaterialModule } from './shared/material/material.module';
 import { RoleService } from './shared/services/role.service';
 import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
 import { SystemUsersComponent } from './systemUsers/system-users/system-users.component';
+import { DispensaryComponentComponent } from './layouts/dispensary-component/dispensary-component.component';
 
 
 @NgModule({
@@ -68,6 +69,7 @@ import { SystemUsersComponent } from './systemUsers/system-users/system-users.co
     AdminLayoutComponent,
     AvatarDialogComponent,
     ConfirmDialogComponent,
+    DispensaryComponentComponent,
 
   ],
   providers: [SystemUsersService, RoleService],
