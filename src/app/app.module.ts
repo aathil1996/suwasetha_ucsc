@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
-
+import { DispensaryBarsModule } from './dispensaryBars/dispensaryBars.module';
 import { AppComponent } from './app.component';
 import { ToastrModule } from 'ngx-toastr';
 
@@ -40,7 +40,6 @@ import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.c
 import { SystemUsersComponent } from './systemUsers/system-users/system-users.component';
 import { DispensaryComponentComponent } from './layouts/dispensary-component/dispensary-component.component';
 
-
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -48,6 +47,7 @@ import { DispensaryComponentComponent } from './layouts/dispensary-component/dis
     ReactiveFormsModule,
     HttpModule,
     ComponentsModule,
+    DispensaryBarsModule,
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
@@ -70,6 +70,7 @@ import { DispensaryComponentComponent } from './layouts/dispensary-component/dis
     AvatarDialogComponent,
     ConfirmDialogComponent,
     DispensaryComponentComponent,
+    
 
   ],
   providers: [SystemUsersService, RoleService],
