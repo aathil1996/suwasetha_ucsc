@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { SystemUsersService } from 'app/shared/services/system-users.service';
 import { RoleService } from 'app/shared/services/role.service';
 import { NotificationsService } from 'app/shared/services/notifications.service'
-import { ɵEmptyOutletComponent } from '@angular/router';
 import { MatDialogRef } from '@angular/material';
 
 

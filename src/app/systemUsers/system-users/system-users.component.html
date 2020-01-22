@@ -6,7 +6,7 @@
                 
 <form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()">
                     
-                        <div class="controles-container">
+    <div class="controls-container">
                           <input type="hidden" formControlName="$key">
                           <mat-form-field>
                             <input formControlName="userName" matInput placeholder="User Name*">
@@ -52,7 +52,7 @@
                             <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid">Submit</button>
                             <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
                           </div>
-                        </div>
+    </div>
                    
 </form>
   

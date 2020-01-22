@@ -18,11 +18,12 @@ import {
   MatPaginatorModule
 } from '@angular/material';
 
-import { HospitalsComponent } from 'app/layouts/adminComponents/hospitals/hospitals.component';
+import { HospitalsComponent } from 'app/layouts/adminComponents/Hospital/hospitals/hospitals.component';
 import { BlogPostsComponent } from 'app/layouts/adminComponents/blog-posts/blog-posts.component';
 import { MaterialModule } from 'app/shared/material/material.module';
 import { SystemUsersListComponent } from 'app/systemUsers/system-users-list/system-users-list.component';
 import { SystemUsersComponent } from 'app/systemUsers/system-users/system-users.component';
+import { HospitalListComponent } from '../adminComponents/Hospital/hospital-list/hospital-list.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -45,7 +46,8 @@ import { SystemUsersComponent } from 'app/systemUsers/system-users/system-users.
     UserProfileComponent,
     BlogPostsComponent,
     SystemUsersListComponent,
-    SystemUsersComponent
+    SystemUsersComponent,
+    HospitalListComponent
 
    /* TableListComponent,
     TypographyComponent,
@@ -54,7 +56,7 @@ import { SystemUsersComponent } from 'app/systemUsers/system-users/system-users.
     NotificationsComponent,
     UpgradeComponent,*/
   ],
-  entryComponents: [SystemUsersComponent]
+  entryComponents: [SystemUsersComponent, HospitalsComponent]
   
 })
 

@@ -31,14 +31,17 @@ import { environment } from 'environments/environment';
 import { AvatarDialogComponent } from './avatar-dialog/avatar-dialog.component';
 import { MatDialogModule, MatButtonModule, MatInputModule, MatSliderModule } from '@angular/material';
 import { DoctorsComponent } from './layouts/adminComponents/doctors/doctors.component';
-import { HospitalsComponent } from './layouts/adminComponents/hospitals/hospitals.component';
+import { HospitalsComponent } from './layouts/adminComponents/Hospital/hospitals/hospitals.component';
 import { BlogPostsComponent } from './layouts/adminComponents/blog-posts/blog-posts.component';
 import { SystemUsersService } from './shared/services/system-users.service';
 import { MaterialModule } from './shared/material/material.module';
 import { RoleService } from './shared/services/role.service';
 import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
 import { SystemUsersComponent } from './systemUsers/system-users/system-users.component';
+
+import { HospitalListComponent } from './layouts/adminComponents/Hospital/hospital-list/hospital-list.component';
 import { DispensaryComponentComponent } from './layouts/dispensary-component/dispensary-component.component';
+
 
 @NgModule({
   imports: [
@@ -69,11 +72,13 @@ import { DispensaryComponentComponent } from './layouts/dispensary-component/dis
     AdminLayoutComponent,
     AvatarDialogComponent,
     ConfirmDialogComponent,
+
     DispensaryComponentComponent,
-    
+
+
 
   ],
-  providers: [SystemUsersService, RoleService],
+  providers: [SystemUsersService, RoleService, HospitalsComponent],
   bootstrap: [AppComponent],
   entryComponents: [ConfirmDialogComponent]
 })
