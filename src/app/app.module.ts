@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
-
+import { DispensaryBarsModule } from './dispensaryBars/dispensaryBars.module';
 import { AppComponent } from './app.component';
 import { ToastrModule } from 'ngx-toastr';
 
@@ -38,11 +38,9 @@ import { MaterialModule } from './shared/material/material.module';
 import { RoleService } from './shared/services/role.service';
 import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
 import { SystemUsersComponent } from './systemUsers/system-users/system-users.component';
-<<<<<<< HEAD
+
 import { HospitalListComponent } from './layouts/adminComponents/Hospital/hospital-list/hospital-list.component';
-=======
 import { DispensaryComponentComponent } from './layouts/dispensary-component/dispensary-component.component';
->>>>>>> 90adbdce47d649b14ba489ecb9ab0a29ba7dd638
 
 
 @NgModule({
@@ -52,6 +50,7 @@ import { DispensaryComponentComponent } from './layouts/dispensary-component/dis
     ReactiveFormsModule,
     HttpModule,
     ComponentsModule,
+    DispensaryBarsModule,
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
@@ -73,11 +72,10 @@ import { DispensaryComponentComponent } from './layouts/dispensary-component/dis
     AdminLayoutComponent,
     AvatarDialogComponent,
     ConfirmDialogComponent,
-<<<<<<< HEAD
-   
-=======
+
     DispensaryComponentComponent,
->>>>>>> 90adbdce47d649b14ba489ecb9ab0a29ba7dd638
+
+
 
   ],
   providers: [SystemUsersService, RoleService, HospitalsComponent],
