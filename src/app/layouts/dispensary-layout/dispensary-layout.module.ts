@@ -18,12 +18,13 @@ import {
   MatPaginatorModule
 } from '@angular/material';
 
-import { HospitalsComponent } from 'app/layouts/adminComponents/hospitals/hospitals.component';
+
 import { BlogPostsComponent } from 'app/layouts/adminComponents/blog-posts/blog-posts.component';
 import { MaterialModule } from 'app/shared/material/material.module';
 import { SystemUsersListComponent } from 'app/systemUsers/system-users-list/system-users-list.component';
 import { SystemUsersComponent } from 'app/systemUsers/system-users/system-users.component';
 import { DispensaryLayoutComponent } from './dispensary-layout.component';
+import { HospitalsComponent } from '../adminComponents/Hospital/hospitals/hospitals.component';
 @NgModule({
   imports: [
     CommonModule,
