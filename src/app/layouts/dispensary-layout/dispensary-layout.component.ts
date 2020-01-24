@@ -1,10 +1,9 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import { Location, LocationStrategy, PathLocationStrategy, PopStateEvent } from '@angular/common';
-import 'rxjs/add/operator/filter';
-import { NavbarComponent } from '../../components/navbar/navbar.component';
+import { Component, OnInit } from '@angular/core';
+//import { Subscription } from 'rxjs';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
-import { Subscription } from 'rxjs/Subscription';
+import { Location, LocationStrategy, PathLocationStrategy, PopStateEvent } from '@angular/common';
 import PerfectScrollbar from 'perfect-scrollbar';
+import { Subscription } from 'rxjs/Subscription';
 import * as $ from "jquery";
 
 @Component({
@@ -17,10 +16,10 @@ export class DispensaryLayoutComponent implements OnInit {
   private lastPoppedUrl: string;
   private yScrollStack: number[] = [];
 
-  constructor( public location: Location, private router: Router) {}
+  constructor( public location: Location, private router: Router) { }
 
   ngOnInit() {
-      const isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
+    const isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
 
       if (isWindows && !document.getElementsByTagName('body')[0].classList.contains('sidebar-mini')) {
           // if we are on windows OS we activate the perfectScrollbar function
@@ -31,6 +30,7 @@ export class DispensaryLayoutComponent implements OnInit {
       }
       const elemMainPanel = <HTMLElement>document.querySelector('.main-panel');
       const elemSidebar = <HTMLElement>document.querySelector('.sidebar .sidebar-wrapper');
+      
 
       this.location.subscribe((ev:PopStateEvent) => {
           this.lastPoppedUrl = ev.url;
@@ -129,33 +129,33 @@ export class DispensaryLayoutComponent implements OnInit {
       });
   }
   ngAfterViewInit() {
-      this.runOnRouteChange();
-  }
-  /*
-  isMaps(path){
-      var titlee = this.location.prepareExternalUrl(this.location.path());
-      titlee = titlee.slice( 1 );
-      if(path == titlee){
-          return false;
-      }
-      else {
-          return true;
-      }
-  }
-  */
-  runOnRouteChange(): void {
-    if (window.matchMedia(`(min-width: 960px)`).matches && !this.isMac()) {
-      const elemMainPanel = <HTMLElement>document.querySelector('.main-panel');
-      const ps = new PerfectScrollbar(elemMainPanel);
-      ps.update();
+    this.runOnRouteChange();
+}
+/*
+isMaps(path){
+    var titlee = this.location.prepareExternalUrl(this.location.path());
+    titlee = titlee.slice( 1 );
+    if(path == titlee){
+        return false;
     }
+    else {
+        return true;
+    }
+}
+*/
+runOnRouteChange(): void {
+  if (window.matchMedia(`(min-width: 960px)`).matches && !this.isMac()) {
+    const elemMainPanel = <HTMLElement>document.querySelector('.main-panel');
+    const ps = new PerfectScrollbar(elemMainPanel);
+    ps.update();
   }
-  isMac(): boolean {
-      let bool = false;
-      if (navigator.platform.toUpperCase().indexOf('MAC') >= 0 || navigator.platform.toUpperCase().indexOf('IPAD') >= 0) {
-          bool = true;
-      }
-      return bool;
-  }
+}
+isMac(): boolean {
+    let bool = false;
+    if (navigator.platform.toUpperCase().indexOf('MAC') >= 0 || navigator.platform.toUpperCase().indexOf('IPAD') >= 0) {
+        bool = true;
+    }
+    return bool;
+}
 
 }

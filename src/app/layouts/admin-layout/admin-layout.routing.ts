@@ -58,11 +58,11 @@ export const AdminLayoutRoutes: Routes = [
     //         component: UpgradeComponent
     //     }]
     // }
-    { path: 'dashboard',      component: DashboardComponent },
-    {path: 'system-users-list', component:SystemUsersListComponent},
-    { path: 'user-profile',   component: UserProfileComponent },
-    { path: 'hospitals',   component: HospitalListComponent },
-    { path: 'blog-posts',   component: BlogPostsComponent },
+    { path: 'systemAdmin/dashboard',      component: DashboardComponent },
+    {path: 'systemAdmin/system-users-list', component:SystemUsersListComponent},
+    { path: 'systemAdmin/user-profile',   component: UserProfileComponent },
+    { path: 'systemAdmin/hospitals',   component: HospitalListComponent },
+    { path: 'systemAdmin/blog-posts',   component: BlogPostsComponent },
    
    
     /*{ path: 'table-list',     component: TableListComponent },
