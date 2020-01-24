@@ -11,8 +11,7 @@ import { DispensaryBarsModule } from './dispensaryBars/dispensaryBars.module';
 import { AppComponent } from './app.component';
 import { ToastrModule } from 'ngx-toastr';
 
-import { DashboardComponent } from './layouts/adminComponents/dashboard/dashboard.component';
-import { UserProfileComponent } from './layouts/adminComponents/user-profile/user-profile.component';
+
 import { TableListComponent } from './table-list/table-list.component';
 import { TypographyComponent } from './typography/typography.component';
 import { IconsComponent } from './icons/icons.component';
@@ -22,7 +21,6 @@ import { NotificationsComponent } from './shared/notifications/notifications.com
 import {
   AgmCoreModule
 } from '@agm/core';
-import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
@@ -30,9 +28,6 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'environments/environment';
 import { AvatarDialogComponent } from './avatar-dialog/avatar-dialog.component';
 import { MatDialogModule, MatButtonModule, MatInputModule, MatSliderModule } from '@angular/material';
-import { DoctorsComponent } from './layouts/adminComponents/doctors/doctors.component';
-import { HospitalsComponent } from './layouts/adminComponents/Hospital/hospitals/hospitals.component';
-import { BlogPostsComponent } from './layouts/adminComponents/blog-posts/blog-posts.component';
 import { SystemUsersService } from './shared/services/system-users.service';
 import { MaterialModule } from './shared/material/material.module';
 import { RoleService } from './shared/services/role.service';
@@ -40,7 +35,17 @@ import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.c
 import { SystemUsersComponent } from './systemUsers/system-users/system-users.component';
 
 import { HospitalListComponent } from './layouts/adminComponents/Hospital/hospital-list/hospital-list.component';
-import { DispensaryComponentComponent } from './layouts/dispensary-component/dispensary-component.component';
+// { DispensaryComponentComponent } from './layouts/dispensary-component/dispensary-component.component';
+import { DoctorLayoutComponent } from './layouts/doctor-layout/doctor-layout.component';
+import { DoctorFooterComponent } from './doctor-bars/doctor-footer/doctor-footer.component';
+import { DoctorNavbarComponent } from './doctor-bars/doctor-navbar/doctor-navbar.component';
+import { DoctorSidebarComponent } from './doctor-bars/doctor-sidebar/doctor-sidebar.component';
+ //import { DoctorComponentsComponent } from './layouts/doctor-components/doctor-components.component';
+// import { DashboardComponent } from './layouts/doctor-components/dashboard/dashboard.component';
+// import { UserProfileComponent } from './layouts/doctor-components/user-profile/user-profile.component';
+//import { AppointmentsComponent } from './layouts/doctor-components/appointments/appointments.component';
+//import { PrescriptionsComponent } from './layouts/doctor-components/prescriptions/prescriptions.component';
+//import { BlogPostsComponent } from './layouts/doctor-components/blog-posts/blog-posts.component';
 
 
 @NgModule({
@@ -69,16 +74,31 @@ import { DispensaryComponentComponent } from './layouts/dispensary-component/dis
   ],
   declarations: [
     AppComponent,
-    AdminLayoutComponent,
     AvatarDialogComponent,
     ConfirmDialogComponent,
 
-    DispensaryComponentComponent,
+    //DispensaryComponentComponent,
+
+    DoctorLayoutComponent,
+
+  
+    DoctorFooterComponent,
+
+    DoctorNavbarComponent,
+
+    DoctorSidebarComponent,
+
+   // DoctorComponentsComponent,
+
+    //AppointmentsComponent,
+
+    //PrescriptionsComponent,
+
 
 
 
   ],
-  providers: [SystemUsersService, RoleService, HospitalsComponent],
+  providers: [SystemUsersService, RoleService],
   bootstrap: [AppComponent],
   entryComponents: [ConfirmDialogComponent]
 })

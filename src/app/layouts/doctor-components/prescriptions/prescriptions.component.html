@@ -1,0 +1,213 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-sm-6">
+          <button mat-raised-button color="primary" data-toggle="modal" data-target="#addNew">Add New Prescription</button>
+      </div>
+     
+  </div>
+    <div class="row">
+      <div class="col-md-12">
+        <mat-form-field>
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+        </mat-form-field>
+        
+        <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="dataSource" matSort>
+        
+            <!-- ID Column
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+              <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+            </ng-container> -->
+        
+            <!-- Full Name Column -->
+            <ng-container matColumnDef="patientId">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>patient Id</th>
+              <td mat-cell *matCellDef="let row"> {{row.patientId}} </td>
+            </ng-container>
+        
+            <!-- User Name Column -->
+            <ng-container matColumnDef="PatientName">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Patient Name</th>
+              <td mat-cell *matCellDef="let row"> {{row.PatientName}} </td>
+            </ng-container>
+        
+            <!-- Role Column -->
+            <ng-container matColumnDef="description">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Description</th>
+              <td mat-cell *matCellDef="let row" > {{row.description}} </td>
+            </ng-container>
+
+             <!-- NIC Column -->
+             <ng-container matColumnDef="medicine">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Medicine </th>
+              <td mat-cell *matCellDef="let row" > {{row.medicine}} </td>
+            </ng-container>
+
+             <!-- Telephone -->
+             <ng-container matColumnDef="dose">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Needed Dose </th>
+              <td mat-cell *matCellDef="let row" > {{row.dose}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Parient status</th>
+              <td mat-cell *matCellDef="let row" > {{row.status}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+              <mat-header-cell *matHeaderCellDef>Actions </mat-header-cell>
+              <mat-cell *matCellDef="let row">
+                <button mat-icon-button matTooltip="Click to Edit" class="iconbutton" color="primary" (click)="RemoveRecord(row.id)">
+                  <i class="material-icons">edit</i>
+                  </button>
+                <button mat-icon-button matTooltip="Click to Delete" class="iconbutton" color="warn">
+                  <i class="material-icons">close</i>
+                  </button>
+              </mat-cell>
+            </ng-container>
+
+            
+
+           <!-- <ng-container matColumnDef="remove" >
+              <th mat-header-cell *matHeaderCellDef> Remove </th>
+              <td mat-class *matCellDef="let row" class="td-actions text-right">
+                <button mat-raised-button type="button" matTooltip="Edit Task" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                  {{row.remove}}  
+                  <i class="material-icons">edit</i>
+                </button>
+                <button mat-raised-button type="button" matTooltip="Remove" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                    <i class="material-icons">close</i>
+                </button>
+            </td>
+            </ng-container>--> 
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+            </tr>
+          </table>
+        
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+        </div>
+
+      </div>
+   
+
+    </div>
+    
+    
+  </div>
+</div>
+
+<!-- Buy-Modal-angular -->
+<div class="modal modal-angular fade" id="addNew" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-body text-center">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <!-- form to add System Users-->
+              <div class="card">
+                <div class="card-header card-header-danger">
+                    <h4 class="card-title">Add New Prescription</h4>
+                    <!-- <p class="card-category">Complete your profile</p> -->
+                </div>
+                <div class="card-body">
+
+                    <form class="create-form"  [formGroup]="pressForm" novalidate (ngSubmit)="onSubmit(pressForm.value)">
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                             
+                              <div class="form-group">
+                                <!-- <input matInput type="hidden" formControlName="id" class="form-control"> -->
+                                <mat-form-field class="input-style">
+                                  <input matInput placeholder="Patient Name" class="form-control" formControlName="PatientName">
+                                 
+                                </mat-form-field>
+                                <ng-container *ngFor="let validation of validation_messages.PatientName">
+                                  <mat-error *ngIf="pressForm.get('PatientName').hasError(validation.type) && (pressForm.get('PatientName').dirty || pressForm.get('PatientName').touched)">{{validation}}</mat-error>
+                                </ng-container>
+                              </div>
+                            </div>
+
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <mat-form-field class="input-style">
+                                  <input matInput placeholder="Patient Id" class="form-control" formControlName="patientId">
+                                </mat-form-field>
+                                <ng-container *ngFor="let validation of validation_messages.username">
+                                  <mat-error *ngIf="pressForm.get('patientId').hasError(validation.type) && (pressForm.get('patientId').dirty || pressForm.get('patientId').touched)">{{validation}}</mat-error>
+                                </ng-container>
+                              </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <mat-form-field class="input-style">
+                                <input matInput placeholder="Description" class="form-control" formControlName="description">
+                              </mat-form-field>
+                              <ng-container *ngFor="let validation of validation_messages.username">
+                                <mat-error *ngIf="pressForm.get('description').hasError(validation.type) && (pressForm.get('description').dirty || pressForm.get('description').touched)">{{validation}}</mat-error>
+                              </ng-container>
+              
+                            </div>
+                          </div>
+
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <mat-form-field class="input-style">
+                                <input matInput placeholder="Contact Number" class="form-control" formControlName="dose">
+                              </mat-form-field>
+                              <ng-container *ngFor="let validation of validation_messages.username">
+                                <mat-error *ngIf="pressForm.get('dose').hasError(validation.type) && (pressForm.get('dose').dirty || pressForm.get('dose').touched)">{{validation}}</mat-error>
+                              </ng-container>
+
+                            </div>
+                          </div>
+
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+              
+                              
+                              <mat-form-field class="input-style">
+                                <mat-label>Status of Patient</mat-label>
+                                <select matNativeControl placeholder="Patient status" class="form-control" formControlName="status">
+                                  <option value="0">Good</option>
+                                  <option value="1">Revisit</option>
+                                  <option value="2">Bad</option>
+                                </select>
+                              </mat-form-field>
+                              <ng-container *ngFor="let validation of validation_messages.status">
+                                <mat-error *ngIf="pressForm.get('status').hasError(validation.type) && (pressForm.get('role').dirty || pressForm.get('role').touched)">{{validation}}</mat-error>
+                              </ng-container>
+                            </div>
+                          </div>
+
+
+                        </div>
+                      
+                        <div class="submit-button-container">
+                          <button mat-raised-button type="submit" class="submit-button pull-right" color="primary" [disabled]="pressForm.invalid">Add the Prescription</button>
+                        </div>
+                       
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+             
+          </div>
+      </div>
+  </div>
+  
+</div>
+
+
+<!-- Copyright 2019 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

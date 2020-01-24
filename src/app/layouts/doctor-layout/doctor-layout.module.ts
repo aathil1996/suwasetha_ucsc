@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DispensaryLayoutRoutes } from './dispensary-layout.routing';
-import { DashboardComponent } from '../adminComponents/dashboard/dashboard.component';
-import { UserProfileComponent } from '../adminComponents/user-profile/user-profile.component';
+import { DoctorLayoutRoutes } from './doctor-layout.routing';
+
+
 
 
 import {
@@ -18,15 +18,17 @@ import {
   MatPaginatorModule
 } from '@angular/material';
 
-import { BlogPostsComponent } from 'app/layouts/adminComponents/blog-posts/blog-posts.component';
+import { AppointmentsComponent } from 'app/layouts/doctor-components/appointments/appointments.component';
+import { BlogPostsComponent } from 'app/layouts/doctor-components/blog-posts/blog-posts.component';
 import { MaterialModule } from 'app/shared/material/material.module';
-import { SystemUsersListComponent } from 'app/systemUsers/system-users-list/system-users-list.component';
-import { SystemUsersComponent } from 'app/systemUsers/system-users/system-users.component';
-import { DispensaryLayoutComponent } from './dispensary-layout.component';
+import { DashboardComponent } from 'app/layouts/doctor-components/dashboard/dashboard.component';
+import { PrescriptionsComponent } from 'app/layouts/doctor-components/prescriptions/prescriptions.component';
+import { UserProfileComponent} from 'app/layouts/doctor-components/user-profile/user-profile.component';
+
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(DispensaryLayoutRoutes),
+    RouterModule.forChild(DoctorLayoutRoutes),
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
@@ -41,10 +43,11 @@ import { DispensaryLayoutComponent } from './dispensary-layout.component';
   ],
   declarations: [
     DashboardComponent,
+    AppointmentsComponent,
     UserProfileComponent,
     BlogPostsComponent,
-    SystemUsersListComponent,
-    SystemUsersComponent
+    PrescriptionsComponent,
+  
 
    /* TableListComponent,
     TypographyComponent,
@@ -53,8 +56,8 @@ import { DispensaryLayoutComponent } from './dispensary-layout.component';
     NotificationsComponent,
     UpgradeComponent,*/
   ],
-  entryComponents: [SystemUsersComponent]
+
   
 })
 
-export class AdminLayoutModule {}
+export class DoctorLayoutModule {}

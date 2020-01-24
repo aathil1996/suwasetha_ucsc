@@ -14,12 +14,14 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   declarations: [
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+   
   ],
   exports: [
     FooterComponent,
     NavbarComponent,
     SidebarComponent
+   
   ]
 })
 export class ComponentsModule { }
