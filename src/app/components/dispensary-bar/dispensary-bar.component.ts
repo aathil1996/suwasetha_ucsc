@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 declare const $: any;
 declare interface RouteInfo {
     path: string;
@@ -7,13 +6,14 @@ declare interface RouteInfo {
     icon: string;
     class: string;
 }
+
 export const ROUTES: RouteInfo[] = [
-  { path: 'systemAdmin/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
-  { path: 'systemAdmin/system-users-list', title:'System Users List', icon:'person', class:''},
-  { path: 'systemAdmin/hospitals', title: 'Hospitals',  icon:'person', class: '' },
-  { path: 'systemAdmin/blog-posts', title: 'Blog Posts',  icon:'person', class: '' },
-   { path: 'systemAdmin/user-profile', title: 'User Profile',  icon:'person', class: '' },
-    // { path: '/testing', title: 'Testing',  icon:'person', class: '' },
+  // { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
+  // { path: '/system-users-list', title:'System Users List', icon:'person', class:''},
+  // { path: '/hospitals', title: 'Hospitals',  icon:'person', class: '' },
+  // { path: '/blog-posts', title: 'Blog Posts',  icon:'person', class: '' },
+  //  { path: '/user-profile', title: 'User Profile',  icon:'person', class: '' },
+    { path: 'dispensaryAdmin/testing', title: 'Testing',  icon:'person', class: '' },
     
    /* { path: '/table-list', title: 'Table List',  icon:'content_paste', class: '' },
     { path: '/typography', title: 'Typography',  icon:'library_books', class: '' },
@@ -24,11 +24,11 @@ export const ROUTES: RouteInfo[] = [
 ];
 
 @Component({
-  selector: 'app-sidebar',
-  templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  selector: 'app-dispensary-bar',
+  templateUrl: './dispensary-bar.component.html',
+  styleUrls: ['./dispensary-bar.component.scss']
 })
-export class SidebarComponent implements OnInit {
+export class DispensaryBarComponent implements OnInit {
   menuItems: any[];
 
   constructor() { }
@@ -36,10 +36,12 @@ export class SidebarComponent implements OnInit {
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
   }
+
   isMobileMenu() {
-      if ($(window).width() > 991) {
-          return false;
-      }
-      return true;
-  };
+    if ($(window).width() > 991) {
+        return false;
+    }
+    return true;
+};
+
 }

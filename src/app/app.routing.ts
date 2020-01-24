@@ -4,20 +4,45 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { SystemUsersListComponent } from './systemUsers/system-users-list/system-users-list.component';
 import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensary-layout.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes =[
+
+
   {
     path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full',
-  }, {
-    path: '',
+    component: HomeComponent,
+ 
+  }, 
+
+ {
+   path: 'systemAdmin',
+ redirectTo: 'systemAdmin/systemAdmin/dashboard',
+  pathMatch: 'full',
+ }, 
+    
+  
+  {
+    path: 'systemAdmin',
     component: AdminLayoutComponent,
     children: [{
       path: '',
       loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
+    }]
+  },
+ 
+  {
+    path: 'dispensaryAdmin',
+  redirectTo: 'dispensaryAdmin/dispensaryAdmin/testing',
+   pathMatch: 'full',
+  }, 
+  {
+    path: 'dispensaryAdmin',
+    component: DispensaryLayoutComponent,
+    children: [{
+      path: '',
+      loadChildren: './layouts/dispensary-layout/dispensary-layout.module#DispensaryLayoutModule'
     }]
   },
   
