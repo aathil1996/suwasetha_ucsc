@@ -6,16 +6,17 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensary-layout.component';
 import { HomeComponent } from './home/home.component';
+import { DoctorsLayoutComponent } from './layouts/doctors-layout/doctors-layout.component';
 
 const routes: Routes =[
 
-
+// for home page
   {
     path: '',
     component: HomeComponent,
  
   }, 
-
+// system admin dashboard
  {
    path: 'systemAdmin',
  redirectTo: 'systemAdmin/systemAdmin/dashboard',
@@ -32,6 +33,8 @@ const routes: Routes =[
     }]
   },
  
+
+  // dispensary dashbaord
   {
     path: 'dispensaryAdmin',
   redirectTo: 'dispensaryAdmin/dispensaryAdmin/testing',
@@ -43,6 +46,22 @@ const routes: Routes =[
     children: [{
       path: '',
       loadChildren: './layouts/dispensary-layout/dispensary-layout.module#DispensaryLayoutModule'
+    }]
+  },
+
+  // doctor dashbaord
+
+  {
+    path: 'doctors',
+  redirectTo: 'doctors/doctors/testing2',
+   pathMatch: 'full',
+  }, 
+  {
+    path: 'doctors',
+    component: DoctorsLayoutComponent,
+    children: [{
+      path: '',
+      loadChildren: './layouts/doctors-layout/doctors-layout.module#DoctorsLayoutModule'
     }]
   },
   

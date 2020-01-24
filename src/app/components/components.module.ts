@@ -6,6 +6,8 @@ import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { DispensaryBarComponent } from './dispensary-bar/dispensary-bar.component';
+import { DoctorsComponent } from 'app/layouts/adminComponents/doctors/doctors.component';
+import { DoctrosBarComponent } from './doctros-bar/doctros-bar.component';
 
 @NgModule({
   imports: [
@@ -16,13 +18,15 @@ import { DispensaryBarComponent } from './dispensary-bar/dispensary-bar.componen
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
-    DispensaryBarComponent
+    DispensaryBarComponent,
+    DoctrosBarComponent
   ],
   exports: [
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
-    DispensaryBarComponent
+    DispensaryBarComponent,
+    DoctrosBarComponent
   ]
 })
 export class ComponentsModule { }
