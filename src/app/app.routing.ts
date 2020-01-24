@@ -10,7 +10,7 @@ import { DoctorLayoutComponent } from './layouts/doctor-layout/doctor-layout.com
 
 const routes: Routes =[
 
-
+// for home page
   {
     path: '',
     redirectTo: 'dashboard',

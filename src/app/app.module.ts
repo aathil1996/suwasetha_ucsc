@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 
 
 import { AppRoutingModule } from './app.routing';
-import { ComponentsModule } from './components/components.module';
+
 
 import { AppComponent } from './app.component';
 import { ToastrModule } from 'ngx-toastr';
@@ -33,6 +33,9 @@ import { MaterialModule } from './shared/material/material.module';
 import { RoleService } from './shared/services/role.service';
 import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
 import { HomeComponent } from './home/home.component';
+import { DoctorsLayoutComponent } from './layouts/doctors-layout/doctors-layout.component';
+import { Testing2Component } from './testing2/testing2.component';
+import { ComponentsModule } from './components/components.module';
 
 
 import { HospitalListComponent } from './layouts/adminComponents/Hospital/hospital-list/hospital-list.component';
@@ -79,6 +82,8 @@ import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensar
     ConfirmDialogComponent,
     DispensaryLayoutComponent,
     HomeComponent,
+    DoctorsLayoutComponent,
+    
 
     //DispensaryComponentComponent,
 
