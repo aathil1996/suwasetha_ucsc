@@ -6,6 +6,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { DispensaryBarComponent } from './dispensary-bar/dispensary-bar.component';
+import { DoctorSidebarComponent } from 'app/doctor-bars/doctor-sidebar/doctor-sidebar.component';
 
 @NgModule({
   imports: [
@@ -16,22 +17,17 @@ import { DispensaryBarComponent } from './dispensary-bar/dispensary-bar.componen
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
-<<<<<<< HEAD
+    DispensaryBarComponent,
+    DoctorSidebarComponent
    
-=======
-    DispensaryBarComponent
->>>>>>> 7b2ff9b18871bedf2a1fb94b2b59c57fd439a50e
   ],
   exports: [
     FooterComponent,
     NavbarComponent,
-<<<<<<< HEAD
-    SidebarComponent
-   
-=======
     SidebarComponent,
-    DispensaryBarComponent
->>>>>>> 7b2ff9b18871bedf2a1fb94b2b59c57fd439a50e
+    DispensaryBarComponent,
+    DoctorSidebarComponent
+   
   ]
 })
 export class ComponentsModule { }

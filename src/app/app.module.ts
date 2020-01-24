@@ -11,7 +11,6 @@ import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 import { ToastrModule } from 'ngx-toastr';
 
-<<<<<<< HEAD
 
 import { TableListComponent } from './table-list/table-list.component';
 import { TypographyComponent } from './typography/typography.component';
@@ -22,24 +21,13 @@ import { NotificationsComponent } from './shared/notifications/notifications.com
 import {
   AgmCoreModule
 } from '@agm/core';
-=======
-
-import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensary-layout.component';
-
->>>>>>> 7b2ff9b18871bedf2a1fb94b2b59c57fd439a50e
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'environments/environment';
 import { AvatarDialogComponent } from './avatar-dialog/avatar-dialog.component';
-<<<<<<< HEAD
 import { MatDialogModule, MatButtonModule, MatInputModule, MatSliderModule } from '@angular/material';
-=======
-import { MatDialogModule, MatSliderModule } from '@angular/material';
-import { HospitalsComponent } from './layouts/adminComponents/Hospital/hospitals/hospitals.component';
->>>>>>> 7b2ff9b18871bedf2a1fb94b2b59c57fd439a50e
 import { SystemUsersService } from './shared/services/system-users.service';
 import { MaterialModule } from './shared/material/material.module';
 import { RoleService } from './shared/services/role.service';
@@ -47,21 +35,19 @@ import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.c
 import { HomeComponent } from './home/home.component';
 
 
-<<<<<<< HEAD
 import { HospitalListComponent } from './layouts/adminComponents/Hospital/hospital-list/hospital-list.component';
 // { DispensaryComponentComponent } from './layouts/dispensary-component/dispensary-component.component';
 import { DoctorLayoutComponent } from './layouts/doctor-layout/doctor-layout.component';
 import { DoctorFooterComponent } from './doctor-bars/doctor-footer/doctor-footer.component';
 import { DoctorNavbarComponent } from './doctor-bars/doctor-navbar/doctor-navbar.component';
 import { DoctorSidebarComponent } from './doctor-bars/doctor-sidebar/doctor-sidebar.component';
+import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensary-layout.component';
  //import { DoctorComponentsComponent } from './layouts/doctor-components/doctor-components.component';
 // import { DashboardComponent } from './layouts/doctor-components/dashboard/dashboard.component';
 // import { UserProfileComponent } from './layouts/doctor-components/user-profile/user-profile.component';
 //import { AppointmentsComponent } from './layouts/doctor-components/appointments/appointments.component';
 //import { PrescriptionsComponent } from './layouts/doctor-components/prescriptions/prescriptions.component';
 //import { BlogPostsComponent } from './layouts/doctor-components/blog-posts/blog-posts.component';
-=======
->>>>>>> 7b2ff9b18871bedf2a1fb94b2b59c57fd439a50e
 
 
 @NgModule({
@@ -94,7 +80,6 @@ import { DoctorSidebarComponent } from './doctor-bars/doctor-sidebar/doctor-side
     DispensaryLayoutComponent,
     HomeComponent,
 
-<<<<<<< HEAD
     //DispensaryComponentComponent,
 
     DoctorLayoutComponent,
@@ -104,7 +89,7 @@ import { DoctorSidebarComponent } from './doctor-bars/doctor-sidebar/doctor-side
 
     DoctorNavbarComponent,
 
-    DoctorSidebarComponent,
+    
 
    // DoctorComponentsComponent,
 
@@ -114,9 +99,6 @@ import { DoctorSidebarComponent } from './doctor-bars/doctor-sidebar/doctor-side
 
 
 
-=======
-   
->>>>>>> 7b2ff9b18871bedf2a1fb94b2b59c57fd439a50e
 
   ],
   providers: [SystemUsersService, RoleService],
