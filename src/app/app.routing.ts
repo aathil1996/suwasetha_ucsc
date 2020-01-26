@@ -7,6 +7,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensary-layout.component';
 import { HomeComponent } from './home/home.component';
 import { DoctorsLayoutComponent } from './layouts/doctors-layout/doctors-layout.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes =[
 
@@ -63,6 +64,11 @@ const routes: Routes =[
       path: '',
       loadChildren: './layouts/doctors-layout/doctors-layout.module#DoctorsLayoutModule'
     }]
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    
   },
   
 ];

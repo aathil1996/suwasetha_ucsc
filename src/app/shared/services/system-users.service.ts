@@ -6,6 +6,7 @@ import * as _ from 'lodash';
 import { SystemUsers } from '../system-users.model';
 import { Scheduler, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,8 @@ import { map } from 'rxjs/operators';
 export class SystemUsersService {
  
 
-  constructor(private firebase: AngularFireDatabase) {
+  constructor(private firebase: AngularFireDatabase,
+    private afAuth: AngularFireAuth) {
     
    }
 
@@ -63,6 +65,19 @@ export class SystemUsersService {
      });
 
      
+
+     }
+
+     async addCredential(systemUser){
+       const email  = systemUser.email;
+       const password = systemUser.password;
+
+       try{
+         const resp = await this.afAuth.auth.createUserWithEmailAndPassword(email,password);
+       } catch(error){
+         console.log(error.message);
+       }
+
 
      }
 

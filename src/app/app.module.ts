@@ -19,6 +19,7 @@ import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensar
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'environments/environment';
 import { AvatarDialogComponent } from './avatar-dialog/avatar-dialog.component';
 import { MatDialogModule, MatSliderModule } from '@angular/material';
@@ -31,6 +32,7 @@ import { HomeComponent } from './home/home.component';
 import { DoctorsLayoutComponent } from './layouts/doctors-layout/doctors-layout.component';
 import { Testing2Component } from './testing2/testing2.component';
 import { ComponentsModule } from './components/components.module';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -48,6 +50,7 @@ import { ComponentsModule } from './components/components.module';
     AppRoutingModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
     AngularFirestoreModule,
     BrowserAnimationsModule,
     MatSliderModule,
@@ -66,6 +69,7 @@ import { ComponentsModule } from './components/components.module';
     DispensaryLayoutComponent,
     HomeComponent,
     DoctorsLayoutComponent,
+    LoginComponent,
     
 
    
