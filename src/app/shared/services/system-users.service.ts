@@ -43,7 +43,7 @@ export class SystemUsersService {
       });
    }
    
-  
+  //retrieving data
    getSystemUsers(){
      this.systemUsersList = this.firebase.list('systemUsers');
      return this.systemUsersList.snapshotChanges();

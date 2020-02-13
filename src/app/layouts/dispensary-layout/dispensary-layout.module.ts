@@ -20,12 +20,15 @@ import { BlogPostsComponent } from '../adminComponents/blog-posts/blog-posts.com
 import { SystemUsersListComponent } from 'app/systemUsers/system-users-list/system-users-list.component';
 import { SystemUsersComponent } from 'app/systemUsers/system-users/system-users.component';
 import { TestingComponent } from 'app/testing/testing.component';
+import { HomeComponent } from 'app/home/home.component';
+import { PrescriptionComponent } from 'app/prescription/prescription.component';
 
 
 
 @NgModule({
   declarations: [
-    TestingComponent
+    TestingComponent,
+    PrescriptionComponent
   ],
   imports: [
     CommonModule,

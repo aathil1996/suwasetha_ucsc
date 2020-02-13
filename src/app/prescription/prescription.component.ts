@@ -4,13 +4,12 @@ import { MatTableDataSource, MatSort, MatPaginator, MatDialog, MatDialogConfig }
 import { NotificationsService } from 'app/shared/services/notifications.service';
 import { DialogService } from 'app/shared/services/dialog.service';
 
-
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-prescription',
+  templateUrl: './prescription.component.html',
+  styleUrls: ['./prescription.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class PrescriptionComponent implements OnInit {
   searchKey: string;
   array: any;
 

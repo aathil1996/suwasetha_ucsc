@@ -28,6 +28,7 @@ import { MaterialModule } from './shared/material/material.module';
 import { RoleService } from './shared/services/role.service';
 import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
 import { HomeComponent } from './home/home.component';
+import { PrescriptionComponent } from './prescription/prescription.component';
 
 
 
@@ -61,7 +62,9 @@ import { HomeComponent } from './home/home.component';
     AvatarDialogComponent,
     ConfirmDialogComponent,
     DispensaryLayoutComponent,
-    HomeComponent,
+    
+    HomeComponent
+    
 
    
 
