@@ -1,9 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { PrescriptionsService} from 'app/shared/services/prescriptions.service';
-import { MatDialogRef, MatDialog } from '@angular/material';
-import { NotificationsService } from 'app/shared/services/notifications.service';
-import { DialogService } from 'app/shared/services/dialog.service';
-
+import { PrescriptionsService } from 'app/shared/services/prescriptions.service';
+import { NotificationsService } from 'app/shared/services/notifications.service'
+import { MatDialogRef } from '@angular/material';
 
 
 
@@ -13,18 +11,18 @@ import { DialogService } from 'app/shared/services/dialog.service';
   styleUrls: ['./prescriptions.component.scss']
 })
 export class PrescriptionsComponent implements OnInit {
+  
 
-  searchKey: string;
-  array: any;
-  dialogRef: any;
 
-  constructor(private service: PrescriptionsService,
-    private dialog: MatDialog,
-    private notificationService: NotificationsService,
-    private dialogService: DialogService
+ 
+  constructor(private service : PrescriptionsService,
+    public notificationService: NotificationsService,
+    public dialogRef: MatDialogRef<PrescriptionsComponent>
     ) { }
 
-    ngOnInit() {
+ 
+
+  ngOnInit() {
       this.service.getPrescriptions();
     }
 
@@ -60,20 +58,3 @@ export class PrescriptionsComponent implements OnInit {
 
 }
 
-
-
-
-  
-
-
- 
-
- 
-
-  
-
-
-
-
-
-  

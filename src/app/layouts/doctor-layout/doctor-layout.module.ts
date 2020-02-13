@@ -20,10 +20,11 @@ import {
 
 import { AppointmentsComponent } from 'app/layouts/doctor-components/appointments/appointments.component';
 import { BlogPostsComponent } from 'app/layouts/doctor-components/blog-posts/blog-posts.component';
+import {PrescriptionsComponent} from 'app/layouts/doctor-components/prescription/prescriptions/prescriptions.component';
 import { MaterialModule } from 'app/shared/material/material.module';
 import { DashboardComponent } from 'app/layouts/doctor-components/dashboard/dashboard.component';
-import { PrescriptionsComponent } from 'app/layouts/doctor-components/prescriptions/prescriptions.component';
 import { UserProfileComponent} from 'app/layouts/doctor-components/user-profile/user-profile.component';
+import { PrescriptionsListComponent} from 'app/layouts/doctor-components/prescription/prescriptions-list/prescriptions-list.component';
 
 @NgModule({
   imports: [
@@ -47,6 +48,8 @@ import { UserProfileComponent} from 'app/layouts/doctor-components/user-profile/
     UserProfileComponent,
     BlogPostsComponent,
     PrescriptionsComponent,
+    PrescriptionsListComponent
+
   
 
    /* TableListComponent,
@@ -56,6 +59,7 @@ import { UserProfileComponent} from 'app/layouts/doctor-components/user-profile/
     NotificationsComponent,
     UpgradeComponent,*/
   ],
+  entryComponents: [PrescriptionsComponent, PrescriptionsListComponent]
 
   
 })

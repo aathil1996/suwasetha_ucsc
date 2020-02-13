@@ -29,18 +29,18 @@ import { environment } from 'environments/environment';
 import { AvatarDialogComponent } from './avatar-dialog/avatar-dialog.component';
 import { MatDialogModule, MatButtonModule, MatInputModule, MatSliderModule } from '@angular/material';
 import { SystemUsersService } from './shared/services/system-users.service';
+import { PrescriptionsService} from './shared/services/prescriptions.service'
 import { MaterialModule } from './shared/material/material.module';
 import { RoleService } from './shared/services/role.service';
 import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
 import { HomeComponent } from './home/home.component';
-import { DoctorsLayoutComponent } from './layouts/doctors-layout/doctors-layout.component';
+import { DoctorLayoutComponent } from './layouts/doctor-layout/doctor-layout.component';
 import { Testing2Component } from './testing2/testing2.component';
 import { ComponentsModule } from './components/components.module';
 
 
 import { HospitalListComponent } from './layouts/adminComponents/Hospital/hospital-list/hospital-list.component';
 // { DispensaryComponentComponent } from './layouts/dispensary-component/dispensary-component.component';
-import { DoctorLayoutComponent } from './layouts/doctor-layout/doctor-layout.component';
 import { DoctorFooterComponent } from './doctor-bars/doctor-footer/doctor-footer.component';
 import { DoctorNavbarComponent } from './doctor-bars/doctor-navbar/doctor-navbar.component';
 import { DoctorSidebarComponent } from './doctor-bars/doctor-sidebar/doctor-sidebar.component';
@@ -82,7 +82,8 @@ import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensar
     ConfirmDialogComponent,
     DispensaryLayoutComponent,
     HomeComponent,
-    DoctorsLayoutComponent,
+    DoctorLayoutComponent,
+   
     
 
     //DispensaryComponentComponent,
@@ -106,7 +107,7 @@ import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensar
 
 
   ],
-  providers: [SystemUsersService, RoleService],
+  providers: [SystemUsersService, RoleService, PrescriptionsService],
   bootstrap: [AppComponent],
   entryComponents: [ConfirmDialogComponent]
 })

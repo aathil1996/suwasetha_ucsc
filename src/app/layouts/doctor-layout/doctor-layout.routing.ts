@@ -5,7 +5,8 @@ import { UserProfileComponent } from '../doctor-components/user-profile/user-pro
 
 import { AppointmentsComponent } from '../doctor-components/appointments/appointments.component';
 import { BlogPostsComponent } from '../doctor-components/blog-posts/blog-posts.component';
-import { PrescriptionsComponent } from '../doctor-components/prescriptions/prescriptions.component';
+
+import { PrescriptionsListComponent } from 'app/layouts/doctor-components/prescription/prescriptions-list/prescriptions-list.component';
 
 /*import { TableListComponent } from '../../table-list/table-list.component';
 import { TypographyComponent } from '../../typography/typography.component';
@@ -61,7 +62,7 @@ export const DoctorLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
     {path: 'appointments', component:AppointmentsComponent},
     { path: 'user-profile',   component: UserProfileComponent },
-    { path: 'prescriptions',   component: PrescriptionsComponent },
+    { path: 'prescriptions',   component: PrescriptionsListComponent },
     { path: 'blog-posts',   component: BlogPostsComponent },
    
    
