@@ -10,7 +10,10 @@ import { MatButtonModule,
   MatSelectModule, 
   MatTooltipModule,
   MatTableModule,
-  MatPaginatorModule} from '@angular/material';
+  MatPaginatorModule
+} from '@angular/material';
+
+//import { BlogPostsComponent } from 'app/layouts/adminComponents/blog-posts/blog-posts.component';
 import { MaterialModule } from 'app/shared/material/material.module';
 import { HospitalsComponent } from '../adminComponents/Hospital/hospitals/hospitals.component';
 import { HospitalListComponent } from '../adminComponents/Hospital/hospital-list/hospital-list.component';
@@ -24,9 +27,7 @@ import { TestingComponent } from 'app/testing/testing.component';
 
 
 @NgModule({
-  declarations: [
-    TestingComponent
-  ],
+  
   imports: [
     CommonModule,
     RouterModule.forChild(DispensaryLayoutRoutes),
@@ -43,6 +44,22 @@ import { TestingComponent } from 'app/testing/testing.component';
     MaterialModule
    
   ],
-  entryComponents: []
+  declarations: [
+    TestingComponent,
+    DashboardComponent,
+    UserProfileComponent,
+    BlogPostsComponent,
+    SystemUsersListComponent,
+    SystemUsersComponent
+
+   /* TableListComponent,
+    TypographyComponent,
+    IconsComponent,
+    MapsComponent,
+    NotificationsComponent,
+    UpgradeComponent,*/
+  ],
+  entryComponents: [SystemUsersComponent]
+  
 })
 export class DispensaryLayoutModule { }

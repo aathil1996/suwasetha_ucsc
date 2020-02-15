@@ -12,50 +12,23 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { DoctorLayoutComponent } from './layouts/doctor-layout/doctor-layout.component';
 
 const routes: Routes =[
 
 // for home page
   {
     path: '',
-    component: HomeComponent,
- 
-  }, 
-// system admin dashboard
- {
-   path: 'systemAdmin',
- redirectTo: 'systemAdmin/systemAdmin/dashboard',
-  pathMatch: 'full',
- }, 
-    
-  
-  {
-    path: 'systemAdmin',
-    component: AdminLayoutComponent,
+    redirectTo: 'dashboard',
+    pathMatch: 'full',
+  }, {
+    path: '',
+    component: DoctorLayoutComponent,
     children: [{
       path: '',
-      loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
-    }]
+      loadChildren: './layouts/doctor-layout/doctor-layout.module#DoctorLayoutModule'
+    }] 
   },
- 
-
-  // dispensary dashbaord
-  {
-    path: 'dispensaryAdmin',
-  redirectTo: 'dispensaryAdmin/dispensaryAdmin/testing',
-   pathMatch: 'full',
-  }, 
-  {
-    path: 'dispensaryAdmin',
-    component: DispensaryLayoutComponent,
-    children: [{
-      path: '',
-      loadChildren: './layouts/dispensary-layout/dispensary-layout.module#DispensaryLayoutModule'
-    }]
-  },
-
-  // doctor dashbaord
-
   {
     path: 'doctors',
   redirectTo: 'doctors/doctors/testing2',
@@ -90,7 +63,9 @@ const routes: Routes =[
     
   },
   
-];
+    }
+  
+]
 
 @NgModule({
   imports: [

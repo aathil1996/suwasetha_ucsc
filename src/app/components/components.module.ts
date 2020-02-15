@@ -6,7 +6,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { DispensaryBarComponent } from './dispensary-bar/dispensary-bar.component';
-import { DoctorsComponent } from 'app/layouts/adminComponents/doctors/doctors.component';
+import { DoctorSidebarComponent } from 'app/doctor-bars/doctor-sidebar/doctor-sidebar.component';
 import { DoctrosBarComponent } from './doctros-bar/doctros-bar.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
@@ -34,7 +34,9 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
     NavbarComponent,
     SidebarComponent,
     DispensaryBarComponent,
+    DoctorSidebarComponent,
     DoctrosBarComponent
+   
   ]
 })
 export class ComponentsModule { }

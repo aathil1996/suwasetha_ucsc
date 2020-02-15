@@ -33,3 +33,7 @@
   position: absolute;
   width: 260px;
 }
+
+.main-content{
+  background-image: url(../img/doctor.png);
+}

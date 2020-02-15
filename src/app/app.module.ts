@@ -12,9 +12,15 @@ import { AppComponent } from './app.component';
 import { ToastrModule } from 'ngx-toastr';
 
 
-import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensary-layout.component';
+import { TableListComponent } from './table-list/table-list.component';
+import { TypographyComponent } from './typography/typography.component';
+import { IconsComponent } from './icons/icons.component';
+//import { MapsComponent } from './maps/maps.component';
+import { NotificationsComponent } from './shared/notifications/notifications.component';
 
+import {
+  AgmCoreModule
+} from '@agm/core';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule } from '@angular/fire/storage';
@@ -23,14 +29,14 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'environments/environment';
 import { AvatarDialogComponent } from './avatar-dialog/avatar-dialog.component';
-import { MatDialogModule, MatSliderModule } from '@angular/material';
-import { HospitalsComponent } from './layouts/adminComponents/Hospital/hospitals/hospitals.component';
+import { MatDialogModule, MatButtonModule, MatInputModule, MatSliderModule } from '@angular/material';
 import { SystemUsersService } from './shared/services/system-users.service';
+import { PrescriptionsService} from './shared/services/prescriptions.service'
 import { MaterialModule } from './shared/material/material.module';
 import { RoleService } from './shared/services/role.service';
 import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
 import { HomeComponent } from './home/home.component';
-import { DoctorsLayoutComponent } from './layouts/doctors-layout/doctors-layout.component';
+import { DoctorLayoutComponent } from './layouts/doctor-layout/doctor-layout.component';
 import { Testing2Component } from './testing2/testing2.component';
 import { ComponentsModule } from './components/components.module';
 import { LoginComponent } from './login/login.component';
@@ -40,6 +46,18 @@ import { BlogListComponent } from './layouts/adminComponents/blog/blog-list/blog
 import { ArticlesComponent } from './layouts/adminComponents/blog/articles/articles.component';
 
 
+import { HospitalListComponent } from './layouts/adminComponents/Hospital/hospital-list/hospital-list.component';
+// { DispensaryComponentComponent } from './layouts/dispensary-component/dispensary-component.component';
+import { DoctorFooterComponent } from './doctor-bars/doctor-footer/doctor-footer.component';
+import { DoctorNavbarComponent } from './doctor-bars/doctor-navbar/doctor-navbar.component';
+import { DoctorSidebarComponent } from './doctor-bars/doctor-sidebar/doctor-sidebar.component';
+import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensary-layout.component';
+ //import { DoctorComponentsComponent } from './layouts/doctor-components/doctor-components.component';
+// import { DashboardComponent } from './layouts/doctor-components/dashboard/dashboard.component';
+// import { UserProfileComponent } from './layouts/doctor-components/user-profile/user-profile.component';
+//import { AppointmentsComponent } from './layouts/doctor-components/appointments/appointments.component';
+//import { PrescriptionsComponent } from './layouts/doctor-components/prescriptions/prescriptions.component';
+//import { BlogPostsComponent } from './layouts/doctor-components/blog-posts/blog-posts.component';
 
 
 @NgModule({
@@ -68,16 +86,36 @@ import { ArticlesComponent } from './layouts/adminComponents/blog/articles/artic
   ],
   declarations: [
     AppComponent,
-    AdminLayoutComponent,
     AvatarDialogComponent,
     ConfirmDialogComponent,
     DispensaryLayoutComponent,
     HomeComponent,
-    DoctorsLayoutComponent,
-    LoginComponent,
+    DoctorLayoutComponent,
    
+    
+
+    //DispensaryComponentComponent,
+
+    DoctorLayoutComponent,
+
+  
+    DoctorFooterComponent,
+
+    DoctorNavbarComponent,
+
+    
+
+   // DoctorComponentsComponent,
+
+    //AppointmentsComponent,
+
+    //PrescriptionsComponent,
+
+
+
+
   ],
-  providers: [SystemUsersService, RoleService, HospitalsComponent],
+  providers: [SystemUsersService, RoleService, PrescriptionsService],
   bootstrap: [AppComponent],
   entryComponents: [ConfirmDialogComponent]
 })
