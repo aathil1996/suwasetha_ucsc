@@ -17,6 +17,7 @@ import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensar
 
 
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -33,6 +34,10 @@ import { DoctorsLayoutComponent } from './layouts/doctors-layout/doctors-layout.
 import { Testing2Component } from './testing2/testing2.component';
 import { ComponentsModule } from './components/components.module';
 import { LoginComponent } from './login/login.component';
+import { PatientsComponent } from './layouts/adminComponents/Patients/patients/patients.component';
+import { PatientsListComponent } from './layouts/adminComponents/Patients/patients-list/patients-list.component';
+import { BlogListComponent } from './layouts/adminComponents/blog/blog-list/blog-list.component';
+import { ArticlesComponent } from './layouts/adminComponents/blog/articles/articles.component';
 
 
 
@@ -46,12 +51,12 @@ import { LoginComponent } from './login/login.component';
     ComponentsModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule,
     AppRoutingModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    AngularFireStorageModule,
     BrowserAnimationsModule,
     MatSliderModule,
     MatDialogModule,
@@ -70,10 +75,7 @@ import { LoginComponent } from './login/login.component';
     HomeComponent,
     DoctorsLayoutComponent,
     LoginComponent,
-    
-
    
-
   ],
   providers: [SystemUsersService, RoleService, HospitalsComponent],
   bootstrap: [AppComponent],

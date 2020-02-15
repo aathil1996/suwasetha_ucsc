@@ -45,10 +45,11 @@ export class SystemUsersComponent implements OnInit {
           this.service.addCredential(this.service.form.value);}
         else
        { this.service.updateSystemUsers(this.service.form.value);
+       }
         this.service.form.reset();
         this.service.initializeFormGroup();
         this.notificationService.success('Submitted Successfully');
-        this.onClose();}
+        this.onClose();
         
         
       }
