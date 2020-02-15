@@ -59,11 +59,11 @@ export const DoctorLayoutRoutes: Routes = [
     //         component: UpgradeComponent
     //     }]
     // }
-    { path: 'dashboard',      component: DashboardComponent },
-    {path: 'appointments', component:AppointmentsComponent},
-    { path: 'user-profile',   component: UserProfileComponent },
-    { path: 'prescriptions',   component: PrescriptionsListComponent },
-    { path: 'blog-posts',   component: BlogPostsComponent },
+    { path: 'doctor/dashboard',      component: DashboardComponent },
+    {path: 'doctor/appointments', component:AppointmentsComponent},
+    { path: 'doctor/user-profile',   component: UserProfileComponent },
+    { path: 'doctor/prescriptions',   component: PrescriptionsListComponent },
+    { path: 'doctor/blog-posts',   component: BlogPostsComponent },
    
    
     /*{ path: 'table-list',     component: TableListComponent },

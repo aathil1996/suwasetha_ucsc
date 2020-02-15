@@ -4,6 +4,7 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { DoctorLayoutComponent } from './layouts/doctor-layout/doctor-layout.component';
+import { HomeComponent } from './home/home.component';
 
 // import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensary-layout.component';
 // import { DoctorLayoutComponent } from './layouts/doctor-layout/doctor-layout.component';
@@ -11,12 +12,17 @@ import { DoctorLayoutComponent } from './layouts/doctor-layout/doctor-layout.com
 const routes: Routes =[
 
 // for home page
+{
+  path: '',
+  component: HomeComponent
+},
+
   {
-    path: '',
-    redirectTo: 'dashboard',
+    path: 'doctor',
+    redirectTo: 'doctor/doctor/dashboard',
     pathMatch: 'full',
   }, {
-    path: '',
+    path: 'doctor',
     component: DoctorLayoutComponent,
     children: [{
       path: '',

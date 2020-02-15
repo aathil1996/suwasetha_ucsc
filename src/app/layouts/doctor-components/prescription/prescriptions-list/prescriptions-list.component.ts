@@ -21,7 +21,7 @@ export class PrescriptionsListComponent implements OnInit {
     ) { }
 
   listData: MatTableDataSource<any>;
-  displayedColumns: string[] = ['nic', 'medicine', 'dose'];
+  displayedColumns: string[] = ['nic', 'medicine', 'dose','actions'];
 
   @ViewChild(MatSort, {static:true}) sort: MatSort;
   @ViewChild(MatPaginator, {static:true}) paginator: MatPaginator;
