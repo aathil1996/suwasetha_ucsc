@@ -28,7 +28,7 @@ export class PatientService {
 
 
    form: FormGroup = new FormGroup({
-    // $key: new FormControl(null),
+     $key: new FormControl(null),
     userName:new FormControl('', Validators.required),
     fullName: new FormControl('', Validators.required),
     nic:new FormControl('', [Validators.required, Validators.minLength(10)]),
@@ -41,7 +41,7 @@ export class PatientService {
 
   initializeFormGroup(){
     this.form.setValue({
-      // $key: null,
+      $key: null,
       userName: '',
       fullName: '',
       nic: '',
@@ -54,34 +54,34 @@ export class PatientService {
  }
  
  getPatients(){
-  // this.patientsList = this.firebase.list('patients');
-  // return this.patientsList.snapshotChanges();
+  this.patientsList = this.firebase.list('patients');
+  return this.patientsList.snapshotChanges();
 
-  return this.patientsCollection.snapshotChanges().pipe(map(actions => {
-    return actions.map(a => {
-      const data = a.payload.doc.data() as Patient
-      const id = a.payload.doc.id
-      return { id, ...data }
-    })
-  }))
+  // return this.patientsCollection.snapshotChanges().pipe(map(actions => {
+  //   return actions.map(a => {
+  //     const data = a.payload.doc.data() as Patient
+  //     const id = a.payload.doc.id
+  //     return { id, ...data }
+  //   })
+  // }))
  
 }
 
-insertPatient(data: Patient){
+insertPatient(patient){
  
-    // this.patientsList.push({
+    this.patientsList.push({
    
-    //   userName: patient.userName,
-    //   fullName: patient.fullName,
-    //   nic: patient.nic,
-    //   email: patient.email,
-    //   tellNo: patient.tellNo,
-    //   password: patient.password,
-    //   profileImage: patient.profileImage,
+      userName: patient.userName,
+      fullName: patient.fullName,
+       nic: patient.nic,
+       email: patient.email,
+       tellNo: patient.tellNo,
+       password: patient.password,
+     profileImage: patient.profileImage,
       
    
-    //  });
-    this.patientsCollection.add(data)
+     });
+   // this.patientsCollection.add(data)
 
      this.form.reset();
               this.initializeFormGroup();
@@ -108,28 +108,28 @@ insertPatient(data: Patient){
 
   }
 
-//   updatePatient(patient){
-//    this.patientsList.update(patient.$key,
-//    {
-//      userName: patient.userName,
-//      fullName: patient.fullName,
-//      nic: patient.nic,
-//      email: patient.email,
-//      tellNo: patient.tellNo,
-//      password: patient.password,
-//      profileImage: patient.profileImage
+  updatePatient(patient){
+   this.patientsList.update(patient.$key,
+   {
+     userName: patient.userName,
+     fullName: patient.fullName,
+     nic: patient.nic,
+     email: patient.email,
+     tellNo: patient.tellNo,
+     password: patient.password,
+     profileImage: patient.profileImage
     
-//    });
+   });
 
-//  }
+ }
 
-//  deletePatients($key: string){
-//    this.patientsList.remove($key);
-//  }
+ deletePatients($key: string){
+   this.patientsList.remove($key);
+ }
 
-//  populateForm(patient){
-//    this.form.setValue(patient);
-//  }
+ populateForm(patient){
+   this.form.setValue(patient);
+ }
 
  
 }
