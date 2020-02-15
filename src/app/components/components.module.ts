@@ -12,6 +12,13 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import { BannerComponent } from 'app/banner/banner.component';
+import { HeaderComponent } from 'app/header/header.component';
+import { HowWorksComponent } from 'app/how-works/how-works.component';
+import { TestimonalsComponent } from 'app/testimonals/testimonals.component';
+import { CounterComponent } from 'app/counter/counter.component';
+import { JobCategoriesComponent } from 'app/job-categories/job-categories.component';
+import { PrescriptionsComponent } from 'app/layouts/doctor-components/prescription/prescriptions/prescriptions.component';
 
 @NgModule({
   imports: [
@@ -25,6 +32,13 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
     DispensaryBarComponent,
     DoctorSidebarComponent,
     DoctrosBarComponent,
+    BannerComponent,
+    HeaderComponent,
+    HowWorksComponent,
+    TestimonalsComponent,
+    CounterComponent,
+    JobCategoriesComponent,
+    
    
   //  DoctrosBarComponent,
     SignInComponent,
@@ -32,6 +46,7 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
     ForgotPasswordComponent,
     VerifyEmailComponent,
     DoctorSidebarComponent,
+    
   ],
   exports: [
     FooterComponent,
@@ -41,7 +56,15 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
     DoctorSidebarComponent,
     DoctrosBarComponent,
   //  DoctrosBarComponent,
-    DoctorSidebarComponent
+    DoctorSidebarComponent,
+    BannerComponent,
+    HeaderComponent,
+    HowWorksComponent,
+    TestimonalsComponent,
+    CounterComponent,
+    JobCategoriesComponent,
+    
+
    
   ]
 })

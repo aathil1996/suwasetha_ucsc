@@ -55,6 +55,24 @@ import { DoctorSidebarComponent } from './doctor-bars/doctor-sidebar/doctor-side
 import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensary-layout.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { AdminLayoutModule } from './layouts/admin-layout/admin-layout.module';
+import { AppointmentsComponent } from './appointments/appointments.component';
+import { Nav2Component } from './nav2/nav2.component';
+import { BannerComponent } from './banner/banner.component';
+import { AboutComponent } from './about/about.component';
+import { BookappointmentComponent } from './bookappointment/bookappointment.component';
+import { ClinicComponent } from './clinic/clinic.component';
+import { ContactComponent } from './contact/contact.component';
+
+import { DoctorsComponent } from './doctors/doctors.component';
+import { FooterComponent } from './footer/footer.component';
+
+import { HospitalComponent } from './hospital/hospital.component';
+
+import { IndexComponent } from './index/index.component';
+import { RegisterComponent } from './register/register.component';
+import { PrescriptionsComponent } from './layouts/doctor-components/prescription/prescriptions/prescriptions.component';
+
+
  //import { DoctorComponentsComponent } from './layouts/doctor-components/doctor-components.component';
 // import { DashboardComponent } from './layouts/doctor-components/dashboard/dashboard.component';
 // import { UserProfileComponent } from './layouts/doctor-components/user-profile/user-profile.component';
@@ -83,6 +101,7 @@ import { AdminLayoutModule } from './layouts/admin-layout/admin-layout.module';
     MatSliderModule,
     MatDialogModule,
     MaterialModule,
+   
     ToastrModule.forRoot()
    /* AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
@@ -108,6 +127,40 @@ import { AdminLayoutModule } from './layouts/admin-layout/admin-layout.module';
 
     DoctorNavbarComponent,
 
+    AppointmentsComponent,
+
+    Nav2Component,
+
+   
+
+    AboutComponent,
+
+    BookappointmentComponent,
+
+    ClinicComponent,
+
+    ContactComponent,
+
+    
+
+    DoctorsComponent,
+
+    FooterComponent,
+
+    
+
+    HospitalComponent,
+
+  
+
+    IndexComponent,
+
+    RegisterComponent,
+
+    
+
+    
+
     
 
    // DoctorComponentsComponent,
@@ -115,6 +168,7 @@ import { AdminLayoutModule } from './layouts/admin-layout/admin-layout.module';
     //AppointmentsComponent,
 
     //PrescriptionsComponent,
+    PrescriptionComponent
 
 
 

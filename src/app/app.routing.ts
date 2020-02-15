@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { DoctorLayoutComponent } from './layouts/doctor-layout/doctor-layout.component';
 import { HomeComponent } from './home/home.component';
-
+import { PrescriptionComponent } from './prescription/prescription.component';
 // import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensary-layout.component';
 // import { DoctorLayoutComponent } from './layouts/doctor-layout/doctor-layout.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
@@ -17,6 +17,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { BookappointmentComponent } from './bookappointment/bookappointment.component';
 
 const routes: Routes =[
 
@@ -108,6 +109,15 @@ const routes: Routes =[
     component: VerifyEmailComponent,
     
   },
+  {
+    path: 'prescriptions',
+    component: PrescriptionComponent,
+  },
+
+  {
+    path:'bookappointment',
+    component: BookappointmentComponent,
+  }
   
 ];
 

@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import {AngularFireDatabase, AngularFireList } from '@anguhttps://github.com/aathil1996/suwasetha_ucsc/pullslar/fire/database';
+//import {AngularFireDatabase, AngularFireList } from '@anguhttps://github.com/aathil1996/suwasetha_ucsc/pullslar/fire/database';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import * as _ from 'lodash';
 import { SystemUsers } from '../system-users.model';
 import { Scheduler, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 
 @Injectable({
   providedIn: 'root'
