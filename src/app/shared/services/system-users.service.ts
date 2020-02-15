@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import {  AngularFirestore} from '@angular/fire/firestore';
 import {AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import * as _ from 'lodash';
@@ -45,7 +44,7 @@ export class SystemUsersService {
       });
    }
    
-  
+   
    getSystemUsers(){
      this.systemUsersList = this.firebase.list('systemUsers');
      return this.systemUsersList.snapshotChanges();

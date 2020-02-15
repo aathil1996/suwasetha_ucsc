@@ -8,6 +8,15 @@ import { HomeComponent } from './home/home.component';
 
 // import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensary-layout.component';
 // import { DoctorLayoutComponent } from './layouts/doctor-layout/doctor-layout.component';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensary-layout.component';
+//import { HomeComponent } from './home/home.component';
+//import { DoctorsLayoutComponent } from './layouts/doctors-layout/doctors-layout.component';
+import { LoginComponent } from './login/login.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 
 const routes: Routes =[
 
@@ -30,9 +39,77 @@ const routes: Routes =[
     }] 
 
   
-    }
+  }, 
+// system admin dashboard
+ {
+   path: 'systemAdmin',
+ redirectTo: 'systemAdmin/systemAdmin/dashboard',
+  pathMatch: 'full',
+ }, 
+    
   
-]
+  {
+    path: 'systemAdmin',
+    component: AdminLayoutComponent,
+    children: [{
+      path: '',
+      loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
+    }]
+  },
+ 
+
+  // dispensary dashbaord
+  {
+    path: 'dispensaryAdmin',
+  redirectTo: 'dispensaryAdmin/dispensaryAdmin/testing',
+   pathMatch: 'full',
+  }, 
+  {
+    path: 'dispensaryAdmin',
+    component: DispensaryLayoutComponent,
+    children: [{
+      path: '',
+      loadChildren: './layouts/dispensary-layout/dispensary-layout.module#DispensaryLayoutModule'
+    }]
+  },
+
+  // doctor dashbaord
+
+  // {
+  //   path: 'doctors',
+  // redirectTo: 'doctors/doctors/testing2',
+  //  pathMatch: 'full',
+  // }, 
+  // {
+  //   path: 'doctors',
+  //   component: DoctorsLayoutComponent,
+  //   children: [{
+  //     path: '',
+  //     loadChildren: './layouts/doctors-layout/doctors-layout.module#DoctorsLayoutModule'
+  //   }]
+  // },
+  {
+    path: 'sign-in',
+    component: SignInComponent,
+    
+  },
+  {
+    path: 'sign-up',
+    component: SignUpComponent,
+    
+  },
+  {
+    path: 'reset-password',
+    component: ForgotPasswordComponent,
+    
+  },
+  {
+    path: 'email-verify',
+    component: VerifyEmailComponent,
+    
+  },
+  
+];
 
 @NgModule({
   imports: [

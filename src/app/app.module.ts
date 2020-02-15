@@ -23,6 +23,7 @@ import {
 } from '@agm/core';
 
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -39,6 +40,10 @@ import { DoctorLayoutComponent } from './layouts/doctor-layout/doctor-layout.com
 import { Testing2Component } from './testing2/testing2.component';
 import { ComponentsModule } from './components/components.module';
 import { LoginComponent } from './login/login.component';
+import { PatientsComponent } from './layouts/adminComponents/Patients/patients/patients.component';
+import { PatientsListComponent } from './layouts/adminComponents/Patients/patients-list/patients-list.component';
+import { BlogListComponent } from './layouts/adminComponents/blog/blog-list/blog-list.component';
+import { ArticlesComponent } from './layouts/adminComponents/blog/articles/articles.component';
 
 
 import { HospitalListComponent } from './layouts/adminComponents/Hospital/hospital-list/hospital-list.component';
@@ -47,6 +52,7 @@ import { DoctorFooterComponent } from './doctor-bars/doctor-footer/doctor-footer
 import { DoctorNavbarComponent } from './doctor-bars/doctor-navbar/doctor-navbar.component';
 import { DoctorSidebarComponent } from './doctor-bars/doctor-sidebar/doctor-sidebar.component';
 import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensary-layout.component';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
  //import { DoctorComponentsComponent } from './layouts/doctor-components/doctor-components.component';
 // import { DashboardComponent } from './layouts/doctor-components/dashboard/dashboard.component';
 // import { UserProfileComponent } from './layouts/doctor-components/user-profile/user-profile.component';
@@ -64,12 +70,12 @@ import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensar
     ComponentsModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule,
     AppRoutingModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    AngularFireStorageModule,
     BrowserAnimationsModule,
     MatSliderModule,
     MatDialogModule,
@@ -86,12 +92,13 @@ import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensar
     DispensaryLayoutComponent,
     HomeComponent,
     DoctorLayoutComponent,
+    AdminLayoutComponent,
    
     
 
     //DispensaryComponentComponent,
 
-    DoctorLayoutComponent,
+    
 
   
     DoctorFooterComponent,
