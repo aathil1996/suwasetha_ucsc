@@ -4,7 +4,7 @@ import { DashboardComponent } from '../adminComponents/dashboard/dashboard.compo
 import { UserProfileComponent } from '../adminComponents/user-profile/user-profile.component';
 
 import { HospitalsComponent } from '../adminComponents/Hospital/hospitals/hospitals.component';
-import { BlogPostsComponent } from '../adminComponents/blog-posts/blog-posts.component';
+import { BlogPostsComponent } from '../adminComponents/blog/blog-posts/blog-posts.component';
 import { SystemUsersListComponent } from 'app/systemUsers/system-users-list/system-users-list.component';
 import { HospitalListComponent } from '../adminComponents/Hospital/hospital-list/hospital-list.component';
 import { TestingComponent } from 'app/testing/testing.component';
