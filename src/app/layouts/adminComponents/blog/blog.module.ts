@@ -7,16 +7,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { BlogService } from 'app/shared/services/blog.service';
 
 const routes: Routes = [
-  { path: 'systemAdmin/blog-posts',   component: BlogListComponent },
-{ path: 'systemAdmin/blog:id', component: ArticlesComponent },
-{ path: 'systemAdmin/blogAdd', component:BlogPostsComponent }
+  { path: 'blog-posts',   component: BlogListComponent },
+{ path: 'blog-posts:id', component: ArticlesComponent },
+{ path: 'blogAdd', component:BlogPostsComponent }
 
 ]
 
 
 
 @NgModule({
-  declarations: [BlogListComponent,ArticlesComponent,BlogPostsComponent],
+  declarations: [],
   imports: [
     CommonModule, RouterModule.forChild(routes)
   ],

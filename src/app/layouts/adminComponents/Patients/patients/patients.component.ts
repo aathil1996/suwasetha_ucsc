@@ -4,6 +4,8 @@ import { NotificationsService } from 'app/shared/services/notifications.service'
 import { MatDialogRef } from '@angular/material';
 import { AngularFireList } from '@angular/fire/database';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-patients',
@@ -13,20 +15,30 @@ import { FormGroup, FormControl } from '@angular/forms';
 
 export class PatientsComponent implements OnInit {
   
-  imageSource : string = 'src/assets/img/faces/dummy.jpg';
+  
+  userName: string
+  fullName: string
+  nic: string
+  email:string
+  tellNo:string
+  password:string
+  profileImage:string = null
+
+  downloadURL: Observable<string>
 
  
  
     constructor(private service : PatientService,
       public notificationService: NotificationsService,
       public dialogRef: MatDialogRef<PatientsComponent>,
+      private storage: AngularFireStorage
       
       ) { 
 
       
       }
   
-      patientsNic: AngularFireList<any>;
+     
   
     ngOnInit() {
         this.service.getPatients();
@@ -66,17 +78,36 @@ export class PatientsComponent implements OnInit {
   
       onSubmit(){
         if(this.service.form.valid){
-          this.service.insertPatient(this.service.form.value);
-              this.service.addCredential(this.service.form.value);
+          const data = {
+            userName: this.userName,
+            fullName: this.fullName,
+            nic: this.nic,
+            email:this.email,
+            tellNo:this.tellNo,
+            password:this.password,
+            profileImage:this.profileImage
+          };
+          this.service.insertPatient(data);
+              this.service.addCredential(data);
               this.onClose();
       }
-          else
-         { this.service.updatePatient(this.service.form.value);
-          this.service.form.reset();
-          this.service.initializeFormGroup();
-          this.notificationService.success('Submitted Successfully');
-          this.onClose();
-         }
+        //   else
+        //  { 
+        //   const data = {
+        //     userName: this.userName,
+        //     fullName: this.fullName,
+        //     nic: this.nic,
+        //     email:this.email,
+        //     tellNo:this.tellNo,
+        //     password:this.password,
+        //     profileImage:this.profileImage
+        //   };
+        //   this.service.updatePatient(data);
+        //   this.service.form.reset();
+        //   this.service.initializeFormGroup();
+        //   this.notificationService.success('Submitted Successfully');
+        //   this.onClose();
+        //  }
           
           
           

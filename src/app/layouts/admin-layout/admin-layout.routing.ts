@@ -68,10 +68,13 @@ export const AdminLayoutRoutes: Routes = [
     {path: 'systemAdmin/system-users-list', component:SystemUsersListComponent},
     { path: 'systemAdmin/user-profile',   component: UserProfileComponent },
     { path: 'systemAdmin/hospitals',   component: HospitalListComponent },
+    // { path: 'systemAdmin/blog-posts',   component: BlogListComponent },
+    // { path: 'systemAdmin/blog-posts/id', component: ArticlesComponent },
+    // { path: 'systemAdmin/blogAdd', component:BlogPostsComponent }
+    //{ path: 'systemAdmin/blog',   loadChildren: '../adminComponents/blog/blog.module#BlogModule' }
     { path: 'systemAdmin/blog-posts',   component: BlogListComponent },
-    { path: 'systemAdmin/blog:id', component: ArticlesComponent },
+    { path: 'systemAdmin/blog-posts/:id', component: ArticlesComponent },
     { path: 'systemAdmin/blogAdd', component:BlogPostsComponent }
-   
    
    
     /*{ path: 'table-list',     component: TableListComponent },

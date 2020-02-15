@@ -4,6 +4,8 @@ import { MatDialog } from '@angular/material';
 import { NotificationsService } from 'app/shared/services/notifications.service';
 import { DialogService } from 'app/shared/services/dialog.service';
 import { Post } from '../blog';
+import { Observable } from 'rxjs';
+import { AuthService } from 'app/shared/services/auth.service';
 
 @Component({
   selector: 'app-blog-list',
@@ -12,26 +14,23 @@ import { Post } from '../blog';
 })
 export class BlogListComponent implements OnInit {
 
+  posts: Observable<Post[]>
+
   constructor(
     private service: BlogService,
+    public auth: AuthService,
     private dialog: MatDialog,
     private notificationService: NotificationsService,
     private dialogService: DialogService
   ) { }
 
   ngOnInit() {
-    this.service.getPosts().subscribe(
-      list => {
-        let array = list.map(item =>{
-          return{
-  
-            key: item.key as unknown as Post,
-            ...item.payload.val()
+    this.posts = this.service.getPosts()
+    
+  }
 
-          };
-        })
-      }
-    )
+  delete(id: string){
+    this.service.delete(id)
   }
 
 }

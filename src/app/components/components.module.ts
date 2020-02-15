@@ -8,6 +8,10 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { DispensaryBarComponent } from './dispensary-bar/dispensary-bar.component';
 import { DoctorsComponent } from 'app/layouts/adminComponents/doctors/doctors.component';
 import { DoctrosBarComponent } from './doctros-bar/doctros-bar.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './verify-email/verify-email.component';
 
 @NgModule({
   imports: [
@@ -19,7 +23,11 @@ import { DoctrosBarComponent } from './doctros-bar/doctros-bar.component';
     NavbarComponent,
     SidebarComponent,
     DispensaryBarComponent,
-    DoctrosBarComponent
+    DoctrosBarComponent,
+    SignInComponent,
+    SignUpComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent
   ],
   exports: [
     FooterComponent,

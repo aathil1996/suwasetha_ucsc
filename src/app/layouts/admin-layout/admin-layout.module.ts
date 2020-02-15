@@ -15,7 +15,8 @@ import {
   MatTooltipModule,
   MatSelectModule,
   MatTableModule,
-  MatPaginatorModule
+  MatPaginatorModule,
+  MatExpansionModule
 } from '@angular/material';
 
 import { HospitalsComponent } from 'app/layouts/adminComponents/Hospital/hospitals/hospitals.component';
@@ -42,7 +43,8 @@ import { ArticlesComponent } from '../adminComponents/blog/articles/articles.com
     MatTooltipModule,
     MatTableModule,
     MatPaginatorModule,
-    MaterialModule
+    MaterialModule,
+    MatExpansionModule
   ],
   declarations: [
     DashboardComponent,
@@ -65,7 +67,8 @@ import { ArticlesComponent } from '../adminComponents/blog/articles/articles.com
     NotificationsComponent,
     UpgradeComponent,*/
   ],
-  entryComponents: [SystemUsersComponent, HospitalsComponent, PatientsComponent, BlogPostsComponent]
+  entryComponents: [SystemUsersComponent, HospitalsComponent, PatientsComponent, BlogPostsComponent, BlogListComponent,
+    ArticlesComponent,]
   
 })
 

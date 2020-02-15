@@ -8,6 +8,10 @@ import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensar
 import { HomeComponent } from './home/home.component';
 import { DoctorsLayoutComponent } from './layouts/doctors-layout/doctors-layout.component';
 import { LoginComponent } from './login/login.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 
 const routes: Routes =[
 
@@ -66,8 +70,23 @@ const routes: Routes =[
     }]
   },
   {
-    path: 'login',
-    component: LoginComponent,
+    path: 'sign-in',
+    component: SignInComponent,
+    
+  },
+  {
+    path: 'sign-up',
+    component: SignUpComponent,
+    
+  },
+  {
+    path: 'reset-password',
+    component: ForgotPasswordComponent,
+    
+  },
+  {
+    path: 'email-verify',
+    component: VerifyEmailComponent,
     
   },
   

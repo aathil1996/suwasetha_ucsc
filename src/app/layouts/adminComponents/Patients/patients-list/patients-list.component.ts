@@ -28,6 +28,7 @@ export class PatientsListComponent implements OnInit {
   @ViewChild(MatPaginator, {static:true}) paginator: MatPaginator;
 
   ngOnInit() {
+    
     this.service.getPatients().subscribe(
       list => {
         let array = list.map(item =>{

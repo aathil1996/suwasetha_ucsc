@@ -5,27 +5,30 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import {map} from 'rxjs/operators/map';
 import { NotificationsService } from './notifications.service';
 import { PatientsComponent } from 'app/layouts/adminComponents/Patients/patients/patients.component';
+import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
+import { Patient } from 'app/layouts/adminComponents/Patients/patients';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PatientService {
   
+  patientsList : AngularFireList<any>;
+  patientsCollection : AngularFirestoreCollection<Patient>
 
   constructor(private firebase: AngularFireDatabase,
     private afAuth: AngularFireAuth,
     public notificationService: NotificationsService,
+    private db:AngularFirestore
    ) {
-    
+    this.patientsCollection = this.db.collection('posts', ref =>
+        ref.orderBy('published','desc')
+      )
    }
 
 
-   patientsList : AngularFireList<any>;
-   
-  
-
    form: FormGroup = new FormGroup({
-    $key: new FormControl(null),
+    // $key: new FormControl(null),
     userName:new FormControl('', Validators.required),
     fullName: new FormControl('', Validators.required),
     nic:new FormControl('', [Validators.required, Validators.minLength(10)]),
@@ -38,7 +41,7 @@ export class PatientService {
 
   initializeFormGroup(){
     this.form.setValue({
-      $key: null,
+      // $key: null,
       userName: '',
       fullName: '',
       nic: '',
@@ -51,48 +54,34 @@ export class PatientService {
  }
  
  getPatients(){
-  this.patientsList = this.firebase.list('patients');
-  return this.patientsList.snapshotChanges();
+  // this.patientsList = this.firebase.list('patients');
+  // return this.patientsList.snapshotChanges();
+
+  return this.patientsCollection.snapshotChanges().pipe(map(actions => {
+    return actions.map(a => {
+      const data = a.payload.doc.data() as Patient
+      const id = a.payload.doc.id
+      return { id, ...data }
+    })
+  }))
  
 }
 
-// getPatientsNic(nic){
-//   this.patientsNic = this.firebase.list('/patients',{
-//     query:{
-//       equalTo: nic
-//     }
-//   }).valueChanges();
-
-//   return this.patientsList;
-// }
-
-
-
-// getPatientsNic(){
-//   return this.patientsList.snapshotChanges()
-//   .pipe(map(actions => actions.map(this.getNic)));
-// }
-
-
-
-
-
-
-
-insertPatient(patient){
+insertPatient(data: Patient){
  
-    this.patientsList.push({
+    // this.patientsList.push({
    
-      userName: patient.userName,
-      fullName: patient.fullName,
-      nic: patient.nic,
-      email: patient.email,
-      tellNo: patient.tellNo,
-      password: patient.password,
-      profileImage: patient.profileImage,
+    //   userName: patient.userName,
+    //   fullName: patient.fullName,
+    //   nic: patient.nic,
+    //   email: patient.email,
+    //   tellNo: patient.tellNo,
+    //   password: patient.password,
+    //   profileImage: patient.profileImage,
       
    
-     });
+    //  });
+    this.patientsCollection.add(data)
 
      this.form.reset();
               this.initializeFormGroup();
@@ -119,28 +108,28 @@ insertPatient(patient){
 
   }
 
-  updatePatient(patient){
-   this.patientsList.update(patient.$key,
-   {
-     userName: patient.userName,
-     fullName: patient.fullName,
-     nic: patient.nic,
-     email: patient.email,
-     tellNo: patient.tellNo,
-     password: patient.password,
-     profileImage: patient.profileImage
+//   updatePatient(patient){
+//    this.patientsList.update(patient.$key,
+//    {
+//      userName: patient.userName,
+//      fullName: patient.fullName,
+//      nic: patient.nic,
+//      email: patient.email,
+//      tellNo: patient.tellNo,
+//      password: patient.password,
+//      profileImage: patient.profileImage
     
-   });
+//    });
 
- }
+//  }
 
- deletePatients($key: string){
-   this.patientsList.remove($key);
- }
+//  deletePatients($key: string){
+//    this.patientsList.remove($key);
+//  }
 
- populateForm(patient){
-   this.form.setValue(patient);
- }
+//  populateForm(patient){
+//    this.form.setValue(patient);
+//  }
 
  
 }

@@ -18,7 +18,12 @@ import * as Material from '@angular/material';
     Material.MatIconModule,
     Material.MatPaginatorModule,
     Material.MatSortModule,
-    Material.MatDialogModule
+    Material.MatDialogModule,
+    Material.MatExpansionModule,
+    Material.MatProgressBarModule,
+    Material.MatCardModule,
+    Material.MatIconModule
+
     
 
   ],
@@ -35,7 +40,11 @@ import * as Material from '@angular/material';
     Material.MatIconModule,
     Material.MatPaginatorModule,
     Material.MatSortModule,
-    Material.MatDialogModule
+    Material.MatDialogModule,
+    Material.MatExpansionModule,
+    Material.MatProgressBarModule,
+    Material.MatCardModule,
+    Material.MatIconModule
   ]
 })
 export class MaterialModule { }
