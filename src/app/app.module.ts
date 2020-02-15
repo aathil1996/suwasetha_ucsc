@@ -53,6 +53,7 @@ import { DoctorNavbarComponent } from './doctor-bars/doctor-navbar/doctor-navbar
 import { DoctorSidebarComponent } from './doctor-bars/doctor-sidebar/doctor-sidebar.component';
 import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensary-layout.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { AdminLayoutModule } from './layouts/admin-layout/admin-layout.module';
  //import { DoctorComponentsComponent } from './layouts/doctor-components/doctor-components.component';
 // import { DashboardComponent } from './layouts/doctor-components/dashboard/dashboard.component';
 // import { UserProfileComponent } from './layouts/doctor-components/user-profile/user-profile.component';
@@ -68,6 +69,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     ReactiveFormsModule,
     HttpModule,
     ComponentsModule,
+    AdminLayoutModule,
     RouterModule,
     FormsModule,
     AppRoutingModule,

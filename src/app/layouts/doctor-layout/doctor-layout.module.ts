@@ -25,6 +25,7 @@ import { MaterialModule } from 'app/shared/material/material.module';
 import { DashboardComponent } from 'app/layouts/doctor-components/dashboard/dashboard.component';
 import { UserProfileComponent} from 'app/layouts/doctor-components/user-profile/user-profile.component';
 import { PrescriptionsListComponent} from 'app/layouts/doctor-components/prescription/prescriptions-list/prescriptions-list.component';
+import { AdminLayoutModule } from '../admin-layout/admin-layout.module';
 
 @NgModule({
   imports: [
@@ -40,7 +41,8 @@ import { PrescriptionsListComponent} from 'app/layouts/doctor-components/prescri
     MatTooltipModule,
     MatTableModule,
     MatPaginatorModule,
-    MaterialModule
+    MaterialModule,
+    AdminLayoutModule
   ],
   declarations: [
     DashboardComponent,

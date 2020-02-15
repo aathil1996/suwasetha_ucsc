@@ -31,7 +31,7 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
     SignUpComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
-    DoctorSidebarComponent
+    DoctorSidebarComponent,
   ],
   exports: [
     FooterComponent,

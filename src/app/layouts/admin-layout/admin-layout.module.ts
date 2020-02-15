@@ -46,6 +46,9 @@ import { ArticlesComponent } from '../adminComponents/blog/articles/articles.com
     MaterialModule,
     MatExpansionModule
   ],
+  exports: [
+    BlogPostsComponent
+  ],
   declarations: [
     DashboardComponent,
     HospitalsComponent,
