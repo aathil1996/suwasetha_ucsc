@@ -17,23 +17,18 @@ import * as _ from 'lodash';
   
      form: FormGroup = new FormGroup({
        $key: new FormControl(null),
-       patientId:new FormControl('', Validators.required),
-       patientName:new FormControl('', Validators.required),
-       description: new FormControl('', Validators.required),
+       nic:new FormControl('', Validators.required,Validators.minLength(10), Validators.maxLength(12)),
        medicine:new FormControl('', Validators.required),
-       dose: new FormControl('', [Validators.required,Validators.email]),
-       status: new FormControl(0, Validators.required)
+       dose: new FormControl('', Validators.required),
+      
      });
   
      initializeFormGroup(){
         this.form.setValue({
           $key: null,
-          patientId: '',
-          patientName: '',
-          description: '',
+          nic: '',
           medicine:'',
           dose:'',
-          status:0
         });
      }
      
@@ -46,12 +41,9 @@ import * as _ from 'lodash';
      insertPrescriptions(prescriptions){
        this.prescriptionsList.push({
         
-        patientId: prescriptions.patientId,
-        patientName: prescriptions.patientName,
-        description: prescriptions.description,
+        nic: prescriptions.nic,
         medicine: prescriptions.medicine,
         dose: prescriptions.dose,
-        status: prescriptions.status
   
        });
   
@@ -62,12 +54,9 @@ import * as _ from 'lodash';
        updatePrescriptions(prescriptions){
         this.prescriptionsList.update(prescriptions.$key,
         {
-          patientId: prescriptions.patientId,
-          patientName: prescriptions.patientName,
-          description: prescriptions.description,
+          nic: prescriptions.nic,
           medicine: prescriptions.medicine,
           dose: prescriptions.dose,
-          status: prescriptions.status,
         });
   
       }
