@@ -52,6 +52,7 @@ import { DoctorFooterComponent } from './doctor-bars/doctor-footer/doctor-footer
 import { DoctorNavbarComponent } from './doctor-bars/doctor-navbar/doctor-navbar.component';
 import { DoctorSidebarComponent } from './doctor-bars/doctor-sidebar/doctor-sidebar.component';
 import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensary-layout.component';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
  //import { DoctorComponentsComponent } from './layouts/doctor-components/doctor-components.component';
 // import { DashboardComponent } from './layouts/doctor-components/dashboard/dashboard.component';
 // import { UserProfileComponent } from './layouts/doctor-components/user-profile/user-profile.component';
@@ -91,12 +92,13 @@ import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensar
     DispensaryLayoutComponent,
     HomeComponent,
     DoctorLayoutComponent,
+    AdminLayoutComponent,
    
     
 
     //DispensaryComponentComponent,
 
-    DoctorLayoutComponent,
+    
 
   
     DoctorFooterComponent,
