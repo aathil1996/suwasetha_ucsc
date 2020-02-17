@@ -17,7 +17,10 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
-import { BookappointmentComponent } from './bookappointment/bookappointment.component';
+//import { BookappointmentComponent } from './bookappointment/bookappointment.component';
+import { BookappointmentListComponent } from './bookappointment/bookappointment-list/bookappointment-list.component'
+//import { AuthGuardService as AuthGuard } from 'app/shared/services/auth-guard.service';
+//import { RoleGuardService as RoleGuard } from 'app/shared/services/role-guard.service';
 
 const routes: Routes =[
 
@@ -116,7 +119,7 @@ const routes: Routes =[
 
   {
     path:'bookappointment',
-    component: BookappointmentComponent,
+    component: BookappointmentListComponent,
   }
   
 ];

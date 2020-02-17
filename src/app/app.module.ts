@@ -59,7 +59,7 @@ import { AppointmentsComponent } from './appointments/appointments.component';
 import { Nav2Component } from './nav2/nav2.component';
 import { BannerComponent } from './banner/banner.component';
 import { AboutComponent } from './about/about.component';
-import { BookappointmentComponent } from './bookappointment/bookappointment.component';
+
 import { ClinicComponent } from './clinic/clinic.component';
 import { ContactComponent } from './contact/contact.component';
 
@@ -71,7 +71,9 @@ import { HospitalComponent } from './hospital/hospital.component';
 import { IndexComponent } from './index/index.component';
 import { RegisterComponent } from './register/register.component';
 import { PrescriptionsComponent } from './layouts/doctor-components/prescription/prescriptions/prescriptions.component';
-
+import { BookappointmentListComponent } from './bookappointment/bookappointment-list/bookappointment-list.component';
+import { BookappointmentComponent } from './bookappointment/bookappointment.component';
+import { BookappointmentService } from './shared/services/bookappointment.service';
 
  //import { DoctorComponentsComponent } from './layouts/doctor-components/doctor-components.component';
 // import { DashboardComponent } from './layouts/doctor-components/dashboard/dashboard.component';
@@ -168,14 +170,25 @@ import { PrescriptionsComponent } from './layouts/doctor-components/prescription
     //AppointmentsComponent,
 
     //PrescriptionsComponent,
-    PrescriptionComponent
+    PrescriptionComponent,
+
+    
+
+    
+
+    
+
+   BookappointmentListComponent
 
 
 
 
   ],
-  providers: [SystemUsersService, RoleService, PrescriptionsService],
+
+  
+
+  providers: [SystemUsersService, RoleService, PrescriptionsService, BookappointmentService],
   bootstrap: [AppComponent],
-  entryComponents: [ConfirmDialogComponent]
+  entryComponents: [ConfirmDialogComponent, BookappointmentComponent,BookappointmentListComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app'
 
@@ -9,9 +10,13 @@ export class AuthService {
 
   authState : any = null
 
-  constructor(public afAuth: AngularFireAuth) {
+  constructor(public afAuth: AngularFireAuth,
+    public jwtHelper: JwtHelperService
+    ) {
     this.afAuth.authState.subscribe(data => this.authState = data)
    }
+
+   
 
    get authenticated(): boolean{
      return this.authState !== null
