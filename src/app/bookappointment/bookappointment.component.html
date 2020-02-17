@@ -21,12 +21,16 @@
 
                             </mat-form-field>
                             <mat-form-field>
-                              <input formControlName="age" matInput placeholder="Age*">
-                              <mat-error *ngIf="service.form.controls['age'].errors?.required"> This is field is mandatory.</mat-error>
+                              <input type="number" formControlName="age" matInput placeholder="Age*" required maxlength="120" minlength="0" >
+							  <mat-error *ngIf="service.form.controls['age'].errors?.required"> This is field is mandatory.</mat-error>
+							  <mat-error *ngIf="service.form.controls['age'].errors?.minlength"> Minimum age is 0 years.</mat-error>
+                              <mat-error *ngIf="service.form.controls['age'].errors?.maxlength"> Maximum age is 120 years.</mat-error>
 							</mat-form-field>
 							
 							<mat-form-field>
-								<input formControlName="nic" matInput placeholder="NIC*">
+								<input formControlName="nic" matInput placeholder="NIC*" required minlength="10" maxlength="12">
+								<mat-error *ngIf="service.form.controls['nic'].errors?.minlength"> Minimum 10 characters should be entered.</mat-error>
+                              <mat-error *ngIf="service.form.controls['nic'].errors?.maxlength"> Maximum 12 characters should be entered.</mat-error>
 								<mat-error *ngIf="service.form.controls['nic'].errors?.required"> This is field is mandatory.</mat-error>
 							  </mat-form-field>
 

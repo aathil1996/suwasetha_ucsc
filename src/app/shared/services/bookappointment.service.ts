@@ -78,7 +78,7 @@ import { app } from 'firebase';
   
        }
   
-       deleteBookAppointment($key: string){
+       delete($key: string){
          this.bookAppointmentList.remove($key);
        }
   
