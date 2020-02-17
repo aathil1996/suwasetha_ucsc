@@ -30,8 +30,14 @@
 								<mat-error *ngIf="service.form.controls['nic'].errors?.required"> This is field is mandatory.</mat-error>
 							  </mat-form-field>
 
+							  <!-- <mat-form-field>
+								<input matInput [matDatepicker]="date">
+								<mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
+								<mat-datepicker #date></mat-datepicker>
+							  </mat-form-field> -->
+
 							  <mat-form-field>
-								<input formControlName="date" matInput placeholder="Date*">
+								<input type="date" formControlName="date" matInput placeholder="Date*">
 								<mat-error *ngIf="service.form.controls['date'].errors?.required"> This is field is mandatory.</mat-error>
 							  </mat-form-field>
 

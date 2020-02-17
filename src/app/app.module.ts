@@ -59,6 +59,7 @@ import { AppointmentsComponent } from './appointments/appointments.component';
 import { Nav2Component } from './nav2/nav2.component';
 import { BannerComponent } from './banner/banner.component';
 import { AboutComponent } from './about/about.component';
+import {MatDatepickerModule} from '@angular/material';
 
 import { ClinicComponent } from './clinic/clinic.component';
 import { ContactComponent } from './contact/contact.component';
@@ -103,7 +104,7 @@ import { BookappointmentService } from './shared/services/bookappointment.servic
     MatSliderModule,
     MatDialogModule,
     MaterialModule,
-   
+    MatDatepickerModule,
     ToastrModule.forRoot()
    /* AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
