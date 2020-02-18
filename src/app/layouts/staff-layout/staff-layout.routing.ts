@@ -1,13 +1,8 @@
 import { Routes } from '@angular/router';
 
-import { DashboardComponent } from '../doctor-components/dashboard/dashboard.component';
-import { UserProfileComponent } from '../doctor-components/user-profile/user-profile.component';
 
-import { AppointmentsComponent } from '../doctor-components/appointments/appointments.component';
-import { BlogPostsComponent } from '../doctor-components/blog-posts/blog-posts.component';
+import { LookClinicsComponent } from '../staff-components/lookclinics/lookclinics.component';
 
-import { PrescriptionsListComponent } from 'app/layouts/doctor-components/prescription/prescriptions-list/prescriptions-list.component';
-import { PatientdetailsComponent} from 'app/layouts/doctor-components/patientdetails/patientdetails.component';
 /*import { TableListComponent } from '../../table-list/table-list.component';
 import { TypographyComponent } from '../../typography/typography.component';
 import { IconsComponent } from '../../icons/icons.component';
@@ -16,7 +11,7 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 */
 
-export const DoctorLayoutRoutes: Routes = [
+export const StaffLayoutRoutes: Routes = [
     // {
     //   path: '',
     //   children: [ {
@@ -59,12 +54,9 @@ export const DoctorLayoutRoutes: Routes = [
     //         component: UpgradeComponent
     //     }]
     // }
-    { path: 'doctor/dashboard',      component: DashboardComponent },
-    {path: 'doctor/appointments', component:AppointmentsComponent},
-    { path: 'doctor/user-profile',   component: UserProfileComponent },
-    { path: 'doctor/prescriptions',   component: PrescriptionsListComponent },
-    { path: 'doctor/blog-posts',   component: BlogPostsComponent },
-    {path: 'doctor/patientdetails', component:PatientdetailsComponent}
+   
+    { path: 'staff/clinics',   component: LookClinicsComponent },
+    
    
    
     /*{ path: 'table-list',     component: TableListComponent },

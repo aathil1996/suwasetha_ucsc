@@ -1,33 +1,35 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { PrescriptionsService } from 'app/shared/services/prescriptions.service';
-import { MatTableDataSource, MatSort, MatPaginator, MatDialog, MatDialogConfig } from '@angular/material';
+import { PatientDetailsService } from 'app/shared/services/patientdetails.service';
 import { NotificationsService } from 'app/shared/services/notifications.service';
+import { MatTableDataSource, MatSort, MatPaginator, MatDialog, MatDialogConfig } from '@angular/material';
+import { UpdatepatientComponent} from '../patientdetails/updatepatient/updatepatient.component';
+
 import { DialogService } from 'app/shared/services/dialog.service';
-import { PrescriptionsComponent } from '../prescriptions/prescriptions.component';
 
 @Component({
-  selector: 'app-prescriptions-list',
-  templateUrl: './prescriptions-list.component.html',
-  styleUrls: ['./prescriptions-list.component.scss']
+  selector: 'app-patientdetails',
+  templateUrl: './patientdetails.component.html',
+  styleUrls: ['./patientdetails.component.scss']
 })
-export class PrescriptionsListComponent implements OnInit {
+export class PatientdetailsComponent implements OnInit {
+
   searchKey: string;
   array: any;
 
-  constructor(private service: PrescriptionsService,
+  constructor(private service: PatientDetailsService,
     private dialog: MatDialog,
     private notificationService: NotificationsService,
     private dialogService: DialogService
     ) { }
 
   listData: MatTableDataSource<any>;
-  displayedColumns: string[] = ['nic','disease', 'medicine','dose','actions'];
+  displayedColumns: string[] = ['fullName', 'nic', 'tellNo','actions'];
 
   @ViewChild(MatSort, {static:true}) sort: MatSort;
   @ViewChild(MatPaginator, {static:true}) paginator: MatPaginator;
 
   ngOnInit() {
-    this.service.getPrescriptions().subscribe(
+    this.service.getPatientdetails().subscribe(
       list => {
         let array = list.map(item =>{
           return {
@@ -45,34 +47,13 @@ export class PrescriptionsListComponent implements OnInit {
     );
   }
 
-  onCreate(){
-    this.service.initializeFormGroup();
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.autoFocus = true;
-    dialogConfig.disableClose = true;
-    dialogConfig.width = "40%";
-    this.dialog.open(PrescriptionsComponent, dialogConfig);
-  }
-
   onEdit(row){
     this.service.populateForm(row);
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = true;
     dialogConfig.width = "40%";
-    this.dialog.open(PrescriptionsComponent, dialogConfig);
-  }
-
-  onDelete($key){
-    
-    this.dialogService.openConfirmDialog('Are you sure to delete this prescription?')
-    .afterClosed().subscribe(res => {
-      if(res){
-        this.service.deletePrescriptions($key);
-        this.notificationService.warn('Deleted Successfully');
-      }
-    });
-     
+    this.dialog.open(UpdatepatientComponent, dialogConfig);
   }
 
   onSearchClear(){
@@ -85,4 +66,3 @@ export class PrescriptionsListComponent implements OnInit {
   }
 
   }
-

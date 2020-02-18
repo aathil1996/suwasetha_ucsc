@@ -3,6 +3,7 @@ import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { DoctorLayoutComponent } from './layouts/doctor-layout/doctor-layout.component';
+import { StaffLayoutComponent } from './layouts/staff-layout/staff-layout.component';
 import { HomeComponent } from './home/home.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensary-layout.component';
@@ -45,6 +46,22 @@ import { AuthGuardGuard } from './auth/auth-guard.guard';
     children: [{
       path: '',
       loadChildren: './layouts/doctor-layout/doctor-layout.module#DoctorLayoutModule'
+    }] 
+
+  
+  }, 
+
+  //for staff
+  {
+    path: 'staff',
+    redirectTo: 'staff/staff/patients',
+    pathMatch: 'full',
+  }, {
+    path: 'staff',
+    component: StaffLayoutComponent,
+    children: [{
+      path: '',
+      loadChildren: './layouts/staff-layout/staff-layout.module#StaffLayoutModule'
     }] 
 
   

@@ -21,7 +21,10 @@ import { environment } from 'environments/environment';
 import { AvatarDialogComponent } from './avatar-dialog/avatar-dialog.component';
 import { MatDialogModule, MatSliderModule } from '@angular/material';
 import { SystemUsersService } from './shared/services/system-users.service';
-import { PrescriptionsService} from './shared/services/prescriptions.service'
+import { PrescriptionsService} from './shared/services/prescriptions.service';
+import { PatientDetailsService} from './shared/services/patientdetails.service';
+import {LookClinicsService} from './shared/services/lookclinics.service';
+
 import { MaterialModule } from './shared/material/material.module';
 import { RoleService } from './shared/services/role.service';
 import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
@@ -37,6 +40,17 @@ import { AdminLayoutModule } from './layouts/admin-layout/admin-layout.module';
 import { PatientService } from './shared/services/patient.service';
 import { AboutComponent } from './main/about/about.component';
 import { ContactComponent } from './main/contact/contact.component';
+import { StaffLayoutComponent } from './layouts/staff-layout/staff-layout.component';
+import { UpdatepatientComponent } from './layouts/doctor-components/patientdetails/updatepatient/updatepatient.component';
+
+
+ //import { DoctorComponentsComponent } from './layouts/doctor-components/doctor-components.component';
+// import { DashboardComponent } from './layouts/doctor-components/dashboard/dashboard.component';
+// import { UserProfileComponent } from './layouts/doctor-components/user-profile/user-profile.component';
+//import { AppointmentsComponent } from './layouts/doctor-components/appointments/appointments.component';
+//import { PrescriptionsComponent } from './layouts/doctor-components/prescriptions/prescriptions.component';
+//import { BlogPostsComponent } from './layouts/doctor-components/blog-posts/blog-posts.component';
+
 
 @NgModule({
   imports: [
@@ -71,12 +85,14 @@ import { ContactComponent } from './main/contact/contact.component';
     HomeComponent,
     DoctorLayoutComponent,
     AdminLayoutComponent,
+    StaffLayoutComponent,
+  
    
     
 
     //DispensaryComponentComponent,
 
-    
+   
 
   
     DoctorFooterComponent,
@@ -88,6 +104,10 @@ import { ContactComponent } from './main/contact/contact.component';
     ContactComponent,
 
     
+    UpdatepatientComponent,
+
+   
+
     
 
    // DoctorComponentsComponent,
@@ -100,7 +120,7 @@ import { ContactComponent } from './main/contact/contact.component';
 
 
   ],
-  providers: [SystemUsersService, RoleService, PrescriptionsService, PatientService],
+  providers: [SystemUsersService, RoleService, PrescriptionsService, PatientService,LookClinicsService,PatientDetailsService],
   bootstrap: [AppComponent],
   entryComponents: [ConfirmDialogComponent]
 })
