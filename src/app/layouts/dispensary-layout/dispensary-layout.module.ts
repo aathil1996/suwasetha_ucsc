@@ -23,11 +23,13 @@ import { BlogPostsComponent } from '../adminComponents/blog/blog-posts/blog-post
 import { SystemUsersListComponent } from 'app/systemUsers/system-users-list/system-users-list.component';
 import { SystemUsersComponent } from 'app/systemUsers/system-users/system-users.component';
 import { TestingComponent } from 'app/testing/testing.component';
+import { HomeComponent } from 'app/home/home.component';
+import { PrescriptionComponent } from 'app/prescription/prescription.component';
 
 
 
 @NgModule({
-  
+
   imports: [
     CommonModule,
     RouterModule.forChild(DispensaryLayoutRoutes),
@@ -50,7 +52,8 @@ import { TestingComponent } from 'app/testing/testing.component';
     UserProfileComponent,
     BlogPostsComponent,
     SystemUsersListComponent,
-    SystemUsersComponent
+    SystemUsersComponent,
+   PrescriptionComponent
 
    /* TableListComponent,
     TypographyComponent,

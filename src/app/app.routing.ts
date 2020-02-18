@@ -5,15 +5,31 @@ import { Routes, RouterModule } from '@angular/router';
 import { DoctorLayoutComponent } from './layouts/doctor-layout/doctor-layout.component';
 import { StaffLayoutComponent } from './layouts/staff-layout/staff-layout.component';
 import { HomeComponent } from './home/home.component';
+
+import { PrescriptionComponent } from './prescription/prescription.component';
+// import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensary-layout.component';
+// import { DoctorLayoutComponent } from './layouts/doctor-layout/doctor-layout.component';
+
+
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensary-layout.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+
+//import { BookappointmentComponent } from './bookappointment/bookappointment.component';
+//import { BookappointmentListComponent } from 'app/layouts/patient-components/bookappointment/bookappointment-list/bookappointment-list.component'
+//import { AuthGuardService as AuthGuard } from 'app/shared/services/auth-guard.service';
+//import { RoleGuardService as RoleGuard } from 'app/shared/services/role-guard.service';
+//import { ClinicListComponent } from 'app/layouts/patient-components/clinic/clinic-list/clinic-list.component';
+//import { HospitalListComponent } from 'app/layouts/patient-components/hospital/hospital-list/hospital-list.component';
+import { PatientLayoutComponent } from './layouts/patient-layout/patient-layout.component';
+
 import { AboutComponent } from './main/about/about.component';
 import { ContactComponent } from './main/contact/contact.component';
 import { AuthGuardGuard } from './auth/auth-guard.guard';
 import { BlogComponent } from './main/blog/blog.component';
+
 
 
  const routes: Routes =[
@@ -56,6 +72,22 @@ import { BlogComponent } from './main/blog/blog.component';
   
   }, 
 
+
+  {
+    path: 'patient',
+    redirectTo: 'patient/patient/bookappointment',
+    pathMatch: 'full',
+  }, {
+    path: 'patient',
+    component: PatientLayoutComponent,
+    children: [{
+      path: '',
+      loadChildren: './layouts/patient-layout/patient-layout.module#PatientLayoutModule'
+    }] 
+
+  
+  },
+
   //for staff
   {
     path: 'staff',
@@ -71,6 +103,7 @@ import { BlogComponent } from './main/blog/blog.component';
 
   
   }, 
+
 // system admin dashboard
  {
    path: 'systemAdmin',
@@ -118,6 +151,31 @@ import { BlogComponent } from './main/blog/blog.component';
     component: VerifyEmailComponent,
     
   },
+  {
+    path: 'prescriptions',
+    component: PrescriptionComponent,
+  },
+
+  // {
+  //   path:'bookappointment',
+  //   component: BookappointmentListComponent,
+  // },
+  // {
+  //   path:'patient/clinic',
+  //   component: ClinicListComponent,
+  // },
+  // {
+  //   path:'patient/hospital',
+  //   component: HospitalListComponent,
+  // },
+  // {
+  //   path: 'patient',
+  //   redirectTo: 'home',
+  //   pathMatch: 'full',
+  // },
+
+   
+
   
 ];
 
