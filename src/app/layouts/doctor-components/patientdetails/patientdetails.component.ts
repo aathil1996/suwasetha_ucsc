@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { PatientDetailsService } from 'app/shared/services/patientdetails.service';
 import { NotificationsService } from 'app/shared/services/notifications.service';
 import { MatTableDataSource, MatSort, MatPaginator, MatDialog, MatDialogConfig } from '@angular/material';
+import { UpdatepatientComponent} from '../patientdetails/updatepatient/updatepatient.component';
 
 import { DialogService } from 'app/shared/services/dialog.service';
 
@@ -44,6 +45,15 @@ export class PatientdetailsComponent implements OnInit {
         
       }
     );
+  }
+
+  onEdit(row){
+    this.service.populateForm(row);
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = true;
+    dialogConfig.width = "40%";
+    this.dialog.open(UpdatepatientComponent, dialogConfig);
   }
 
   onSearchClear(){

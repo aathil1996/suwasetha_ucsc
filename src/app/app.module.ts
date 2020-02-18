@@ -24,6 +24,7 @@ import { AvatarDialogComponent } from './avatar-dialog/avatar-dialog.component';
 import { MatDialogModule, MatSliderModule } from '@angular/material';
 import { SystemUsersService } from './shared/services/system-users.service';
 import { PrescriptionsService} from './shared/services/prescriptions.service';
+import { PatientDetailsService} from './shared/services/patientdetails.service';
 import {LookClinicsService} from './shared/services/lookclinics.service';
 
 import { MaterialModule } from './shared/material/material.module';
@@ -47,6 +48,7 @@ import { DoctorsListComponent } from './layouts/adminComponents/doctors-list/doc
 import { HospitalAdminListComponent } from './layouts/adminComponents/hospital-admin-list/hospital-admin-list.component';
 import { HospitalAdminComponent } from './layouts/adminComponents/hospital-admin/hospital-admin.component';
 import { StaffLayoutComponent } from './layouts/staff-layout/staff-layout.component';
+import { UpdatepatientComponent } from './layouts/doctor-components/patientdetails/updatepatient/updatepatient.component';
 
 
  //import { DoctorComponentsComponent } from './layouts/doctor-components/doctor-components.component';
@@ -112,6 +114,8 @@ import { StaffLayoutComponent } from './layouts/staff-layout/staff-layout.compon
 
     HospitalAdminComponent,
 
+    UpdatepatientComponent,
+
    
 
     
@@ -126,7 +130,7 @@ import { StaffLayoutComponent } from './layouts/staff-layout/staff-layout.compon
 
 
   ],
-  providers: [SystemUsersService, RoleService, PrescriptionsService, PatientService],
+  providers: [SystemUsersService, RoleService, PrescriptionsService, PatientService,LookClinicsService,PatientDetailsService],
   bootstrap: [AppComponent],
   entryComponents: [ConfirmDialogComponent]
 })
