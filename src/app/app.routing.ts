@@ -21,6 +21,7 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
 import { BookappointmentListComponent } from './bookappointment/bookappointment-list/bookappointment-list.component'
 //import { AuthGuardService as AuthGuard } from 'app/shared/services/auth-guard.service';
 //import { RoleGuardService as RoleGuard } from 'app/shared/services/role-guard.service';
+import { ClinicListComponent } from 'app/clinic/clinic-list/clinic-list.component';
 
 const routes: Routes =[
 
@@ -120,7 +121,12 @@ const routes: Routes =[
   {
     path:'bookappointment',
     component: BookappointmentListComponent,
+  },
+  {
+    path:'clinic',
+    component: ClinicListComponent,
   }
+
   
 ];
 

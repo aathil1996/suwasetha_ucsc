@@ -75,7 +75,8 @@ import { PrescriptionsComponent } from './layouts/doctor-components/prescription
 import { BookappointmentListComponent } from './bookappointment/bookappointment-list/bookappointment-list.component';
 import { BookappointmentComponent } from './bookappointment/bookappointment.component';
 import { BookappointmentService } from './shared/services/bookappointment.service';
-
+import { ClinicListComponent } from './clinic/clinic-list/clinic-list.component';
+import { ClinicService } from 'app/shared/services/clinic.service';
  //import { DoctorComponentsComponent } from './layouts/doctor-components/doctor-components.component';
 // import { DashboardComponent } from './layouts/doctor-components/dashboard/dashboard.component';
 // import { UserProfileComponent } from './layouts/doctor-components/user-profile/user-profile.component';
@@ -179,7 +180,15 @@ import { BookappointmentService } from './shared/services/bookappointment.servic
 
     
 
-   BookappointmentListComponent
+   BookappointmentListComponent,
+
+    
+
+    
+
+    
+
+   ClinicListComponent
 
 
 
@@ -188,8 +197,8 @@ import { BookappointmentService } from './shared/services/bookappointment.servic
 
   
 
-  providers: [SystemUsersService, RoleService, PrescriptionsService, BookappointmentService],
+  providers: [SystemUsersService, RoleService, PrescriptionsService, BookappointmentService, ClinicService],
   bootstrap: [AppComponent],
-  entryComponents: [ConfirmDialogComponent, BookappointmentComponent,BookappointmentListComponent]
+  entryComponents: [ConfirmDialogComponent, BookappointmentComponent,BookappointmentListComponent, ClinicListComponent]
 })
 export class AppModule { }
