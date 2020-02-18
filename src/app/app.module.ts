@@ -42,6 +42,7 @@ import { AboutComponent } from './main/about/about.component';
 import { ContactComponent } from './main/contact/contact.component';
 import { StaffLayoutComponent } from './layouts/staff-layout/staff-layout.component';
 import { UpdatepatientComponent } from './layouts/doctor-components/patientdetails/updatepatient/updatepatient.component';
+import { BlogComponent } from './main/blog/blog.component';
 
 
  //import { DoctorComponentsComponent } from './layouts/doctor-components/doctor-components.component';
@@ -105,6 +106,9 @@ import { UpdatepatientComponent } from './layouts/doctor-components/patientdetai
 
     
     UpdatepatientComponent,
+
+    
+    BlogComponent,
 
    
 

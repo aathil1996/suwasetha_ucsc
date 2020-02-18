@@ -16,11 +16,11 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
+    <!-- <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
         <div class="container"><a class="navbar-brand" [routerLink]="['/']">Suwasetha.lk</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"></button>
             <div class="collapse navbar-collapse" id="navcol-1"><a class="btn btn-primary ml-auto" role="button" [routerLink]="['/contact']">Contact Us</a></div>
         </div>
-    </nav>
+    </nav> -->
     <!-- Start: Login Form Dark -->
     <div class="login-dark">
         <form (ngSubmit)="login(loginForm.value)" [formGroup]="loginForm">
@@ -34,15 +34,18 @@
             </div>
             <div class="form-group">
                 <button class="btn btn-primary btn-block" type="submit" [disabled]="!loginForm.valid">Log In</button>
-            </div><a class="forgot" href="#">Forgot your email or password?</a></form>
+                <button class="btn btn-warning btn-block" type="submit" [routerLink]="['/']">Back to Home</button>
+            </div>
+            <a class="forgot" href="#">Forgot your email or password?</a></form>
+           
     </div>
     <!-- End: Login Form Dark -->
     <!-- Start: Footer Dark -->
-    <div class="footer-dark">
+    <!-- <div class="footer-dark">
         <footer>
             <div class="container">
                 <div class="row">
-                    <!-- Start: About -->
+                    <!-- Start: About 
                     <div class="col-sm-6 col-md-3 item">
                         <h3>Login</h3>
                         <ul>
@@ -52,22 +55,22 @@
                         </ul>
                     </div>
                     <!-- End: About -->
-                    <!-- Start: Footer Text -->
+                    <!-- Start: Footer Text 
                     <div class="col-md-6 item text">
                         <h3>Suwasetha.lk</h3>
                         <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
                     </div>
                     <!-- End: Footer Text -->
-                    <!-- Start: Social Icons -->
+                    <!-- Start: Social Icons 
                     <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-github"></i></a></div>
-                    <!-- End: Social Icons -->
+                    <!-- End: Social Icons 
                 </div>
-                <!-- Start: Copyright -->
+                <!-- Start: Copyright 
                 <p class="copyright">Suwasetha.lk © 2020</p>
-                <!-- End: Copyright -->
+                <!-- End: Copyright 
             </div>
         </footer>
-    </div>
+    </div> -->
     <!-- End: Footer Dark -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>

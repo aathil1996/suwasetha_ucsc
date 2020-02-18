@@ -85,7 +85,7 @@ export class AuthService {
   logout(){
     this.afAuth.auth.signOut()
     .then(()=>{
-      this.toastr.show("user signed Out successfully");
+      this.toastr.success("user signed Out successfully");
       
       //set current user to null to be logged out
       this.currentUser = null;
@@ -106,24 +106,36 @@ export class AuthService {
             this.currentUser = userRef.data();
             //setUserStatus
             this.setUserStatus(this.currentUser);
-            console.log(this.userStatus)
+            // console.log(this.userStatus)
             
             if(userRef.data().role == "systemAdmin") {
-             this.ngZone.run(() => this.router.navigate(["/systemAdmin"]));
+              this.router.navigate(["/systemAdmin"])
             }
             else if(userRef.data().role == "doctor"){
-             this.ngZone.run(() => this.router.navigate(["/doctor"])); 
+              this.router.navigate(["/doctor"])
+            }
+            else if(userRef.data().role == "clinicAdmin"){
+              this.router.navigate(["/clinicAdmin"])
+  
+            }
+            else if(userRef.data().role == "hospitalAdmin"){
+              this.router.navigate(["/hospitalAdmin"])
+  
+            }
+            else if(userRef.data().role == "hospitalAdmin"){
+              this.router.navigate(["/hospitalAdmin"])
+  
+            }
+  
+            else if(userRef.data().role == "patient"){
+              this.router.navigate(["/patient"])
+  
             }
             else{
               this.ngZone.run(() => this.router.navigate(["/"])); 
             }
           })
         })
-      }else{
-        //this is the error you where looking at the video that I wasn't able to fix
-        //the function is running on refresh so its checking if the user is logged in or not
-        //hence the redirect to the login
-        this.ngZone.run(() => this.router.navigate(["/login"]));
       }
     })
   }

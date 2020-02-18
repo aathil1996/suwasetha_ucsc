@@ -13,6 +13,7 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
 import { AboutComponent } from './main/about/about.component';
 import { ContactComponent } from './main/contact/contact.component';
 import { AuthGuardGuard } from './auth/auth-guard.guard';
+import { BlogComponent } from './main/blog/blog.component';
 
 
  const routes: Routes =[
@@ -33,6 +34,10 @@ import { AuthGuardGuard } from './auth/auth-guard.guard';
 {
   path: 'login',
   component: SignInComponent
+},
+{
+  path: 'blog',
+  component: BlogComponent
 },
 
   {

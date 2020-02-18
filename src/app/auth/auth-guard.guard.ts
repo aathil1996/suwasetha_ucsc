@@ -25,7 +25,7 @@ export class AuthGuardGuard implements CanActivate {
       if(next.data.roles && next.data.roles.indexOf(currentUser.role) === -1){
         //role not authorized
         this.ngZone.run(() => this.router.navigate(["/login"]));
-        this.router.navigate(["/login"])
+        // this.router.navigate(["/login"])
       
       }else{
         return true;
