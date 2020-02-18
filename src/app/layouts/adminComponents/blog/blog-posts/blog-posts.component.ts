@@ -47,7 +47,7 @@ export class BlogPostsComponent implements OnInit {
     this.image = ''
     this.title = ''
     this.content = ''
-    this.toastr.success("Post Created")
+    
     
   }
 

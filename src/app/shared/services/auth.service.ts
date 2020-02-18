@@ -74,9 +74,7 @@ export class AuthService {
             this.router.navigate(["/patient"])
 
           }
-          else{
-            this.router.navigate(["/login"])
-          }
+         
         })
       })
     }). catch((err) =>{
@@ -87,12 +85,13 @@ export class AuthService {
   logout(){
     this.afAuth.auth.signOut()
     .then(()=>{
-      console.log("user signed Out successfully");
+      this.toastr.show("user signed Out successfully");
+      
       //set current user to null to be logged out
       this.currentUser = null;
-      //set the listenener to be null, for the UI to react
+      //set the listener to be null, for the UI to react
       this.setUserStatus(null);
-      this.ngZone.run(() => this.router.navigate(["/login"]));
+      this.ngZone.run(() => this.router.navigate(["/"]));
 
     }).catch((err) => {
       console.log(err);
@@ -114,6 +113,9 @@ export class AuthService {
             }
             else if(userRef.data().role == "doctor"){
              this.ngZone.run(() => this.router.navigate(["/doctor"])); 
+            }
+            else{
+              this.ngZone.run(() => this.router.navigate(["/"])); 
             }
           })
         })

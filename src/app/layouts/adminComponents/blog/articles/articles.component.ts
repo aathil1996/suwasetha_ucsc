@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { BlogService } from 'app/shared/services/blog.service';
 import { Post } from '../blog';
 import { AuthService } from 'app/shared/services/auth.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-articles',
@@ -18,7 +19,8 @@ export class ArticlesComponent implements OnInit {
     private route: ActivatedRoute,
     private service: BlogService,
     private router: Router,
-    public auth: AuthService
+    public auth: AuthService,
+    private toastr: ToastrService
 
 
   ) { }
@@ -45,13 +47,15 @@ export class ArticlesComponent implements OnInit {
     };
     const id = this.route.snapshot.paramMap.get('id')
     this.service.update(id,formData)
+    this.toastr.success("Post Updated")
     this.editing = false;
   }
 
   delete(){
     const id = this.route.snapshot.paramMap.get('id')
     this.service.delete(id)
-    this.router.navigate(["/blog-posts"])
+    this.toastr.error("Post Deleted")
+    this.router.navigate(['systemAdmin/systemAdmin/blog-posts'])
   }
 
 
