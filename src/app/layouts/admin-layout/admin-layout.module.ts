@@ -29,6 +29,8 @@ import { PatientsComponent } from '../adminComponents/Patients/patients/patients
 import { PatientsListComponent } from '../adminComponents/Patients/patients-list/patients-list.component';
 import { BlogListComponent } from '../adminComponents/blog/blog-list/blog-list.component';
 import { ArticlesComponent } from '../adminComponents/blog/articles/articles.component';
+import { DoctorsListComponent } from '../adminComponents/doctors-list/doctors-list.component';
+import { DoctorsComponent } from '../adminComponents/doctors/doctors.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -61,6 +63,8 @@ import { ArticlesComponent } from '../adminComponents/blog/articles/articles.com
     HospitalListComponent,
     PatientsComponent,
     PatientsListComponent,
+    DoctorsListComponent,
+    DoctorsComponent
     
 
    /* TableListComponent,
@@ -71,7 +75,7 @@ import { ArticlesComponent } from '../adminComponents/blog/articles/articles.com
     UpgradeComponent,*/
   ],
   entryComponents: [SystemUsersComponent, HospitalsComponent, PatientsComponent, BlogPostsComponent, BlogListComponent,
-    ArticlesComponent,]
+    ArticlesComponent,DoctorsComponent]
   
 })
 

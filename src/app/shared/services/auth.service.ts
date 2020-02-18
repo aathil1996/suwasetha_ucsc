@@ -86,7 +86,7 @@ export class AuthService {
             this.router.navigate(["/systemAdmin"])
           }
           else if(userRef.data().role == "doctor"){
-            this.router.navigate(["/systemAdmin"])
+            this.router.navigate(["/doctor"])
           }
         })
       })

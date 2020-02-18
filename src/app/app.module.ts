@@ -41,6 +41,9 @@ import { AdminLayoutModule } from './layouts/admin-layout/admin-layout.module';
 import { PatientService } from './shared/services/patient.service';
 import { AboutComponent } from './main/about/about.component';
 import { ContactComponent } from './main/contact/contact.component';
+import { DoctorsListComponent } from './layouts/adminComponents/doctors-list/doctors-list.component';
+import { HospitalAdminListComponent } from './layouts/adminComponents/hospital-admin-list/hospital-admin-list.component';
+import { HospitalAdminComponent } from './layouts/adminComponents/hospital-admin/hospital-admin.component';
 
 
  //import { DoctorComponentsComponent } from './layouts/doctor-components/doctor-components.component';
@@ -100,9 +103,11 @@ import { ContactComponent } from './main/contact/contact.component';
 
     ContactComponent,
 
-  
+    HospitalAdminListComponent,
 
-    
+    HospitalAdminComponent,
+
+   
 
     
 
