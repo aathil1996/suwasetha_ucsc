@@ -3,7 +3,7 @@ import { HospitalService } from 'app/shared/services/hospital.service';
 import { MatTableDataSource, MatSort, MatPaginator, MatDialog, MatDialogConfig } from '@angular/material';
 import { NotificationsService } from 'app/shared/services/notifications.service';
 import { DialogService } from 'app/shared/services/dialog.service';
-import { HospitalComponent } from 'app/hospital/hospital.component';
+import { HospitalComponent } from 'app/layouts/patient-components/hospital/hospital.component';
 
 @Component({
   selector: 'app-hospital-list',

@@ -3,7 +3,7 @@ import { ClinicService } from 'app/shared/services/clinic.service';
 import { MatTableDataSource, MatSort, MatPaginator, MatDialog, MatDialogConfig } from '@angular/material';
 import { NotificationsService } from 'app/shared/services/notifications.service';
 import { DialogService } from 'app/shared/services/dialog.service';
-import { ClinicComponent } from 'app/clinic/clinic.component';
+import { ClinicComponent } from 'app/layouts/patient-components/clinic/clinic.component';
 
 @Component({
   selector: 'app-clinic-list',

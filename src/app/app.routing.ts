@@ -18,11 +18,12 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 //import { BookappointmentComponent } from './bookappointment/bookappointment.component';
-import { BookappointmentListComponent } from './bookappointment/bookappointment-list/bookappointment-list.component'
+//import { BookappointmentListComponent } from 'app/layouts/patient-components/bookappointment/bookappointment-list/bookappointment-list.component'
 //import { AuthGuardService as AuthGuard } from 'app/shared/services/auth-guard.service';
 //import { RoleGuardService as RoleGuard } from 'app/shared/services/role-guard.service';
-import { ClinicListComponent } from 'app/clinic/clinic-list/clinic-list.component';
-import { HospitalListComponent } from 'app/hospital/hospital-list/hospital-list.component';
+//import { ClinicListComponent } from 'app/layouts/patient-components/clinic/clinic-list/clinic-list.component';
+//import { HospitalListComponent } from 'app/layouts/patient-components/hospital/hospital-list/hospital-list.component';
+import { PatientLayoutComponent } from './layouts/patient-layout/patient-layout.component';
 
 const routes: Routes =[
 
@@ -46,6 +47,21 @@ const routes: Routes =[
 
   
   }, 
+
+  {
+    path: 'patient',
+    redirectTo: 'patient/patient/bookappointment',
+    pathMatch: 'full',
+  }, {
+    path: 'patient',
+    component: PatientLayoutComponent,
+    children: [{
+      path: '',
+      loadChildren: './layouts/patient-layout/patient-layout.module#PatientLayoutModule'
+    }] 
+
+  
+  },
 // system admin dashboard
  {
    path: 'systemAdmin',
@@ -119,18 +135,25 @@ const routes: Routes =[
     component: PrescriptionComponent,
   },
 
-  {
-    path:'bookappointment',
-    component: BookappointmentListComponent,
-  },
-  {
-    path:'clinic',
-    component: ClinicListComponent,
-  },
-  {
-    path:'hospital',
-    component: HospitalListComponent,
-  }
+  // {
+  //   path:'bookappointment',
+  //   component: BookappointmentListComponent,
+  // },
+  // {
+  //   path:'patient/clinic',
+  //   component: ClinicListComponent,
+  // },
+  // {
+  //   path:'patient/hospital',
+  //   component: HospitalListComponent,
+  // },
+  // {
+  //   path: 'patient',
+  //   redirectTo: 'home',
+  //   pathMatch: 'full',
+  // },
+
+   
 
   
 ];

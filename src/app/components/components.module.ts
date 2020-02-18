@@ -19,6 +19,8 @@ import { TestimonalsComponent } from 'app/testimonals/testimonals.component';
 import { CounterComponent } from 'app/counter/counter.component';
 import { JobCategoriesComponent } from 'app/job-categories/job-categories.component';
 import { PrescriptionsComponent } from 'app/layouts/doctor-components/prescription/prescriptions/prescriptions.component';
+import { PateintBarComponent } from './pateint-bar/pateint-bar.component';
+import { PatientSidebarComponent } from 'app/patient-bars/patient-sidebar/patient-sidebar.component';
 
 @NgModule({
   imports: [
@@ -38,6 +40,7 @@ import { PrescriptionsComponent } from 'app/layouts/doctor-components/prescripti
     TestimonalsComponent,
     CounterComponent,
     JobCategoriesComponent,
+    PatientSidebarComponent,
     
    
   //  DoctrosBarComponent,
@@ -46,6 +49,7 @@ import { PrescriptionsComponent } from 'app/layouts/doctor-components/prescripti
     ForgotPasswordComponent,
     VerifyEmailComponent,
     DoctorSidebarComponent,
+    PateintBarComponent,
     
   ],
   exports: [
@@ -63,7 +67,8 @@ import { PrescriptionsComponent } from 'app/layouts/doctor-components/prescripti
     TestimonalsComponent,
     CounterComponent,
     JobCategoriesComponent,
-    
+    PatientSidebarComponent,
+    PateintBarComponent,
 
    
   ]

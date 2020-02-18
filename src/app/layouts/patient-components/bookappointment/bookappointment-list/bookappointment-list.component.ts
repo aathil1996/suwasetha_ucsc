@@ -24,6 +24,9 @@ export class BookappointmentListComponent implements OnInit {
   listData: MatTableDataSource<any>;
   displayedColumns: string[] = ['firstName', 'secondName', 'age','nic', 'date', 'hospital', 'clinic'];
 
+  //@ViewChild(MatSort, {static:true}) sort: MatSort;
+  @ViewChild(MatPaginator, {static:true}) paginator: MatPaginator;
+
   ngOnInit() {
     this.service.getBookAppointment().subscribe(
       list => {

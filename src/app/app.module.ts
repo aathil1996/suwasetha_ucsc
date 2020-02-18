@@ -58,27 +58,31 @@ import { AdminLayoutModule } from './layouts/admin-layout/admin-layout.module';
 import { AppointmentsComponent } from './appointments/appointments.component';
 import { Nav2Component } from './nav2/nav2.component';
 import { BannerComponent } from './banner/banner.component';
-import { AboutComponent } from './about/about.component';
+//import { AboutComponent } from 'app/layouts/patient-components/about/about.component';
 import {MatDatepickerModule} from '@angular/material';
 
-import { ClinicComponent } from './clinic/clinic.component';
+//import { ClinicComponent } from 'app/layouts/patient-components/clinic/clinic.component';
 import { ContactComponent } from './contact/contact.component';
 
 import { DoctorsComponent } from './doctors/doctors.component';
 import { FooterComponent } from './footer/footer.component';
 
-import { HospitalComponent } from './hospital/hospital.component';
+//import { HospitalComponent } from 'app/layouts/patient-components/hospital/hospital.component';
 
 import { IndexComponent } from './index/index.component';
 import { RegisterComponent } from './register/register.component';
 import { PrescriptionsComponent } from './layouts/doctor-components/prescription/prescriptions/prescriptions.component';
-import { BookappointmentListComponent } from './bookappointment/bookappointment-list/bookappointment-list.component';
-import { BookappointmentComponent } from './bookappointment/bookappointment.component';
+//import { BookappointmentListComponent } from 'app/layouts/patient-components/bookappointment/bookappointment-list/bookappointment-list.component';
+//import { BookappointmentComponent } from 'app/layouts/patient-components/bookappointment/bookappointment.component';
 import { BookappointmentService } from './shared/services/bookappointment.service';
-import { ClinicListComponent } from './clinic/clinic-list/clinic-list.component';
-import { ClinicService } from 'app/shared/services/clinic.service';
-import { HospitalListComponent } from './hospital/hospital-list/hospital-list.component';
-import { HospitalService } from 'app/shared/services/hospital.service';
+//import { ClinicListComponent } from 'app/layouts/patient-components/clinic/clinic-list/clinic-list.component';
+import { ClinicService } from './shared/services/clinic.service';
+//import { HospitalListComponent } from 'app/layouts/patient-components/hospital/hospital-list/hospital-list.component';
+import { HospitalService } from './shared/services/hospital.service';
+import { PatientFooterComponent } from './patient-bars/patient-footer/patient-footer.component';
+import { PatientNavbarComponent } from './patient-bars/patient-navbar/patient-navbar.component';
+import { PatientLayoutComponent } from './layouts/patient-layout/patient-layout.component';
+//import { PatientSidebarComponent } from './patient-bars/patient-sidebar/patient-sidebar.component';
 
  //import { DoctorComponentsComponent } from './layouts/doctor-components/doctor-components.component';
 // import { DashboardComponent } from './layouts/doctor-components/dashboard/dashboard.component';
@@ -122,84 +126,32 @@ import { HospitalService } from 'app/shared/services/hospital.service';
     HomeComponent,
     DoctorLayoutComponent,
     AdminLayoutComponent,
-   
-    
-
-    //DispensaryComponentComponent,
-
-    
-
-  
     DoctorFooterComponent,
-
     DoctorNavbarComponent,
-
     AppointmentsComponent,
-
     Nav2Component,
-
-   
-
-    AboutComponent,
-
-    BookappointmentComponent,
-
-    ClinicComponent,
-
+    
+    
     ContactComponent,
-
-    
-
     DoctorsComponent,
-
     FooterComponent,
-
     
-
-    HospitalComponent,
-
-  
-
     IndexComponent,
-
     RegisterComponent,
-
-    
-
-    
-
-    
-
    // DoctorComponentsComponent,
 
     //AppointmentsComponent,
 
     //PrescriptionsComponent,
     PrescriptionComponent,
+   //BookappointmentListComponent,
+   //ClinicListComponent,
+   //HospitalListComponent,
+   PatientFooterComponent,
+   PatientNavbarComponent,
+  PatientLayoutComponent,
 
-    
-
-    
-
-    
-
-   BookappointmentListComponent,
-
-    
-
-    
-
-    
-
-   ClinicListComponent,
-
-    
-
-    
-
-    
-
-   HospitalListComponent
+   //PatientSidebarComponent
 
 
 
@@ -210,6 +162,6 @@ import { HospitalService } from 'app/shared/services/hospital.service';
 
   providers: [SystemUsersService, RoleService, PrescriptionsService, BookappointmentService, ClinicService, HospitalService],
   bootstrap: [AppComponent],
-  entryComponents: [ConfirmDialogComponent, BookappointmentComponent,BookappointmentListComponent, ClinicListComponent, HospitalListComponent]
+  entryComponents: [ConfirmDialogComponent]
 })
 export class AppModule { }
