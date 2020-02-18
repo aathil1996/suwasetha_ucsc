@@ -17,18 +17,18 @@ import * as _ from 'lodash';
   
      form: FormGroup = new FormGroup({
        $key: new FormControl(null),
-       nic:new FormControl('', Validators.required),
-       medicine:new FormControl('', Validators.required),
-       dose: new FormControl('', Validators.required),
+       date:new FormControl('', Validators.required),
+      //  medicine:new FormControl('', Validators.required),
+      //  dose: new FormControl('', Validators.required),
       
      });
   
      initializeFormGroup(){
         this.form.setValue({
           $key: null,
-          nic: '',
-          medicine:'',
-          dose:'',
+          date: '',
+          // medicine:'',
+          // dose:'',
         });
      }
      

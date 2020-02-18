@@ -15,7 +15,8 @@ export const ROUTES: RouteInfo[] = [
     { path: 'doctor/appointments', title:'Appointments', icon:'person', class:''},
     { path: 'doctor/prescriptions', title: 'Prescriptions',  icon:'person', class: '' },
     { path: 'doctor/blog-posts', title: 'Blog Posts',  icon:'person', class: '' },
-    
+    { path: 'doctor/patientdetails', title:'Patient Details', icon:'person',class:''},
+  
   
 ];
 

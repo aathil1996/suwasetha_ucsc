@@ -48,9 +48,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DoctorSidebarComponent,
     DoctrosBarComponent,
   //  DoctrosBarComponent,
+<<<<<<< HEAD
     DoctorSidebarComponent,
     TitleBarComponent,
     LoginComponent
+=======
+    StaffSidebarComponent
+>>>>>>> maneesha'scommitnow
    
   ]
 })

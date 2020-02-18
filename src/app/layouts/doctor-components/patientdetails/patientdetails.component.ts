@@ -1,37 +1,34 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { AppointmentsService } from 'app/shared/services/appointments.service';
+import { PatientDetailsService } from 'app/shared/services/patientdetails.service';
 import { NotificationsService } from 'app/shared/services/notifications.service';
 import { MatTableDataSource, MatSort, MatPaginator, MatDialog, MatDialogConfig } from '@angular/material';
 
 import { DialogService } from 'app/shared/services/dialog.service';
 
-
-
-
 @Component({
-  selector: 'app-appointments',
-  templateUrl: './appointments.component.html',
-  styleUrls: ['./appointments.component.scss']
+  selector: 'app-patientdetails',
+  templateUrl: './patientdetails.component.html',
+  styleUrls: ['./patientdetails.component.scss']
 })
-export class AppointmentsComponent implements OnInit {
+export class PatientdetailsComponent implements OnInit {
 
   searchKey: string;
   array: any;
 
-  constructor(private service: AppointmentsService,
+  constructor(private service: PatientDetailsService,
     private dialog: MatDialog,
     private notificationService: NotificationsService,
     private dialogService: DialogService
     ) { }
 
   listData: MatTableDataSource<any>;
-  displayedColumns: string[] = ['age', 'clinic', 'date','firstName','hospital','nic','secondName'];
+  displayedColumns: string[] = ['fullName', 'nic', 'tellNo','actions'];
 
   @ViewChild(MatSort, {static:true}) sort: MatSort;
   @ViewChild(MatPaginator, {static:true}) paginator: MatPaginator;
 
   ngOnInit() {
-    this.service.getAppointments().subscribe(
+    this.service.getPatientdetails().subscribe(
       list => {
         let array = list.map(item =>{
           return {
@@ -59,5 +56,3 @@ export class AppointmentsComponent implements OnInit {
   }
 
   }
-
-
