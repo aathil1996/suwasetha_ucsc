@@ -1,0 +1,36 @@
+<mat-toolbar>
+  <span>{{service.form.controls['$key'].value?"Modify Staff":"New Staff Member"}}</span>
+  <span class="fill-remaining-space"></span>
+  <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon >clear</mat-icon></button>
+</mat-toolbar>
+                
+<form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()">
+                    
+    <div class="controls-container">
+                          <input type="hidden" formControlName="$key">
+                          <mat-form-field>
+                            <input formControlName="nic" matInput placeholder="NIC of Staff Member*">
+                            <mat-error> This is field is mandatory.</mat-error>
+                            <!-- <mat-error *ngIf="service.form.controls['nic'].errors?.minlength"> Minimum 10 characters should be entered.</mat-error>
+                            <mat-error *ngIf="service.form.controls['nic'].errors?.maxlength"> Maximum 12 characters should be entered.</mat-error> -->
+                          </mat-form-field>
+                        
+                          <mat-form-field>
+                            <input formControlName="name" matInput placeholder="Name*">
+                            <mat-error *ngIf="service.form.controls['name'].errors?.required"> This is field is mandatory.</mat-error>
+
+                          </mat-form-field>
+                          <mat-form-field>
+                            <input formControlName="telno" matInput placeholder="Telephone Number*">
+                            <mat-error *ngIf="service.form.controls['telno'].errors?.required"> This is field is mandatory.</mat-error>
+                          </mat-form-field>
+
+                  
+                          <div class="button-row">
+                            <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid">Submit</button>
+                            <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
+                          </div>
+    </div>
+                   
+</form>
+  
