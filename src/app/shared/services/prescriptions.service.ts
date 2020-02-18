@@ -17,7 +17,7 @@ import * as _ from 'lodash';
   
      form: FormGroup = new FormGroup({
        $key: new FormControl(null),
-       nic:new FormControl('', Validators.required),
+       nic:new FormControl('', [Validators.required, Validators.minLength(10),Validators.maxLength(12)]),
        disease: new FormControl('',Validators.required),
        medicine:new FormControl('', Validators.required),
        dose: new FormControl('', Validators.required),
