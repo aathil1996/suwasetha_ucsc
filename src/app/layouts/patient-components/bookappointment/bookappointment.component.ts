@@ -18,7 +18,7 @@ export class BookappointmentComponent implements OnInit {
   constructor(
     private service : BookappointmentService,
     public notificationService: NotificationsService,
-    public dialogRef: MatDialogRef<BookappointmentComponent>
+    //public dialogRef: MatDialogRef<BookappointmentComponent>
   ) { }
 
   ngOnInit() {
@@ -48,7 +48,7 @@ export class BookappointmentComponent implements OnInit {
   onClose(){
     this.service.form.reset();
     this.service.initializeFormGroup();
-    this.dialogRef.close();
+   // this.dialogRef.close();
   }
 
 }

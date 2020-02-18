@@ -7,6 +7,7 @@ import { MaterialModule } from 'app/shared/material/material.module';
 import { AboutComponent } from '../patient-components/about/about.component';
 import { AdminLayoutModule } from '../admin-layout/admin-layout.module';
 import { BookappointmentComponent } from 'app/layouts/patient-components/bookappointment/bookappointment.component';
+import { BookappointmentListComponent } from '../patient-components/bookappointment/bookappointment-list/bookappointment-list.component';
 
 //import { PrescriptionsListComponent } from 'app/layouts/doctor-components/prescription/prescriptions-list/prescriptions-list.component';
 
@@ -61,9 +62,9 @@ export const PatientLayoutRoutes: Routes = [
     //         component: UpgradeComponent
     //     }]
     // }
-    { path: 'patient/clinics',      component: ClinicListComponent },
-    {path: 'patient/hospitals', component:HospitalListComponent},
-    { path: 'patient/bookappointment',   component: BookappointmentComponent },
+    { path: 'patient/clinic',      component: ClinicListComponent },
+    {path: 'patient/hospital', component:HospitalListComponent},
+    { path: 'patient/bookappointment',   component: BookappointmentListComponent },
     { path: 'patient/about',   component: AboutComponent },
     //{ path: 'doctor/blog-posts',   component: BlogPostsComponent },
    
