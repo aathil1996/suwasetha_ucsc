@@ -1,21 +1,23 @@
 <mat-toolbar>
-  <span>{{service.form.controls['$key'].value?"Modify Patient":"New Patient"}}</span>
+  <span>{{service.form.controls['$key'].value?"Modify Clinic Admin":"New Clinic Admin"}}</span>
   <span class="fill-remaining-space"></span>
   <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon >clear</mat-icon></button>
 </mat-toolbar>
-         
-<form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()"> 
+                
+<form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()">
                     
-
-  <div class="controls-container">
+    <div class="controls-container">
                           <input type="hidden" formControlName="$key">
                           <mat-form-field>
                             <input formControlName="userName" matInput placeholder="User Name*">
                             <mat-error> This is field is mandatory.</mat-error>
                           </mat-form-field>
-                         
                           <mat-form-field>
                             <input formControlName="fullName" matInput placeholder="Full Name*">
+                            <mat-error> This is field is mandatory.</mat-error>
+                          </mat-form-field>
+                          <mat-form-field>
+                            <input formControlName="hospital" matInput placeholder="Hospital*">
                             <mat-error> This is field is mandatory.</mat-error>
                           </mat-form-field>
                           <mat-form-field>
@@ -47,5 +49,5 @@
                           </div>
     </div>
                    
-</form> 
+</form>
   

@@ -40,37 +40,6 @@ export class AuthService {
      return this.authenticated ? this.authState.uid: null
    }
 
-  //  register(email: string, password: string){
-  //   this.afAuth.auth.createUserWithEmailAndPassword(email, password)
-  //   .then((userResponse)=>{
-  //     // add the user to the "users" database
-  //     let user = {
-  //      id: userResponse.user.uid,
-  //      username: userResponse.user.email,
-  //      role: "user",
-  //     }
-      
-  //     //add the user to the database
-  //     this.firestore.collection("users").add(user)
-  //     .then(user => {
-  //      user.get().then(x => {
-  //        //return the user data
-  //        console.log(x.data());
-  //        this.currentUser = x.data();
-  //        this.setUserStatus(this.currentUser);
-  //        this.router.navigate(["/"]);
-  //      })
-  //     }).catch(err => {
-  //       console.log(err);
-  //     })
-      
-     
-  //   })
-  //   .catch((err)=>{
-  //      console.log("An error ocurred: ", err);
-  //   })
-
-  //  }
 
   login(email: string, password: string){
     this.afAuth.auth.signInWithEmailAndPassword(email, password)
@@ -88,6 +57,24 @@ export class AuthService {
           else if(userRef.data().role == "doctor"){
             this.router.navigate(["/doctor"])
           }
+          else if(userRef.data().role == "clinicAdmin"){
+            this.router.navigate(["/clinicAdmin"])
+
+          }
+          else if(userRef.data().role == "hospitalAdmin"){
+            this.router.navigate(["/hospitalAdmin"])
+
+          }
+          else if(userRef.data().role == "hospitalAdmin"){
+            this.router.navigate(["/hospitalAdmin"])
+
+          }
+
+          else if(userRef.data().role == "patient"){
+            this.router.navigate(["/patient"])
+
+          }
+         
         })
       })
     }). catch((err) =>{
@@ -98,12 +85,13 @@ export class AuthService {
   logout(){
     this.afAuth.auth.signOut()
     .then(()=>{
-      console.log("user signed Out successfully");
+      this.toastr.show("user signed Out successfully");
+      
       //set current user to null to be logged out
       this.currentUser = null;
-      //set the listenener to be null, for the UI to react
+      //set the listener to be null, for the UI to react
       this.setUserStatus(null);
-      this.ngZone.run(() => this.router.navigate(["/login"]));
+      this.ngZone.run(() => this.router.navigate(["/"]));
 
     }).catch((err) => {
       console.log(err);
@@ -125,6 +113,9 @@ export class AuthService {
             }
             else if(userRef.data().role == "doctor"){
              this.ngZone.run(() => this.router.navigate(["/doctor"])); 
+            }
+            else{
+              this.ngZone.run(() => this.router.navigate(["/"])); 
             }
           })
         })

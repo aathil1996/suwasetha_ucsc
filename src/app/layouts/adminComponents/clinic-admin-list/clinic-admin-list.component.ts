@@ -1,20 +1,20 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { HospitalAdminService } from 'app/shared/services/hospital-admin.service';
+import { ClinicAdminService } from 'app/shared/services/clinic-admin.service';
 import { MatDialog, MatTableDataSource, MatSort, MatPaginator, MatDialogConfig } from '@angular/material';
 import { DialogService } from 'app/shared/services/dialog.service';
-import { HospitalAdminComponent } from '../hospital-admin/hospital-admin.component';
+import { ClinicAdminComponent } from '../clinic-admin/clinic-admin.component';
 
 @Component({
-  selector: 'app-hospital-admin-list',
-  templateUrl: './hospital-admin-list.component.html',
-  styleUrls: ['./hospital-admin-list.component.scss']
+  selector: 'app-clinic-admin-list',
+  templateUrl: './clinic-admin-list.component.html',
+  styleUrls: ['./clinic-admin-list.component.scss']
 })
-export class HospitalAdminListComponent implements OnInit {
+export class ClinicAdminListComponent implements OnInit {
 
   searchKey: string;
   array: any;
   
-  constructor(private service: HospitalAdminService,
+  constructor(private service: ClinicAdminService,
     private dialog: MatDialog,
     private dialogService: DialogService) { }
 
@@ -23,7 +23,7 @@ export class HospitalAdminListComponent implements OnInit {
     @ViewChild(MatSort, {static:true}) sort: MatSort;
     @ViewChild(MatPaginator, {static:true}) paginator: MatPaginator;
   
-    ngOnInit() {this.service.getHospitalAdmin().subscribe(
+    ngOnInit() {this.service.getClinicAdmins().subscribe(
       list => {
         let array = list.map(item =>{
           return {
@@ -56,7 +56,7 @@ export class HospitalAdminListComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = true;
     dialogConfig.width = "40%";
-    this.dialog.open(HospitalAdminComponent, dialogConfig);
+    this.dialog.open(ClinicAdminComponent, dialogConfig);
   }
 
   onEdit(row){
@@ -65,7 +65,7 @@ export class HospitalAdminListComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = true;
     dialogConfig.width = "40%";
-    this.dialog.open(HospitalAdminComponent, dialogConfig);
+    this.dialog.open(ClinicAdminComponent, dialogConfig);
   }
 
   onDelete($key){
@@ -73,7 +73,7 @@ export class HospitalAdminListComponent implements OnInit {
     this.dialogService.openConfirmDialog('Are you sure to delete this user?')
     .afterClosed().subscribe(res => {
       if(res){
-        this.service.deleteHospitalAdmin($key);
+        this.service.deleteClinicAdmins($key);
         
       }
     });
