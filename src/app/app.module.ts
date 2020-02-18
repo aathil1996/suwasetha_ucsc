@@ -12,8 +12,6 @@ import { AppComponent } from './app.component';
 import { ToastrModule } from 'ngx-toastr';
 
 
-
-
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
@@ -31,8 +29,6 @@ import { HomeComponent } from './home/home.component';
 import { DoctorLayoutComponent } from './layouts/doctor-layout/doctor-layout.component';
 import { ComponentsModule } from './components/components.module';
 
-
-// { DispensaryComponentComponent } from './layouts/dispensary-component/dispensary-component.component';
 import { DoctorFooterComponent } from './doctor-bars/doctor-footer/doctor-footer.component';
 import { DoctorNavbarComponent } from './doctor-bars/doctor-navbar/doctor-navbar.component';
 import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensary-layout.component';
@@ -41,18 +37,6 @@ import { AdminLayoutModule } from './layouts/admin-layout/admin-layout.module';
 import { PatientService } from './shared/services/patient.service';
 import { AboutComponent } from './main/about/about.component';
 import { ContactComponent } from './main/contact/contact.component';
-import { DoctorsListComponent } from './layouts/adminComponents/doctors-list/doctors-list.component';
-import { HospitalAdminListComponent } from './layouts/adminComponents/hospital-admin-list/hospital-admin-list.component';
-import { HospitalAdminComponent } from './layouts/adminComponents/hospital-admin/hospital-admin.component';
-
-
- //import { DoctorComponentsComponent } from './layouts/doctor-components/doctor-components.component';
-// import { DashboardComponent } from './layouts/doctor-components/dashboard/dashboard.component';
-// import { UserProfileComponent } from './layouts/doctor-components/user-profile/user-profile.component';
-//import { AppointmentsComponent } from './layouts/doctor-components/appointments/appointments.component';
-//import { PrescriptionsComponent } from './layouts/doctor-components/prescriptions/prescriptions.component';
-//import { BlogPostsComponent } from './layouts/doctor-components/blog-posts/blog-posts.component';
-
 
 @NgModule({
   imports: [
@@ -103,12 +87,7 @@ import { HospitalAdminComponent } from './layouts/adminComponents/hospital-admin
 
     ContactComponent,
 
-    HospitalAdminListComponent,
-
-    HospitalAdminComponent,
-
-   
-
+    
     
 
    // DoctorComponentsComponent,

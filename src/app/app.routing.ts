@@ -2,19 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
-
 import { DoctorLayoutComponent } from './layouts/doctor-layout/doctor-layout.component';
 import { HomeComponent } from './home/home.component';
-
-// import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensary-layout.component';
-// import { DoctorLayoutComponent } from './layouts/doctor-layout/doctor-layout.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensary-layout.component';
-//import { HomeComponent } from './home/home.component';
-//import { DoctorsLayoutComponent } from './layouts/doctors-layout/doctors-layout.component';
-import { LoginComponent } from './login/login.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { AboutComponent } from './main/about/about.component';
@@ -60,7 +52,7 @@ import { AuthGuardGuard } from './auth/auth-guard.guard';
 // system admin dashboard
  {
    path: 'systemAdmin',
- redirectTo: 'systemAdmin/systemAdmin/dashboard',
+ redirectTo: 'systemAdmin/systemAdmin/system-users-list',
   pathMatch: 'full',
   canActivate:[AuthGuardGuard], data:{roles: ["systemAdmin"]}
   
@@ -93,22 +85,7 @@ import { AuthGuardGuard } from './auth/auth-guard.guard';
     }]
   },
 
-  // doctor dashbaord
-
-  // {
-  //   path: 'doctors',
-  // redirectTo: 'doctors/doctors/testing2',
-  //  pathMatch: 'full',
-  // }, 
-  // {
-  //   path: 'doctors',
-  //   component: DoctorsLayoutComponent,
-  //   children: [{
-  //     path: '',
-  //     loadChildren: './layouts/doctors-layout/doctors-layout.module#DoctorsLayoutModule'
-  //   }]
-  // },
- 
+  
   {
     path: 'reset-password',
     component: ForgotPasswordComponent,
