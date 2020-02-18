@@ -2,10 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { PatientService } from 'app/shared/services/patient.service';
 import { NotificationsService } from 'app/shared/services/notifications.service';
 import { MatDialogRef } from '@angular/material';
-import { AngularFireList } from '@angular/fire/database';
-import { FormGroup, FormControl } from '@angular/forms';
-import { Observable } from 'rxjs';
-import { AngularFireStorage } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-patients',
@@ -22,16 +18,17 @@ export class PatientsComponent implements OnInit {
   email:string
   tellNo:string
   password:string
-  profileImage:string = null
+  role: string
+  //profileImage:string = null
 
-  downloadURL: Observable<string>
+  //downloadURL: Observable<string>
 
  
  
     constructor(private service : PatientService,
-      public notificationService: NotificationsService,
+      
       public dialogRef: MatDialogRef<PatientsComponent>,
-      private storage: AngularFireStorage
+      
       
       ) { 
 
@@ -42,21 +39,7 @@ export class PatientsComponent implements OnInit {
   
     ngOnInit() {
         this.service.getPatients();
-        // this.service.getPatients().subscribe(
-        //   list => {
-        //     let array = list.map(item =>{
-        //       return {
-        //         nic: item.key.nic,
-        //         ...item.payload.val()
-        //       };
-              
-        //     });
-           
-            
-            
-        //   }
-        // );
-       
+        
       }
   
       onClear(){
@@ -65,49 +48,26 @@ export class PatientsComponent implements OnInit {
         
         
       }
-      // getNic = (_: { payload: { doc: { data: () => any; nic: any; }; }; }) =>{
-      //   const record = _.payload.doc.data();
-      //   record.nic = _.payload.doc.nic;
-       
-      //   return record.nic;
-        
-        
-      // }
-
-
-  
+      
       onSubmit(){
         if(this.service.form.valid){
-          const data = {
-            userName: this.userName,
-            fullName: this.fullName,
-            nic: this.nic,
-            email:this.email,
-            tellNo:this.tellNo,
-            password:this.password,
-            profileImage:this.profileImage
-          };
-          this.service.insertPatient(data);
-              this.service.addCredential(data);
-              this.onClose();
-      }
-        //   else
-        //  { 
-        //   const data = {
-        //     userName: this.userName,
-        //     fullName: this.fullName,
-        //     nic: this.nic,
-        //     email:this.email,
-        //     tellNo:this.tellNo,
-        //     password:this.password,
-        //     profileImage:this.profileImage
-        //   };
-        //   this.service.updatePatient(data);
-        //   this.service.form.reset();
-        //   this.service.initializeFormGroup();
-        //   this.notificationService.success('Submitted Successfully');
-        //   this.onClose();
-        //  }
+          if(!this.service.form.get('$key').value){
+            this.service.insertPatient(this.service.form.value);
+            this.service.addCredential(this.service.form.value);
+            
+          }
+          else{
+            this.service.updatePatient(this.service.form.value);
+            
+            
+            
+          }
+        this.service.form.reset();
+        this.service.initializeFormGroup();
+        this.onClose();
+        }
+        
+        
           
           
           

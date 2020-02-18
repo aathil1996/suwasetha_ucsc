@@ -12,11 +12,16 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import { TitleBarComponent } from './title-bar/title-bar.component';
+import { LoginComponent } from 'app/login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   declarations: [
     FooterComponent,
@@ -32,6 +37,8 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
     ForgotPasswordComponent,
     VerifyEmailComponent,
     DoctorSidebarComponent,
+    TitleBarComponent,
+    LoginComponent
   ],
   exports: [
     FooterComponent,
@@ -41,7 +48,9 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
     DoctorSidebarComponent,
     DoctrosBarComponent,
   //  DoctrosBarComponent,
-    DoctorSidebarComponent
+    DoctorSidebarComponent,
+    TitleBarComponent,
+    LoginComponent
    
   ]
 })

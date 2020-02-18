@@ -6,6 +6,8 @@ import { SystemUsers } from '../system-users.model';
 import { Scheduler, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
@@ -14,11 +16,13 @@ export class SystemUsersService {
  
 
   constructor(private firebase: AngularFireDatabase,
-    private afAuth: AngularFireAuth) {
+    private afAuth: AngularFireAuth,
+    private firestore: AngularFirestore,
+    private toastr: ToastrService) {
     
    }
 
-   systemUsersList: AngularFireList<any>;
+   systemAdminsList: AngularFireList<any>;
 
    form: FormGroup = new FormGroup({
      $key: new FormControl(null),
@@ -28,7 +32,7 @@ export class SystemUsersService {
      email: new FormControl('', [Validators.required,Validators.email]),
      tellNo: new FormControl('', [Validators.required, Validators.minLength(10)]),
      password: new FormControl('', [Validators.required, Validators.minLength(8)]),
-     role: new FormControl(0, Validators.required)
+    //  role: new FormControl(0, Validators.required)
    });
 
    initializeFormGroup(){
@@ -40,18 +44,18 @@ export class SystemUsersService {
         email:'',
         tellNo:'',
         password:'',
-        role:0
+       // role:0
       });
    }
    
    
    getSystemUsers(){
-     this.systemUsersList = this.firebase.list('systemUsers');
-     return this.systemUsersList.snapshotChanges();
+     this.systemAdminsList = this.firebase.list('systemAdmins');
+     return this.systemAdminsList.snapshotChanges();
    }
 
    insertSystemUser(systemUser){
-     this.systemUsersList.push({
+     this.systemAdminsList.push({
       
       userName: systemUser.userName,
       fullName: systemUser.fullName,
@@ -59,9 +63,12 @@ export class SystemUsersService {
       email: systemUser.email,
       tellNo: systemUser.tellNo,
       password: systemUser.password,
-      role: systemUser.role
+     // role: systemUser.role
 
      });
+     this.toastr.success("System Admin Added");
+
+    
 
      
 
@@ -72,16 +79,31 @@ export class SystemUsersService {
        const password = systemUser.password;
 
        try{
-         const resp = await this.afAuth.auth.createUserWithEmailAndPassword(email,password);
+         const resp = await this.afAuth.auth.createUserWithEmailAndPassword(email,password)
+          .then((userResponse)=>{
+            let user = {
+              id: userResponse.user.uid,
+              email: userResponse.user.email,
+              role: "systemAdmin"
+
+            }
+
+            this.firestore.collection("users").add(user);
+            this.toastr.success("User Account Created")
+            
+          })
+
+         
        } catch(error){
-         console.log(error.message);
+        this.toastr.error(error.message)
+        
        }
 
 
      }
 
      updateSystemUsers(systemUser){
-      this.systemUsersList.update(systemUser.$key,
+      this.systemAdminsList.update(systemUser.$key,
       {
         userName: systemUser.userName,
         fullName: systemUser.fullName,
@@ -89,13 +111,15 @@ export class SystemUsersService {
         email: systemUser.email,
         tellNo: systemUser.tellNo,
         password: systemUser.password,
-        role: systemUser.role,
+        //role: systemUser.role,
       });
+      this.toastr.success("Successfully Updated");
 
     }
 
     deleteSystemUsers($key: string){
-      this.systemUsersList.remove($key);
+      this.systemAdminsList.remove($key);
+      this.toastr.warning("Details Deleted!")
     }
 
     populateForm(systemUser){

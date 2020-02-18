@@ -17,19 +17,36 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { AboutComponent } from './main/about/about.component';
+import { ContactComponent } from './main/contact/contact.component';
+import { AuthGuardGuard } from './auth/auth-guard.guard';
 
-const routes: Routes =[
+
+ const routes: Routes =[
 
 // for home page
 {
   path: '',
   component: HomeComponent
 },
+{
+  path: 'about',
+  component: AboutComponent
+},
+{
+  path: 'contact',
+  component: ContactComponent
+},
+{
+  path: 'login',
+  component: SignInComponent
+},
 
   {
     path: 'doctor',
     redirectTo: 'doctor/doctor/dashboard',
     pathMatch: 'full',
+    canActivate:[AuthGuardGuard], data:{roles: ["doctor"]}
   }, {
     path: 'doctor',
     component: DoctorLayoutComponent,
@@ -45,6 +62,8 @@ const routes: Routes =[
    path: 'systemAdmin',
  redirectTo: 'systemAdmin/systemAdmin/dashboard',
   pathMatch: 'full',
+  canActivate:[AuthGuardGuard], data:{roles: ["systemAdmin"]}
+  
  }, 
     
   
@@ -63,6 +82,7 @@ const routes: Routes =[
     path: 'dispensaryAdmin',
   redirectTo: 'dispensaryAdmin/dispensaryAdmin/testing',
    pathMatch: 'full',
+   canActivate:[AuthGuardGuard], data:{roles: ["dispensaryAdmin"]}
   }, 
   {
     path: 'dispensaryAdmin',
@@ -88,16 +108,7 @@ const routes: Routes =[
   //     loadChildren: './layouts/doctors-layout/doctors-layout.module#DoctorsLayoutModule'
   //   }]
   // },
-  {
-    path: 'sign-in',
-    component: SignInComponent,
-    
-  },
-  {
-    path: 'sign-up',
-    component: SignUpComponent,
-    
-  },
+ 
   {
     path: 'reset-password',
     component: ForgotPasswordComponent,
@@ -116,7 +127,8 @@ const routes: Routes =[
     CommonModule,
     BrowserModule,
     RouterModule.forRoot(routes,{
-       useHash: true
+       useHash: true,
+       scrollPositionRestoration: "enabled"
     })
   ],
   exports: [

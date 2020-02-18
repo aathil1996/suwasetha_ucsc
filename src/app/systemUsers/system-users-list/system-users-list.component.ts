@@ -16,12 +16,11 @@ export class SystemUsersListComponent implements OnInit {
 
   constructor(private service: SystemUsersService,
     private dialog: MatDialog,
-    private notificationService: NotificationsService,
     private dialogService: DialogService
     ) { }
 
   listData: MatTableDataSource<any>;
-  displayedColumns: string[] = ['userName', 'fullName', 'email', 'tellNo', 'nic', 'role', 'actions'];
+  displayedColumns: string[] = ['userName', 'fullName', 'email', 'tellNo', 'nic','actions'];
 
   @ViewChild(MatSort, {static:true}) sort: MatSort;
   @ViewChild(MatPaginator, {static:true}) paginator: MatPaginator;
@@ -78,7 +77,7 @@ export class SystemUsersListComponent implements OnInit {
     .afterClosed().subscribe(res => {
       if(res){
         this.service.deleteSystemUsers($key);
-        this.notificationService.warn('Deleted Successfully');
+        
       }
     });
      
