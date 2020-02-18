@@ -24,11 +24,8 @@ import { AvatarDialogComponent } from './avatar-dialog/avatar-dialog.component';
 import { MatDialogModule, MatSliderModule } from '@angular/material';
 import { SystemUsersService } from './shared/services/system-users.service';
 import { PrescriptionsService} from './shared/services/prescriptions.service';
-import {PatientDetailsService} from './shared/services/patientdetails.service';
-import { AppointmentsService} from './shared/services/appointments.service';
-import {LookAppointmentsService} from './shared/services/lookappointments.service';
 import {LookClinicsService} from './shared/services/lookclinics.service';
-import {LookPatientsService} from './shared/services/lookpatients.service';
+
 import { MaterialModule } from './shared/material/material.module';
 import { RoleService } from './shared/services/role.service';
 import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
@@ -49,15 +46,9 @@ import { ContactComponent } from './main/contact/contact.component';
 import { DoctorsListComponent } from './layouts/adminComponents/doctors-list/doctors-list.component';
 import { HospitalAdminListComponent } from './layouts/adminComponents/hospital-admin-list/hospital-admin-list.component';
 import { HospitalAdminComponent } from './layouts/adminComponents/hospital-admin/hospital-admin.component';
-import { StaffFooterComponent } from './staff-bars/staff-footer/staff-footer.component';
-import { StaffNavbarComponent } from './staff-bars/staff-navbar/staff-navbar.component';
 import { StaffLayoutComponent } from './layouts/staff-layout/staff-layout.component';
-<<<<<<< HEAD
 
 
-=======
-import { PatientdetailsListComponent } from './layouts/doctor-components/patientdetails/patientdetails-list/patientdetails-list.component';
->>>>>>> maneesha'scommitnow
  //import { DoctorComponentsComponent } from './layouts/doctor-components/doctor-components.component';
 // import { DashboardComponent } from './layouts/doctor-components/dashboard/dashboard.component';
 // import { UserProfileComponent } from './layouts/doctor-components/user-profile/user-profile.component';
@@ -99,8 +90,6 @@ import { PatientdetailsListComponent } from './layouts/doctor-components/patient
     HomeComponent,
     DoctorLayoutComponent,
     AdminLayoutComponent,
-    StaffFooterComponent,
-    StaffNavbarComponent,
     StaffLayoutComponent,
   
    
@@ -115,7 +104,6 @@ import { PatientdetailsListComponent } from './layouts/doctor-components/patient
 
     DoctorNavbarComponent,
 
-<<<<<<< HEAD
     AboutComponent,
 
     ContactComponent,
@@ -123,9 +111,6 @@ import { PatientdetailsListComponent } from './layouts/doctor-components/patient
     HospitalAdminListComponent,
 
     HospitalAdminComponent,
-=======
-    PatientdetailsListComponent,
->>>>>>> maneesha'scommitnow
 
    
 
@@ -141,11 +126,7 @@ import { PatientdetailsListComponent } from './layouts/doctor-components/patient
 
 
   ],
-<<<<<<< HEAD
   providers: [SystemUsersService, RoleService, PrescriptionsService, PatientService],
-=======
-providers: [AppointmentsService,SystemUsersService, RoleService, PrescriptionsService,LookAppointmentsService,LookClinicsService,LookPatientsService,PatientDetailsService],
->>>>>>> maneesha'scommitnow
   bootstrap: [AppComponent],
   entryComponents: [ConfirmDialogComponent]
 })

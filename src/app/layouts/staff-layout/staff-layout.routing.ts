@@ -1,7 +1,5 @@
 import { Routes } from '@angular/router';
 
-import { LookAppointmentsComponent } from '../staff-components/lookappointments/lookappointments.component';
-import { LookPatientsComponent } from '../staff-components/lookpatients/lookpatients.component';
 
 import { LookClinicsComponent } from '../staff-components/lookclinics/lookclinics.component';
 
@@ -56,8 +54,7 @@ export const StaffLayoutRoutes: Routes = [
     //         component: UpgradeComponent
     //     }]
     // }
-    { path: 'staff/patients',      component: LookPatientsComponent },
-    {path: 'staff/appointments', component:LookAppointmentsComponent},
+   
     { path: 'staff/clinics',   component: LookClinicsComponent },
     
    

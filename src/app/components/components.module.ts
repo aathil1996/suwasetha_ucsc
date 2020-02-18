@@ -15,6 +15,8 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { TitleBarComponent } from './title-bar/title-bar.component';
 import { LoginComponent } from 'app/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StaffSidebarComponent} from 'app/staff-bars/staff-sidbar/staff-sidebar.component';
+import { StafBarComponent} from './staf-bar/staf-bar.component';
 
 @NgModule({
   imports: [
@@ -30,6 +32,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DispensaryBarComponent,
     DoctorSidebarComponent,
     DoctrosBarComponent,
+    StaffSidebarComponent,
+    StafBarComponent,
    
   //  DoctrosBarComponent,
     SignInComponent,
@@ -47,14 +51,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DispensaryBarComponent,
     DoctorSidebarComponent,
     DoctrosBarComponent,
-  //  DoctrosBarComponent,
-<<<<<<< HEAD
     DoctorSidebarComponent,
     TitleBarComponent,
-    LoginComponent
-=======
+    LoginComponent,
+    StafBarComponent,
     StaffSidebarComponent
->>>>>>> maneesha'scommitnow
    
   ]
 })

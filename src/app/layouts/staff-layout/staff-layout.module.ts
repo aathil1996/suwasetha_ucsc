@@ -18,8 +18,6 @@ import {
   MatPaginatorModule
 } from '@angular/material';
 
-import { LookPatientsComponent } from 'app/layouts/staff-components/lookpatients/lookpatients.component';
-import { LookAppointmentsComponent } from 'app/layouts/staff-components/lookappointments/lookappointments.component';
 import {LookClinicsComponent} from 'app/layouts/staff-components/lookclinics/lookclinics.component';
 import { MaterialModule } from 'app/shared/material/material.module';
 
@@ -40,9 +38,9 @@ import { MaterialModule } from 'app/shared/material/material.module';
     MaterialModule
   ],
   declarations: [
-    LookAppointmentsComponent,
+    
     LookClinicsComponent,
-    LookPatientsComponent,
+    
 
 
   

@@ -24,9 +24,9 @@ export class HospitalAdminComponent implements OnInit {
 
  
 
-var hospitals =  this.firebase.database().ref("hospitals")
-export const HOSPITALS: SelectOption[] = [
+// var hospitals =  this.firebase.database().ref("hospitals")
+// export const HOSPITALS: SelectOption[] = [
   
-];
+//];
 
 }
