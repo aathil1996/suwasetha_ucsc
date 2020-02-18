@@ -33,6 +33,7 @@ import { StafBarComponent} from './staf-bar/staf-bar.component';
     DoctorSidebarComponent,
     DoctrosBarComponent,
     StaffSidebarComponent,
+    
     StafBarComponent,
    
   //  DoctrosBarComponent,
