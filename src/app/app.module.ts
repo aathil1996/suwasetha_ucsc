@@ -47,7 +47,7 @@ import { BlogListComponent } from './layouts/adminComponents/blog/blog-list/blog
 import { ArticlesComponent } from './layouts/adminComponents/blog/articles/articles.component';
 
 
-import { HospitalListComponent } from './layouts/adminComponents/Hospital/hospital-list/hospital-list.component';
+//import { HospitalListComponent } from './layouts/adminComponents/Hospital/hospital-list/hospital-list.component';
 // { DispensaryComponentComponent } from './layouts/dispensary-component/dispensary-component.component';
 import { DoctorFooterComponent } from './doctor-bars/doctor-footer/doctor-footer.component';
 import { DoctorNavbarComponent } from './doctor-bars/doctor-navbar/doctor-navbar.component';
@@ -77,6 +77,9 @@ import { BookappointmentComponent } from './bookappointment/bookappointment.comp
 import { BookappointmentService } from './shared/services/bookappointment.service';
 import { ClinicListComponent } from './clinic/clinic-list/clinic-list.component';
 import { ClinicService } from 'app/shared/services/clinic.service';
+import { HospitalListComponent } from './hospital/hospital-list/hospital-list.component';
+import { HospitalService } from 'app/shared/services/hospital.service';
+
  //import { DoctorComponentsComponent } from './layouts/doctor-components/doctor-components.component';
 // import { DashboardComponent } from './layouts/doctor-components/dashboard/dashboard.component';
 // import { UserProfileComponent } from './layouts/doctor-components/user-profile/user-profile.component';
@@ -188,7 +191,15 @@ import { ClinicService } from 'app/shared/services/clinic.service';
 
     
 
-   ClinicListComponent
+   ClinicListComponent,
+
+    
+
+    
+
+    
+
+   HospitalListComponent
 
 
 
@@ -197,8 +208,8 @@ import { ClinicService } from 'app/shared/services/clinic.service';
 
   
 
-  providers: [SystemUsersService, RoleService, PrescriptionsService, BookappointmentService, ClinicService],
+  providers: [SystemUsersService, RoleService, PrescriptionsService, BookappointmentService, ClinicService, HospitalService],
   bootstrap: [AppComponent],
-  entryComponents: [ConfirmDialogComponent, BookappointmentComponent,BookappointmentListComponent, ClinicListComponent]
+  entryComponents: [ConfirmDialogComponent, BookappointmentComponent,BookappointmentListComponent, ClinicListComponent, HospitalListComponent]
 })
 export class AppModule { }

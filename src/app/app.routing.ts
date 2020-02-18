@@ -22,6 +22,7 @@ import { BookappointmentListComponent } from './bookappointment/bookappointment-
 //import { AuthGuardService as AuthGuard } from 'app/shared/services/auth-guard.service';
 //import { RoleGuardService as RoleGuard } from 'app/shared/services/role-guard.service';
 import { ClinicListComponent } from 'app/clinic/clinic-list/clinic-list.component';
+import { HospitalListComponent } from 'app/hospital/hospital-list/hospital-list.component';
 
 const routes: Routes =[
 
@@ -125,6 +126,10 @@ const routes: Routes =[
   {
     path:'clinic',
     component: ClinicListComponent,
+  },
+  {
+    path:'hospital',
+    component: HospitalListComponent,
   }
 
   
