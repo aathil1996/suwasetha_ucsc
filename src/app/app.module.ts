@@ -12,16 +12,6 @@ import { AppComponent } from './app.component';
 import { ToastrModule } from 'ngx-toastr';
 
 
-import { TableListComponent } from './table-list/table-list.component';
-import { TypographyComponent } from './typography/typography.component';
-import { IconsComponent } from './icons/icons.component';
-//import { MapsComponent } from './maps/maps.component';
-import { NotificationsComponent } from './shared/notifications/notifications.component';
-
-import {
-  AgmCoreModule
-} from '@agm/core';
-
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
@@ -29,32 +19,30 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'environments/environment';
 import { AvatarDialogComponent } from './avatar-dialog/avatar-dialog.component';
-import { MatDialogModule, MatButtonModule, MatInputModule, MatSliderModule } from '@angular/material';
+import { MatDialogModule, MatSliderModule } from '@angular/material';
 import { SystemUsersService } from './shared/services/system-users.service';
-import { PrescriptionsService} from './shared/services/prescriptions.service'
+import { PrescriptionsService} from './shared/services/prescriptions.service';
+import { PatientDetailsService} from './shared/services/patientdetails.service';
+import {LookClinicsService} from './shared/services/lookclinics.service';
+
 import { MaterialModule } from './shared/material/material.module';
 import { RoleService } from './shared/services/role.service';
 import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
 import { HomeComponent } from './home/home.component';
 import { PrescriptionComponent } from './prescription/prescription.component';
 import { DoctorLayoutComponent } from './layouts/doctor-layout/doctor-layout.component';
-import { Testing2Component } from './testing2/testing2.component';
 import { ComponentsModule } from './components/components.module';
-import { LoginComponent } from './login/login.component';
-import { PatientsComponent } from './layouts/adminComponents/Patients/patients/patients.component';
-import { PatientsListComponent } from './layouts/adminComponents/Patients/patients-list/patients-list.component';
-import { BlogListComponent } from './layouts/adminComponents/blog/blog-list/blog-list.component';
-import { ArticlesComponent } from './layouts/adminComponents/blog/articles/articles.component';
 
 
 //import { HospitalListComponent } from './layouts/adminComponents/Hospital/hospital-list/hospital-list.component';
 // { DispensaryComponentComponent } from './layouts/dispensary-component/dispensary-component.component';
+
 import { DoctorFooterComponent } from './doctor-bars/doctor-footer/doctor-footer.component';
 import { DoctorNavbarComponent } from './doctor-bars/doctor-navbar/doctor-navbar.component';
-import { DoctorSidebarComponent } from './doctor-bars/doctor-sidebar/doctor-sidebar.component';
 import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensary-layout.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { AdminLayoutModule } from './layouts/admin-layout/admin-layout.module';
+
 import { AppointmentsComponent } from './appointments/appointments.component';
 import { Nav2Component } from './nav2/nav2.component';
 import { BannerComponent } from './banner/banner.component';
@@ -82,7 +70,14 @@ import { HospitalService } from './shared/services/hospital.service';
 import { PatientFooterComponent } from './patient-bars/patient-footer/patient-footer.component';
 import { PatientNavbarComponent } from './patient-bars/patient-navbar/patient-navbar.component';
 import { PatientLayoutComponent } from './layouts/patient-layout/patient-layout.component';
-//import { PatientSidebarComponent } from './patient-bars/patient-sidebar/patient-sidebar.component';
+
+import { PatientService } from './shared/services/patient.service';
+import { AboutComponent } from './main/about/about.component';
+import { ContactComponent } from './main/contact/contact.component';
+import { StaffLayoutComponent } from './layouts/staff-layout/staff-layout.component';
+import { UpdatepatientComponent } from './layouts/doctor-components/patientdetails/updatepatient/updatepatient.component';
+
+
 
  //import { DoctorComponentsComponent } from './layouts/doctor-components/doctor-components.component';
 // import { DashboardComponent } from './layouts/doctor-components/dashboard/dashboard.component';
@@ -126,10 +121,35 @@ import { PatientLayoutComponent } from './layouts/patient-layout/patient-layout.
     HomeComponent,
     DoctorLayoutComponent,
     AdminLayoutComponent,
+
+    StaffLayoutComponent,
+  
+   
+    
+
+    //DispensaryComponentComponent,
+
+   
+
+  
+
     DoctorFooterComponent,
     DoctorNavbarComponent,
+
     AppointmentsComponent,
     Nav2Component,
+
+
+    AboutComponent,
+
+    ContactComponent,
+
+    
+    UpdatepatientComponent,
+
+   
+
+
     
     
     ContactComponent,
@@ -158,9 +178,13 @@ import { PatientLayoutComponent } from './layouts/patient-layout/patient-layout.
 
   ],
 
+
   
 
   providers: [SystemUsersService, RoleService, PrescriptionsService, BookappointmentService, ClinicService, HospitalService],
+
+  providers: [SystemUsersService, RoleService, PrescriptionsService, PatientService,LookClinicsService,PatientDetailsService],
+
   bootstrap: [AppComponent],
   entryComponents: [ConfirmDialogComponent]
 })

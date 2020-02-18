@@ -18,6 +18,7 @@ import * as _ from 'lodash';
      form: FormGroup = new FormGroup({
        $key: new FormControl(null),
        nic:new FormControl('', Validators.required),
+       disease: new FormControl('',Validators.required),
        medicine:new FormControl('', Validators.required),
        dose: new FormControl('', Validators.required),
       
@@ -27,6 +28,7 @@ import * as _ from 'lodash';
         this.form.setValue({
           $key: null,
           nic: '',
+          disease:'',
           medicine:'',
           dose:'',
         });
@@ -42,6 +44,7 @@ import * as _ from 'lodash';
        this.prescriptionsList.push({
         
         nic: prescriptions.nic,
+        disease: prescriptions.disease,
         medicine: prescriptions.medicine,
         dose: prescriptions.dose,
   
@@ -55,6 +58,7 @@ import * as _ from 'lodash';
         this.prescriptionsList.update(prescriptions.$key,
         {
           nic: prescriptions.nic,
+          disease:prescriptions.disease,
           medicine: prescriptions.medicine,
           dose: prescriptions.dose,
         });

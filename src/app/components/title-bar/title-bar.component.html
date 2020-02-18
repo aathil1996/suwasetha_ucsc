@@ -1,0 +1,10 @@
+<nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
+    <div class="container"><a class="navbar-brand" [routerLink]="['/']">Suwasetha.lk</a>
+        <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"></button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <a class="btn btn-primary ml-auto" role="button" *ngIf="!userStatus" [routerLink]="['/login']">Sign In</a>
+            <a class="btn btn-primary ml-auto" role="button" *ngIf="userStatus && userStatus.role === systemAdmin" [routerLink]="['/systemAdmin']">System Admin</a>
+            <a class="btn btn-primary ml-auto" role="button" *ngIf="userStatus" (click)="logout()">Logout</a>
+        </div>
+    </div>
+</nav>

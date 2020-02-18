@@ -32,7 +32,7 @@
                             <mat-error *ngIf="service.form.controls['nic'].errors?.minlength"> Minimum 10 characters should be entered.</mat-error>
                           </mat-form-field>
 
-                          <mat-form-field>
+                          <!-- <mat-form-field>
                             <mat-select formControlName="role" placeholder="User Role*">
                               
                               <ng-container *ngFor="let role of roleService.array" >
@@ -40,7 +40,7 @@
                               </ng-container>
                             </mat-select>
                             <mat-error> This is field is mandatory.</mat-error>
-                          </mat-form-field>
+                          </mat-form-field> -->
 
                           <mat-form-field>
                             <input formControlName="password" matInput placeholder="Password*" type="password">

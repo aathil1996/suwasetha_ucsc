@@ -16,11 +16,17 @@
         <mat-header-cell *matHeaderCellDef mat-sort-header>NIC</mat-header-cell>
         <mat-cell *matCellDef="let element">{{element.nic}}</mat-cell>
       </ng-container>
-    
+
+      <ng-container matColumnDef="disease" >
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Disease</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.disease}}</mat-cell>
+      </ng-container>
+
       <ng-container matColumnDef="medicine" >
         <mat-header-cell *matHeaderCellDef mat-sort-header>Medicine</mat-header-cell>
         <mat-cell *matCellDef="let element">{{element.medicine}}</mat-cell>
       </ng-container>
+
       <ng-container matColumnDef="dose" >
         <mat-header-cell *matHeaderCellDef mat-sort-header>Dosage</mat-header-cell>
         <mat-cell *matCellDef="let element">{{element.dose}}</mat-cell>

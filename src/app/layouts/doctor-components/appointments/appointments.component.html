@@ -1,70 +1,64 @@
-<div class="main-content">
-  <div class="container-fluid">
-      <div class="row">
-          <div class="col-md-12">
-            <div class="card">
-              <div class="card-header card-header-danger">
-                 <h1>View Appointments</h1>
-                 </div>
-                </div>
-           
-            <div class="mat-elevation-z8">
-              <table mat-table [dataSource]="dataSource" matSort>
-            
-            
-                <ng-container matColumnDef="code">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Code</th>
-                  <td mat-cell *matCellDef="let row"> {{row.code}} </td>
-                </ng-container>
-            
-        
-                <ng-container matColumnDef="patientId">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Patient Id</th>
-                  <td mat-cell *matCellDef="let row"> {{row.patientId}} </td>
-                </ng-container>
-            
-            
-                <ng-container matColumnDef="patientName">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Patient Name</th>
-                  <td mat-cell *matCellDef="let row" > {{row.patientName}} </td>
-                </ng-container>
-    
-                
-                 <ng-container matColumnDef="description">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Description</th>
-                  <td mat-cell *matCellDef="let row" > {{row.description}} </td>
-                </ng-container>
-    
-                 
-                 <ng-container matColumnDef="phone">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Phone number</th>
-                  <td mat-cell *matCellDef="let row" > {{row.phone}} </td>
-                </ng-container>
-    
-                <ng-container matColumnDef="date">
-                  <mat-header-cell *matHeaderCellDef>Date/Time</mat-header-cell>
-                  <td mat-cell *matCellDef="let row"> {{row.date}} </td>
-                </ng-container>\
+<div class="search-div">
+  <mat-form-field class="search-form-field" floatLabel="never">
+    <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">
+  
+  </mat-form-field>
 
-                <ng-container matColumnDef="status">
-                  <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
-                  <td mat-cell *matCellDef="let row"> {{row.status}} </td>
-                </ng-container>
+</div>
+<div class="mat-elevation-z8">
+  <mat-table [dataSource] = "listData" matSort>
     
-            
-                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumns;">
-                </tr>
-              </table>
-            
-              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
-            </div>
-    
-          </div>
-       
-    
-        </div>
-        
-        
-      </div>
-    </div>
+    <ng-container matColumnDef="age" >
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Age</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.age}}</mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="clinic" >
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Clinic</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.clinic}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="date" >
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Date</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.date}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="firstName" >
+      <mat-header-cell *matHeaderCellDef mat-sort-header>First Name</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.firstName}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="hospital" >
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Hospital</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.hospital}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="nic" >
+      <mat-header-cell *matHeaderCellDef mat-sort-header>NIC</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.nic}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="secondName" >
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Second Name</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.secondName}}</mat-cell>
+    </ng-container>
+  
+
+    <!-- mat footer loading data-->
+    <ng-container matColumnDef="loading">
+      <mat-footer-cell *matFooterCellDef colspan="7">
+        Loading Data
+      </mat-footer-cell>
+    </ng-container>
+      <!-- No data-->
+    <ng-container matColumnDef="noData">
+      <mat-footer-cell *matFooterCellDef colspan="7">
+        No Data.
+      </mat-footer-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':listData!=null}"></mat-footer-row>
+    <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(listData!=null && listData.data.length==0)}"></mat-footer-row>
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[5,10,25,100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+</div>

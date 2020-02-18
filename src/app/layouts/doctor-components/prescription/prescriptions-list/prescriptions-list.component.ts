@@ -21,7 +21,7 @@ export class PrescriptionsListComponent implements OnInit {
     ) { }
 
   listData: MatTableDataSource<any>;
-  displayedColumns: string[] = ['nic', 'medicine', 'dose','actions'];
+  displayedColumns: string[] = ['nic','disease', 'medicine','dose','actions'];
 
   @ViewChild(MatSort, {static:true}) sort: MatSort;
   @ViewChild(MatPaginator, {static:true}) paginator: MatPaginator;
@@ -43,15 +43,6 @@ export class PrescriptionsListComponent implements OnInit {
         
       }
     );
-  }
-
-  onSearchClear(){
-    this.searchKey = "";
-    this.applyFilter();
-  }
-
-  applyFilter(){
-    this.listData.filter = this.searchKey.trim().toLowerCase();
   }
 
   onCreate(){
@@ -83,4 +74,15 @@ export class PrescriptionsListComponent implements OnInit {
     });
      
   }
-}
+
+  onSearchClear(){
+    this.searchKey = "";
+    this.applyFilter();
+  }
+
+  applyFilter(){
+    this.listData.filter = this.searchKey.trim().toLowerCase();
+  }
+
+  }
+

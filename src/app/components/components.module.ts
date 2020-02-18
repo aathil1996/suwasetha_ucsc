@@ -12,6 +12,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
+
 import { BannerComponent } from 'app/banner/banner.component';
 import { HeaderComponent } from 'app/header/header.component';
 import { HowWorksComponent } from 'app/how-works/how-works.component';
@@ -22,10 +23,19 @@ import { PrescriptionsComponent } from 'app/layouts/doctor-components/prescripti
 import { PateintBarComponent } from './pateint-bar/pateint-bar.component';
 import { PatientSidebarComponent } from 'app/patient-bars/patient-sidebar/patient-sidebar.component';
 
+import { TitleBarComponent } from './title-bar/title-bar.component';
+import { LoginComponent } from 'app/login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StaffSidebarComponent} from 'app/staff-bars/staff-sidbar/staff-sidebar.component';
+import { StafBarComponent} from './staf-bar/staf-bar.component';
+
+
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   declarations: [
     FooterComponent,
@@ -34,6 +44,7 @@ import { PatientSidebarComponent } from 'app/patient-bars/patient-sidebar/patien
     DispensaryBarComponent,
     DoctorSidebarComponent,
     DoctrosBarComponent,
+
     BannerComponent,
     HeaderComponent,
     HowWorksComponent,
@@ -42,6 +53,10 @@ import { PatientSidebarComponent } from 'app/patient-bars/patient-sidebar/patien
     JobCategoriesComponent,
     PatientSidebarComponent,
     
+
+    StaffSidebarComponent,
+    StafBarComponent,
+
    
   //  DoctrosBarComponent,
     SignInComponent,
@@ -49,8 +64,13 @@ import { PatientSidebarComponent } from 'app/patient-bars/patient-sidebar/patien
     ForgotPasswordComponent,
     VerifyEmailComponent,
     DoctorSidebarComponent,
+
     PateintBarComponent,
     
+
+    TitleBarComponent,
+    LoginComponent
+
   ],
   exports: [
     FooterComponent,
@@ -59,6 +79,7 @@ import { PatientSidebarComponent } from 'app/patient-bars/patient-sidebar/patien
     DispensaryBarComponent,
     DoctorSidebarComponent,
     DoctrosBarComponent,
+
   //  DoctrosBarComponent,
     DoctorSidebarComponent,
     BannerComponent,
@@ -69,6 +90,13 @@ import { PatientSidebarComponent } from 'app/patient-bars/patient-sidebar/patien
     JobCategoriesComponent,
     PatientSidebarComponent,
     PateintBarComponent,
+
+
+    DoctorSidebarComponent,
+    TitleBarComponent,
+    LoginComponent,
+    StafBarComponent,
+    StaffSidebarComponent
 
    
   ]

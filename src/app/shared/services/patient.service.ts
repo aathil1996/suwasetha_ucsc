@@ -7,35 +7,43 @@ import { NotificationsService } from './notifications.service';
 import { PatientsComponent } from 'app/layouts/adminComponents/Patients/patients/patients.component';
 import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
 import { Patient } from 'app/layouts/adminComponents/Patients/patients';
+import { ToastrService } from 'ngx-toastr';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PatientService {
   
-  patientsList : AngularFireList<any>;
-  patientsCollection : AngularFirestoreCollection<Patient>
+  
+  //patientsCollection : AngularFirestoreCollection<Patient>
 
   constructor(private firebase: AngularFireDatabase,
     private afAuth: AngularFireAuth,
     public notificationService: NotificationsService,
-    private db:AngularFirestore
+    private toastr: ToastrService,
+    private firestore: AngularFirestore
+
+    
    ) {
-    this.patientsCollection = this.db.collection('posts', ref =>
-        ref.orderBy('published','desc')
-      )
+    // this.patientsCollection = this.db.collection('posts', ref =>
+    //     ref.orderBy('published','desc')
+    //   )
    }
 
+   patientsList : AngularFireList<any>;
+  
 
    form: FormGroup = new FormGroup({
-     $key: new FormControl(null),
+    $key: new FormControl(null),
     userName:new FormControl('', Validators.required),
     fullName: new FormControl('', Validators.required),
     nic:new FormControl('', [Validators.required, Validators.minLength(10)]),
     email: new FormControl('', [Validators.required,Validators.email]),
     tellNo: new FormControl('', [Validators.required, Validators.minLength(10)]),
     password: new FormControl('', [Validators.required, Validators.minLength(8)]),
-    profileImage: new FormControl('', [Validators.required])
+  //role: new FormControl('')
+    //profileImage: new FormControl('', [Validators.required])
    
   });
 
@@ -48,7 +56,8 @@ export class PatientService {
       email:'',
       tellNo:'',
       password:'',
-      profileImage: ''
+     
+      //profileImage: ''
      
     });
  }
@@ -77,32 +86,42 @@ insertPatient(patient){
        email: patient.email,
        tellNo: patient.tellNo,
        password: patient.password,
-     profileImage: patient.profileImage,
+       role: 'patient'
+     //profileImage: patient.profileImage,
       
    
-     });
+     })
+    
+     this.toastr.success("Patient Added");
    // this.patientsCollection.add(data)
 
-     this.form.reset();
-              this.initializeFormGroup();
-              this.notificationService.success('Submitted Successfully');
+    // this.form.reset();
+    // this.initializeFormGroup();
+    // this.notificationService.success('Submitted Successfully');
               
 
   }
   
-
-  
-
-  
-
   async addCredential(patient){
     const email  = patient.email;
     const password = patient.password;
 
     try{
-      const resp = await this.afAuth.auth.createUserWithEmailAndPassword(email,password);
+      const resp = await this.afAuth.auth.createUserWithEmailAndPassword(email,password)
+      .then((userResponse)=>{
+        let user = {
+          id: userResponse.user.uid,
+          email: userResponse.user.email,
+          role: "patient"
+
+        }
+
+        this.firestore.collection("users").add(user);
+        this.toastr.success("User Account Created")
+      })
     } catch(error){
-      this.notificationService.success(error.message);
+      this.toastr.error(error.message);
+     
     }
 
 
@@ -117,14 +136,17 @@ insertPatient(patient){
      email: patient.email,
      tellNo: patient.tellNo,
      password: patient.password,
-     profileImage: patient.profileImage
+     role: 'patient'
+     //profileImage: patient.profileImage
     
    });
+   this.toastr.success("Successfully Updated");
 
  }
 
  deletePatients($key: string){
    this.patientsList.remove($key);
+   this.toastr.warning("Details Deleted!")
  }
 
  populateForm(patient){

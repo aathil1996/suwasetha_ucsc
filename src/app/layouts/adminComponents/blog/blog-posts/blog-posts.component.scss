@@ -1,17 +1,10 @@
-body, html {
-    height: 100%;
-    margin: 0;
-  }
-  
-  .bg {
-    /* The image used */
-    // background-image: url("niyomal sir.png");
-  
-    /* Full height */
-    height: 100%; 
-  
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+section {
+  max-width: 700px;
+  margin: 2em auto;
+}
+mat-form-field {
+  width: 100%;
+}
+img {
+  width: 100%;
+}

@@ -2,21 +2,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
-
 import { DoctorLayoutComponent } from './layouts/doctor-layout/doctor-layout.component';
+import { StaffLayoutComponent } from './layouts/staff-layout/staff-layout.component';
 import { HomeComponent } from './home/home.component';
+
 import { PrescriptionComponent } from './prescription/prescription.component';
 // import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensary-layout.component';
 // import { DoctorLayoutComponent } from './layouts/doctor-layout/doctor-layout.component';
+
+
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { DispensaryLayoutComponent } from './layouts/dispensary-layout/dispensary-layout.component';
-//import { HomeComponent } from './home/home.component';
-//import { DoctorsLayoutComponent } from './layouts/doctors-layout/doctors-layout.component';
-import { LoginComponent } from './login/login.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+
 //import { BookappointmentComponent } from './bookappointment/bookappointment.component';
 //import { BookappointmentListComponent } from 'app/layouts/patient-components/bookappointment/bookappointment-list/bookappointment-list.component'
 //import { AuthGuardService as AuthGuard } from 'app/shared/services/auth-guard.service';
@@ -25,18 +25,37 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
 //import { HospitalListComponent } from 'app/layouts/patient-components/hospital/hospital-list/hospital-list.component';
 import { PatientLayoutComponent } from './layouts/patient-layout/patient-layout.component';
 
-const routes: Routes =[
+import { AboutComponent } from './main/about/about.component';
+import { ContactComponent } from './main/contact/contact.component';
+import { AuthGuardGuard } from './auth/auth-guard.guard';
+
+
+
+ const routes: Routes =[
 
 // for home page
 {
   path: '',
   component: HomeComponent
 },
+{
+  path: 'about',
+  component: AboutComponent
+},
+{
+  path: 'contact',
+  component: ContactComponent
+},
+{
+  path: 'login',
+  component: SignInComponent
+},
 
   {
     path: 'doctor',
     redirectTo: 'doctor/doctor/dashboard',
     pathMatch: 'full',
+    canActivate:[AuthGuardGuard], data:{roles: ["doctor"]}
   }, {
     path: 'doctor',
     component: DoctorLayoutComponent,
@@ -47,6 +66,7 @@ const routes: Routes =[
 
   
   }, 
+
 
   {
     path: 'patient',
@@ -62,11 +82,30 @@ const routes: Routes =[
 
   
   },
+
+  //for staff
+  {
+    path: 'staff',
+    redirectTo: 'staff/staff/patients',
+    pathMatch: 'full',
+  }, {
+    path: 'staff',
+    component: StaffLayoutComponent,
+    children: [{
+      path: '',
+      loadChildren: './layouts/staff-layout/staff-layout.module#StaffLayoutModule'
+    }] 
+
+  
+  }, 
+
 // system admin dashboard
  {
    path: 'systemAdmin',
- redirectTo: 'systemAdmin/systemAdmin/dashboard',
+ redirectTo: 'systemAdmin/systemAdmin/system-users-list',
   pathMatch: 'full',
+  canActivate:[AuthGuardGuard], data:{roles: ["systemAdmin"]}
+  
  }, 
     
   
@@ -85,6 +124,7 @@ const routes: Routes =[
     path: 'dispensaryAdmin',
   redirectTo: 'dispensaryAdmin/dispensaryAdmin/testing',
    pathMatch: 'full',
+   canActivate:[AuthGuardGuard], data:{roles: ["dispensaryAdmin"]}
   }, 
   {
     path: 'dispensaryAdmin',
@@ -95,31 +135,7 @@ const routes: Routes =[
     }]
   },
 
-  // doctor dashbaord
-
-  // {
-  //   path: 'doctors',
-  // redirectTo: 'doctors/doctors/testing2',
-  //  pathMatch: 'full',
-  // }, 
-  // {
-  //   path: 'doctors',
-  //   component: DoctorsLayoutComponent,
-  //   children: [{
-  //     path: '',
-  //     loadChildren: './layouts/doctors-layout/doctors-layout.module#DoctorsLayoutModule'
-  //   }]
-  // },
-  {
-    path: 'sign-in',
-    component: SignInComponent,
-    
-  },
-  {
-    path: 'sign-up',
-    component: SignUpComponent,
-    
-  },
+  
   {
     path: 'reset-password',
     component: ForgotPasswordComponent,
@@ -163,7 +179,8 @@ const routes: Routes =[
     CommonModule,
     BrowserModule,
     RouterModule.forRoot(routes,{
-       useHash: true
+       useHash: true,
+       scrollPositionRestoration: "enabled"
     })
   ],
   exports: [

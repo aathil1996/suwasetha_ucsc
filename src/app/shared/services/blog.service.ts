@@ -5,6 +5,8 @@ import { Post } from '../../layouts/adminComponents/blog/blog'
 import { data } from 'jquery';
 import {map} from 'rxjs/operators/map';
 import { AngularFirestoreCollection, AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +17,8 @@ export class BlogService {
   postDoc: AngularFirestoreDocument<Post>
 
   constructor( private firebase: AngularFirestore,
+    private toastr: ToastrService,
+    private router: Router,
    ) {
       this.postsCollection = this.firebase.collection('posts', ref =>
         ref.orderBy('published','desc')
@@ -48,15 +52,18 @@ export class BlogService {
     }
   
     create(data: Post) {
-      this.postsCollection.add(data)
+      this.postsCollection.add(data);
+      this.toastr.success("Post Created");
+      this.router.navigate(['systemAdmin/systemAdmin/blog-posts']);
     }
   
     delete(id: string) {
-      return this.getPost(id).delete()
+      return this.getPost(id).delete();
     }
   
     update(id: string, formData) {
-      return this.getPost(id).update(formData)
+      return this.getPost(id).update(formData);
+      this.toastr.success("Post Updated");
     }
   
   
