@@ -50,10 +50,10 @@ import { BannerComponent } from './banner/banner.component';
 import {MatDatepickerModule} from '@angular/material';
 
 //import { ClinicComponent } from 'app/layouts/patient-components/clinic/clinic.component';
-import { ContactComponent } from './contact/contact.component';
+
 
 import { DoctorsComponent } from './doctors/doctors.component';
-import { FooterComponent } from './footer/footer.component';
+
 
 //import { HospitalComponent } from 'app/layouts/patient-components/hospital/hospital.component';
 
@@ -73,10 +73,12 @@ import { PatientLayoutComponent } from './layouts/patient-layout/patient-layout.
 
 import { PatientService } from './shared/services/patient.service';
 import { AboutComponent } from './main/about/about.component';
-import { ContactComponent } from './main/contact/contact.component';
+
 import { StaffLayoutComponent } from './layouts/staff-layout/staff-layout.component';
 import { UpdatepatientComponent } from './layouts/doctor-components/patientdetails/updatepatient/updatepatient.component';
 import { BlogComponent } from './main/blog/blog.component';
+import { ContactComponent } from './main/contact/contact.component';
+
 
 
 
@@ -150,16 +152,7 @@ import { BlogComponent } from './main/blog/blog.component';
 
     
     BlogComponent,
-
-   
-
-
-    
-    
-    ContactComponent,
     DoctorsComponent,
-    FooterComponent,
-    
     IndexComponent,
     RegisterComponent,
    // DoctorComponentsComponent,
@@ -185,9 +178,9 @@ import { BlogComponent } from './main/blog/blog.component';
 
   
 
-  providers: [SystemUsersService, RoleService, PrescriptionsService, BookappointmentService, ClinicService, HospitalService],
+  providers: [SystemUsersService, RoleService, PrescriptionsService, BookappointmentService, ClinicService, HospitalService,PatientService,LookClinicsService,PatientDetailsService],
 
-  providers: [SystemUsersService, RoleService, PrescriptionsService, PatientService,LookClinicsService,PatientDetailsService],
+  
 
   bootstrap: [AppComponent],
   entryComponents: [ConfirmDialogComponent]

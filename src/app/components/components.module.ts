@@ -30,6 +30,7 @@ import { StaffSidebarComponent} from 'app/staff-bars/staff-sidbar/staff-sidebar.
 import { StafBarComponent} from './staf-bar/staf-bar.component';
 
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -70,7 +71,8 @@ import { StafBarComponent} from './staf-bar/staf-bar.component';
     
 
     TitleBarComponent,
-    LoginComponent
+    LoginComponent,
+    
 
   ],
   exports: [
