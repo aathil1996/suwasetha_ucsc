@@ -106,7 +106,7 @@ export class AuthService {
             this.currentUser = userRef.data();
             //setUserStatus
             this.setUserStatus(this.currentUser);
-            // console.log(this.userStatus)
+            console.log(this.userStatus)
             
             if(userRef.data().role == "systemAdmin") {
               this.router.navigate(["/systemAdmin"])

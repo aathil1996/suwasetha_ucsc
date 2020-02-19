@@ -73,7 +73,7 @@ export const AdminLayoutRoutes: Routes = [
     {path: 'systemAdmin/hospital-admin', component:HospitalAdminListComponent},
     {path: 'systemAdmin/clinic-admin', component:ClinicAdminListComponent},
     // { path: 'systemAdmin/user-profile',   component: UserProfileComponent },
-    // { path: 'systemAdmin/hospitals',   component: HospitalListComponent },
+    { path: 'systemAdmin/hospitals',   component: HospitalListComponent },
     // { path: 'systemAdmin/blog-posts',   component: BlogListComponent },
     // { path: 'systemAdmin/blog-posts/id', component: ArticlesComponent },
     // { path: 'systemAdmin/blogAdd', component:BlogPostsComponent }

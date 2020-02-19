@@ -17,9 +17,7 @@ export class TitleBarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.auth.userChanges();
-    this.auth.userStatusChanges.subscribe(x => this.userStatus = x);
-    console.log(this.userStatus)
+   
   }
 
 }

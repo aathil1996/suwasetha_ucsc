@@ -78,6 +78,8 @@ import { StaffLayoutComponent } from './layouts/staff-layout/staff-layout.compon
 import { UpdatepatientComponent } from './layouts/doctor-components/patientdetails/updatepatient/updatepatient.component';
 import { BlogComponent } from './main/blog/blog.component';
 import { ContactComponent } from './main/contact/contact.component';
+import { BookingComponent } from './layouts/patient-components/booking/booking.component';
+import { BookingListComponent } from './layouts/patient-components/booking-list/booking-list.component';
 
 
 
@@ -167,6 +169,7 @@ import { ContactComponent } from './main/contact/contact.component';
    PatientFooterComponent,
    PatientNavbarComponent,
   PatientLayoutComponent,
+  
 
    //PatientSidebarComponent
 

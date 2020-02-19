@@ -86,7 +86,7 @@ insertPatient(patient){
        email: patient.email,
        tellNo: patient.tellNo,
        password: patient.password,
-       role: 'patient'
+       //role: 'patient'
      //profileImage: patient.profileImage,
       
    
@@ -136,7 +136,7 @@ insertPatient(patient){
      email: patient.email,
      tellNo: patient.tellNo,
      password: patient.password,
-     role: 'patient'
+     //role: 'patient'
      //profileImage: patient.profileImage
     
    });

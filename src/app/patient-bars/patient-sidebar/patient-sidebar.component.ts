@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'app/shared/services/auth.service';
 
 declare const $: any;
 declare interface RouteInfo {
@@ -11,6 +12,7 @@ export const ROUTES: RouteInfo[] = [
     { path: 'patient/bookappointment', title: 'Appointments',  icon: 'dashboard', class: '' },
     { path: 'patient/clinic', title: 'Clinics',  icon:'person', class: '' },
     { path: 'patient/hospital', title:'Hospitals', icon:'person', class:''},
+    { path: 'patient/booking', title:'Booking', icon:'assignment', class:''},
     { path: 'patient/about', title: 'About Us',  icon:'person', class: '' },
     //{ path: 'doctor/blog-posts', title: 'Blog Posts',  icon:'person', class: '' },
     
@@ -27,7 +29,7 @@ export class PatientSidebarComponent implements OnInit {
   
   menuItems: any[];
 
-  constructor() { }
+  constructor(private auth: AuthService) { }
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
@@ -39,5 +41,10 @@ export class PatientSidebarComponent implements OnInit {
     }
     return true;
 };
+
+logout(){
+  this.auth.logout();
+}
+
 
 }

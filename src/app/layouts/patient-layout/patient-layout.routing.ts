@@ -8,6 +8,7 @@ import { AboutComponent } from '../patient-components/about/about.component';
 import { AdminLayoutModule } from '../admin-layout/admin-layout.module';
 import { BookappointmentComponent } from 'app/layouts/patient-components/bookappointment/bookappointment.component';
 import { BookappointmentListComponent } from '../patient-components/bookappointment/bookappointment-list/bookappointment-list.component';
+import { BookingListComponent } from '../patient-components/booking-list/booking-list.component';
 
 //import { PrescriptionsListComponent } from 'app/layouts/doctor-components/prescription/prescriptions-list/prescriptions-list.component';
 
@@ -65,6 +66,7 @@ export const PatientLayoutRoutes: Routes = [
     { path: 'patient/clinic',      component: ClinicListComponent },
     {path: 'patient/hospital', component:HospitalListComponent},
     { path: 'patient/bookappointment',   component: BookappointmentListComponent },
+    { path: 'patient/booking',   component: BookingListComponent },
     { path: 'patient/about',   component: AboutComponent },
     //{ path: 'doctor/blog-posts',   component: BlogPostsComponent },
    

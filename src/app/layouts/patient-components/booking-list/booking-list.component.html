@@ -1,9 +1,4 @@
-<div class="search-div">
-  <!-- <button mat-raised-button (click)="onCreate()">
-    <mat-icon>add</mat-icon>Make an Appointment
-  </button> -->
- 
-</div>
+
 <div class="mat-elevation-z8">
   <mat-form-field class="search-form-field" floatLabel="never">
     <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">
@@ -12,29 +7,41 @@
     </button>
   </mat-form-field>
   <mat-table [dataSource] = "listData" matSort>
-    
-    <ng-container matColumnDef="clinicName" >
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Clinic Name</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.clinicName}}</mat-cell>
+    <ng-container matColumnDef="hospitalName" >
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Hospital</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.hospitalName}}</mat-cell>
     </ng-container>
-
-    <ng-container matColumnDef="date" >
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Date</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.date}}</mat-cell>
+    <ng-container matColumnDef="hosCategory" >
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Category</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.hosCategory}}</mat-cell>
     </ng-container>
-
-    <ng-container matColumnDef="hospital" >
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Hospital</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.hospital}}</mat-cell>
+    <ng-container matColumnDef="hosEmail" >
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.hosEmail}}</mat-cell>
     </ng-container>
-  
+    <ng-container matColumnDef="hosTellNo" >
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Contact</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.hosTellNo}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="hospitalAddress" >
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Address</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.hospitalAddress}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="hospitalDistrict" >
+      <mat-header-cell *matHeaderCellDef mat-sort-header>District</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.hospitalDistrict}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="hospitalProvince" >
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Province</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.hospitalProvince}}</mat-cell>
+    </ng-container>
 
     <!--Actions-->
     <ng-container matColumnDef="actions" >
       <mat-header-cell *matHeaderCellDef></mat-header-cell>
       <mat-cell *matCellDef="let row">
         <button mat-icon-button (click)="onEdit(row)"><mat-icon>launch</mat-icon></button>
-        <button mat-icon-button color="warn" (click)="onDelete(row.$key)"><mat-icon>delete_outline</mat-icon></button>
+        
       </mat-cell>
     </ng-container>
     <!-- mat footer loading data-->
@@ -42,7 +49,7 @@
       <mat-footer-cell *matFooterCellDef colspan="7">
         Loading Data
       </mat-footer-cell>
-    </ng-container> 
+    </ng-container>
       <!-- No data-->
     <ng-container matColumnDef="noData">
       <mat-footer-cell *matFooterCellDef colspan="7">

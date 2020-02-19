@@ -27,6 +27,8 @@ import { AdminLayoutModule } from '../admin-layout/admin-layout.module';
 import { BookappointmentListComponent } from '../patient-components/bookappointment/bookappointment-list/bookappointment-list.component';
 import { ClinicListComponent } from 'app/layouts/patient-components/clinic/clinic-list/clinic-list.component';
 import { HospitalListComponent } from 'app/layouts/patient-components/hospital/hospital-list/hospital-list.component';
+import { BookingComponent } from '../patient-components/booking/booking.component';
+import { BookingListComponent } from '../patient-components/booking-list/booking-list.component';
 
 @NgModule({
   imports: [
@@ -52,6 +54,8 @@ import { HospitalListComponent } from 'app/layouts/patient-components/hospital/h
     ClinicListComponent,
     HospitalListComponent,
     BookappointmentListComponent,
+    BookingComponent,
+    BookingListComponent
 
   
 
@@ -62,7 +66,7 @@ import { HospitalListComponent } from 'app/layouts/patient-components/hospital/h
     NotificationsComponent,
     UpgradeComponent,*/
   ],
-  entryComponents: [BookappointmentComponent, BookappointmentListComponent]
+  entryComponents: [BookappointmentComponent, BookappointmentListComponent,BookingComponent,BookingListComponent]
 
   
 })

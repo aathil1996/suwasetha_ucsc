@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'app/shared/services/auth.service';
 
 
 declare const $: any;
@@ -25,7 +26,7 @@ export class StaffSidebarComponent implements OnInit {
 
   menuItems: any[];
 
-  constructor() { }
+  constructor(private auth: AuthService) { }
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
@@ -36,6 +37,11 @@ export class StaffSidebarComponent implements OnInit {
       }
       return true;
   };
+
+  logout(){
+    this.auth.logout();
+  }
+
 
 }
 

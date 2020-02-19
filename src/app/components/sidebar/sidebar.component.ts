@@ -10,13 +10,13 @@ declare interface RouteInfo {
 }
 export const ROUTES: RouteInfo[] = [
   // { path: 'systemAdmin/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
-  { path: 'systemAdmin/patients-list', title:'Patients', icon:'person', class:''},
-  { path: 'systemAdmin/system-users-list', title:'System Admin', icon:'person', class:''},
-  { path: 'systemAdmin/doctors', title: 'Doctors',  icon:'person', class: '' },
-  { path: 'systemAdmin/hospital-admin', title: 'Hospital Admins',  icon:'person', class: '' },
-  { path: 'systemAdmin/clinic-admin', title: 'Clinic Admins',  icon:'person', class: '' },
-  // { path: 'systemAdmin/hospitals', title: 'Hospitals',  icon:'person', class: '' },
-  { path: 'systemAdmin/blog-posts', title: 'Blog Posts',  icon:'person', class: '' },
+  { path: 'systemAdmin/patients-list', title:'Patients', icon:'accessible', class:''},
+  { path: 'systemAdmin/system-users-list', title:'System Admin', icon:'build', class:''},
+  { path: 'systemAdmin/doctors', title: 'Doctors',  icon:'assignment_ind', class: '' },
+  { path: 'systemAdmin/hospital-admin', title: 'Hospital Admins',  icon:'pan_tool', class: '' },
+  { path: 'systemAdmin/clinic-admin', title: 'Clinic Admins',  icon:'supervised_user_circle', class: '' },
+  { path: 'systemAdmin/hospitals', title: 'Hospitals',  icon:'local_hospital', class: '' },
+  { path: 'systemAdmin/blog-posts', title: 'Blog Posts',  icon:'attachment', class: '' },
   //  { path: 'systemAdmin/user-profile', title: 'User Profile',  icon:'person', class: '' },
     // { path: '/testing', title: 'Testing',  icon:'person', class: '' },
   

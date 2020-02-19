@@ -64,6 +64,7 @@ import { BlogComponent } from './main/blog/blog.component';
   }, {
     path: 'doctor',
     component: DoctorLayoutComponent,
+    canActivate:[AuthGuardGuard], data:{roles: ["doctor"]},
     children: [{
       path: '',
       loadChildren: './layouts/doctor-layout/doctor-layout.module#DoctorLayoutModule'
@@ -77,9 +78,11 @@ import { BlogComponent } from './main/blog/blog.component';
     path: 'patient',
     redirectTo: 'patient/patient/bookappointment',
     pathMatch: 'full',
+    canActivate:[AuthGuardGuard], data:{roles: ["patient"]}
   }, {
     path: 'patient',
     component: PatientLayoutComponent,
+    canActivate:[AuthGuardGuard], data:{roles: ["patient"]},
     children: [{
       path: '',
       loadChildren: './layouts/patient-layout/patient-layout.module#PatientLayoutModule'
@@ -93,9 +96,11 @@ import { BlogComponent } from './main/blog/blog.component';
     path: 'staff',
     redirectTo: 'staff/staff/patients',
     pathMatch: 'full',
+    canActivate:[AuthGuardGuard], data:{roles: ["staff"]}
   }, {
     path: 'staff',
     component: StaffLayoutComponent,
+    canActivate:[AuthGuardGuard], data:{roles: ["staff"]},
     children: [{
       path: '',
       loadChildren: './layouts/staff-layout/staff-layout.module#StaffLayoutModule'
@@ -117,6 +122,7 @@ import { BlogComponent } from './main/blog/blog.component';
   {
     path: 'systemAdmin',
     component: AdminLayoutComponent,
+    canActivate:[AuthGuardGuard], data:{roles: ["systemAdmin"]},
     children: [{
       path: '',
       loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
@@ -134,6 +140,7 @@ import { BlogComponent } from './main/blog/blog.component';
   {
     path: 'dispensaryAdmin',
     component: DispensaryLayoutComponent,
+    canActivate:[AuthGuardGuard], data:{roles: ["dispensaryAdmin"]},
     children: [{
       path: '',
       loadChildren: './layouts/dispensary-layout/dispensary-layout.module#DispensaryLayoutModule'
