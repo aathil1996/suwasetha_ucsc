@@ -3,4 +3,5 @@ export class Staff {
     nic: string;
     name: string;
     telno:string;
+    designation:string;
 }

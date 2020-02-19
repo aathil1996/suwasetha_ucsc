@@ -20,6 +20,7 @@ import * as _ from 'lodash';
        nic:new FormControl('', Validators.required),
        name:new FormControl('', Validators.required),
        telno: new FormControl('', Validators.required),
+       designation: new FormControl('', Validators.required),
       
      });
   
@@ -29,6 +30,7 @@ import * as _ from 'lodash';
           nic: '',
           name:'',
           telno:'',
+          designation:'',
         });
      }
      
@@ -44,6 +46,7 @@ import * as _ from 'lodash';
         nic: staff.nic,
         name: staff.name,
         telno: staff.telno,
+        designation: staff.designation,
   
        });
   
@@ -55,8 +58,9 @@ import * as _ from 'lodash';
         this.staffList.update(staff.$key,
         {
           nic: staff.nic,
-          medicine: staff.medicine,
-          dose: staff.dose,
+          name: staff.name,
+          telno: staff.telno,
+          designation: staff.designation,
         });
   
       }

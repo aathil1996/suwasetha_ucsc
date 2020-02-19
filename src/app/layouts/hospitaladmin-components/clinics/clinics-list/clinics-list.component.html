@@ -1,6 +1,6 @@
 <div class="search-div">
   <button mat-raised-button (click)="onCreate()">
-    <mat-icon>add</mat-icon>Create
+    <mat-icon>add</mat-icon>Create Clinics
   </button>
   <mat-form-field class="search-form-field" floatLabel="never">
     <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">
@@ -11,12 +11,9 @@
 </div>
 <div class="mat-elevation-z8">
   <mat-table [dataSource] = "listData" matSort>
-    <ng-container matColumnDef="id" >
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Clinic ID</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.id}}</mat-cell>
-    </ng-container>
+    
     <ng-container matColumnDef="date" >
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Clinic Date</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Date</mat-header-cell>
       <mat-cell *matCellDef="let element">{{element.date}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="stime" >
@@ -31,10 +28,15 @@
       <mat-header-cell *matHeaderCellDef mat-sort-header>No of Doctors Available</mat-header-cell>
       <mat-cell *matCellDef="let element">{{element.nod}}</mat-cell>
     </ng-container>
-    <!-- <ng-container matColumnDef="role" >
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Role</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.role}}</mat-cell>
-    </ng-container> -->
+    <ng-container matColumnDef="type" >
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Clinic Type</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.type}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="nos" >
+      <mat-header-cell *matHeaderCellDef mat-sort-header>No of Seats Available</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.nos}}</mat-cell>
+    </ng-container>
+  
 
     <!--Actions-->
     <ng-container matColumnDef="actions" >

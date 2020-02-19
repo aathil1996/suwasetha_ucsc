@@ -1,7 +1,7 @@
-import { Prescriptions } from './prescriptions.model';
+import { Staff } from './staff.model';
 
-describe('Prescriptions', () => {
+describe('Staff', () => {
   it('should create an instance', () => {
-    expect(new Prescriptions()).toBeTruthy();
+    expect(new Staff()).toBeTruthy();
   });
 });

@@ -1,10 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { PatientService } from 'app/shared/services/patient.service';
-import { MatDialog, MatTableDataSource, MatSort, MatPaginator, MatDialogConfig } from '@angular/material';
-import { DialogService } from 'app/shared/services/dialog.service';
-import { NotificationsService } from 'app/shared/services/notifications.service';
-import { AddClinicsComponent } from '../add-clinics/add-clinics.component';
 import { ClinicsService } from 'app/shared/services/clinics.service';
+import { MatTableDataSource, MatSort, MatPaginator, MatDialog, MatDialogConfig } from '@angular/material';
+import { NotificationsService } from 'app/shared/services/notifications.service';
+import { DialogService } from 'app/shared/services/dialog.service';
+import { ClinicsComponent } from '../add-clinics/add-clinics.component';
 
 @Component({
   selector: 'app-clinics-list',
@@ -12,18 +11,8 @@ import { ClinicsService } from 'app/shared/services/clinics.service';
   styleUrls: ['./clinics-list.component.scss']
 })
 export class ClinicsListComponent implements OnInit {
-
   searchKey: string;
   array: any;
-
-  // tslint:disable-next-line: member-ordering
-  listData: MatTableDataSource<any>;
-  // tslint:disable-next-line: member-ordering
-  displayedColumns: string[] = ['id', 'date', 'stime', 'etime', 'nod', 'actions'];
-
-  // tslint:disable-next-line: member-ordering
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
   constructor(private service: ClinicsService,
     private dialog: MatDialog,
@@ -31,11 +20,16 @@ export class ClinicsListComponent implements OnInit {
     private dialogService: DialogService
     ) { }
 
+  listData: MatTableDataSource<any>;
+  displayedColumns: string[] = [ 'date', 'stime','etime' , 'nod','type' ,'nos'];
+
+  @ViewChild(MatSort, {static:true}) sort: MatSort;
+  @ViewChild(MatPaginator, {static:true}) paginator: MatPaginator;
+
   ngOnInit() {
-    
     this.service.getClinics().subscribe(
       list => {
-        let array = list.map(item => {
+        let array = list.map(item =>{
           return {
             $key: item.key,
             ...item.payload.val()
@@ -66,7 +60,7 @@ export class ClinicsListComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = true;
     dialogConfig.width = "40%";
-    this.dialog.open(AddClinicsComponent, dialogConfig);
+    this.dialog.open(ClinicsComponent, dialogConfig);
   }
 
   onEdit(row){
@@ -75,14 +69,14 @@ export class ClinicsListComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = true;
     dialogConfig.width = "40%";
-    this.dialog.open(AddClinicsComponent, dialogConfig);
+    this.dialog.open(ClinicsComponent, dialogConfig);
   }
 
   onDelete($key){
     
-    this.dialogService.openConfirmDialog('Are you sure to delete this user?')
+    this.dialogService.openConfirmDialog('Are you sure to delete this?')
     .afterClosed().subscribe(res => {
-      if (res){
+      if(res){
         this.service.deleteClinics($key);
         this.notificationService.warn('Deleted Successfully');
       }
@@ -90,4 +84,3 @@ export class ClinicsListComponent implements OnInit {
      
   }
 }
-

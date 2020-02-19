@@ -3,7 +3,10 @@ import { StaffService } from 'app/shared/services/staff.service';
 import { NotificationsService } from 'app/shared/services/notifications.service'
 import { MatDialogRef } from '@angular/material';
 
-
+interface Designation{
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-add-staff',
@@ -12,7 +15,14 @@ import { MatDialogRef } from '@angular/material';
 })
 export class StaffComponent implements OnInit {
   
-
+  designations:Designation[]=[
+    {value:'medical assistant', viewValue:'Medical Assistant'},
+    {value:'pharmacist', viewValue:'Pharmacist'},
+    {value:'physician', viewValue:'Physician'},
+    {value:'hospitalist', viewValue:'Hospitalist'},
+    {value:'therapist', viewValue:'Therapist'},
+    {value:'tech', viewValue:'Tech'},
+  ];
 
  
   constructor(private service : StaffService,
