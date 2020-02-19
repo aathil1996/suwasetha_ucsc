@@ -7,8 +7,8 @@ import { MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-doctors',
-  templateUrl: './doctors.html',
-  styleUrls: ['./doctors.scss']
+  templateUrl: './doctors.component.html',
+  styleUrls: ['./doctors.component.scss']
 })
 export class DoctorsComponent implements OnInit {
   

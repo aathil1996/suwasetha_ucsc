@@ -16,23 +16,26 @@ export class ClinicsListComponent implements OnInit {
   searchKey: string;
   array: any;
 
+  // tslint:disable-next-line: member-ordering
+  listData: MatTableDataSource<any>;
+  // tslint:disable-next-line: member-ordering
+  displayedColumns: string[] = ['id', 'date', 'stime', 'etime', 'nod', 'actions'];
+
+  // tslint:disable-next-line: member-ordering
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+
   constructor(private service: ClinicsService,
     private dialog: MatDialog,
     private notificationService: NotificationsService,
     private dialogService: DialogService
     ) { }
 
-  listData: MatTableDataSource<any>;
-  displayedColumns: string[] = ['id', 'date', 'stime', 'etime', 'nod','actions'];
-
-  @ViewChild(MatSort, {static:true}) sort: MatSort;
-  @ViewChild(MatPaginator, {static:true}) paginator: MatPaginator;
-
   ngOnInit() {
     
     this.service.getClinics().subscribe(
       list => {
-        let array = list.map(item =>{
+        let array = list.map(item => {
           return {
             $key: item.key,
             ...item.payload.val()
@@ -79,7 +82,7 @@ export class ClinicsListComponent implements OnInit {
     
     this.dialogService.openConfirmDialog('Are you sure to delete this user?')
     .afterClosed().subscribe(res => {
-      if(res){
+      if (res){
         this.service.deleteClinics($key);
         this.notificationService.warn('Deleted Successfully');
       }
