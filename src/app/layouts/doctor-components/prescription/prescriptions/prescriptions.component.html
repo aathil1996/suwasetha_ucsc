@@ -10,6 +10,7 @@
                             <input type="hidden" formControlName="$key">
                             <mat-form-field>
                               <input formControlName="nic" matInput placeholder="NIC of Patient*">
+<<<<<<< HEAD
                               <mat-error> This is field is mandatory.</mat-error>
                               <!-- <mat-error *ngIf="service.form.controls['nic'].errors?.minlength"> Minimum 10 characters should be entered.</mat-error>
                               <mat-error *ngIf="service.form.controls['nic'].errors?.maxlength"> Maximum 12 characters should be entered.</mat-error> -->
@@ -17,6 +18,21 @@
                           
                             <mat-form-field>
                               <input formControlName="medicine" matInput placeholder="Medicine*">
+=======
+                              <mat-error *ngIf="service.form.controls['nic'].errors?.minlength"> Minimum 10 characters should be entered.</mat-error>
+                              <mat-error *ngIf="service.form.controls['nic'].errors?.maxlength"> Maximum 12 characters should be entered.</mat-error>
+                                <mat-error *ngIf="service.form.controls['nic'].errors?.required"> This is field is mandatory.</mat-error>
+                              </mat-form-field>
+
+                            <mat-form-field>
+                              <input type="text" formControlName="disease" matInput placeholder="Disease*">
+                              <mat-error *ngIf="service.form.controls['disease'].errors?.required"> This is field is mandatory.</mat-error>
+
+                            </mat-form-field>
+                          
+                            <mat-form-field>
+                              <input type="text" formControlName="medicine" matInput placeholder="Medicine*">
+>>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
                               <mat-error *ngIf="service.form.controls['medicine'].errors?.required"> This is field is mandatory.</mat-error>
 
                             </mat-form-field>

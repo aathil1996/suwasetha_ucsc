@@ -2,7 +2,11 @@
     border: 0;
     border-radius: $border-radius-base;
     padding: 0.625rem 0;
+<<<<<<< HEAD
     margin-bottom: 20px;
+=======
+   
+>>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
     @include navbar-colors($white-color, $navbar-color);
 
     &.fixed-top{

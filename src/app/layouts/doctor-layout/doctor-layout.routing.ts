@@ -7,7 +7,11 @@ import { AppointmentsComponent } from '../doctor-components/appointments/appoint
 import { BlogPostsComponent } from '../doctor-components/blog-posts/blog-posts.component';
 
 import { PrescriptionsListComponent } from 'app/layouts/doctor-components/prescription/prescriptions-list/prescriptions-list.component';
+<<<<<<< HEAD
 
+=======
+import { PatientdetailsComponent} from 'app/layouts/doctor-components/patientdetails/patientdetails.component';
+>>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 /*import { TableListComponent } from '../../table-list/table-list.component';
 import { TypographyComponent } from '../../typography/typography.component';
 import { IconsComponent } from '../../icons/icons.component';
@@ -64,6 +68,10 @@ export const DoctorLayoutRoutes: Routes = [
     { path: 'doctor/user-profile',   component: UserProfileComponent },
     { path: 'doctor/prescriptions',   component: PrescriptionsListComponent },
     { path: 'doctor/blog-posts',   component: BlogPostsComponent },
+<<<<<<< HEAD
+=======
+    {path: 'doctor/patientdetails', component:PatientdetailsComponent}
+>>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
    
    
     /*{ path: 'table-list',     component: TableListComponent },

@@ -21,7 +21,11 @@ export class PrescriptionsListComponent implements OnInit {
     ) { }
 
   listData: MatTableDataSource<any>;
+<<<<<<< HEAD
   displayedColumns: string[] = ['nic', 'medicine', 'dose','actions'];
+=======
+  displayedColumns: string[] = ['nic','disease', 'medicine','dose','actions'];
+>>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 
   @ViewChild(MatSort, {static:true}) sort: MatSort;
   @ViewChild(MatPaginator, {static:true}) paginator: MatPaginator;
@@ -45,6 +49,7 @@ export class PrescriptionsListComponent implements OnInit {
     );
   }
 
+<<<<<<< HEAD
   onSearchClear(){
     this.searchKey = "";
     this.applyFilter();
@@ -54,6 +59,8 @@ export class PrescriptionsListComponent implements OnInit {
     this.listData.filter = this.searchKey.trim().toLowerCase();
   }
 
+=======
+>>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
   onCreate(){
     this.service.initializeFormGroup();
     const dialogConfig = new MatDialogConfig();
@@ -83,4 +90,19 @@ export class PrescriptionsListComponent implements OnInit {
     });
      
   }
+<<<<<<< HEAD
 }
+=======
+
+  onSearchClear(){
+    this.searchKey = "";
+    this.applyFilter();
+  }
+
+  applyFilter(){
+    this.listData.filter = this.searchKey.trim().toLowerCase();
+  }
+
+  }
+
+>>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e

@@ -10,6 +10,10 @@ body{
   display: block;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 .hide{
     display: none;
   }
@@ -25,11 +29,20 @@ body{
 }
 .search-form-field{
   // float: right;
+<<<<<<< HEAD
   width: 60%;
   margin-left: 10px;
   padding: 5px 10px;
   background-color: #f5f5f5;
   border-radius: 5px;
+=======
+  width: 100%;
+  
+  padding: 5px 10px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+ 
+>>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 }
 
 .search-form-field div.mat-form-field-underline{

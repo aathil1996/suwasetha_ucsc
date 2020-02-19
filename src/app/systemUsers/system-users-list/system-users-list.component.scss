@@ -2,6 +2,18 @@ body{
   padding: 50px;
 }
 
+<<<<<<< HEAD
+=======
+.mat-elevation-z8{
+  padding: 50px;
+}
+
+.search-div{
+  display: block;
+}
+
+
+>>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 .hide{
     display: none;
   }
@@ -13,6 +25,7 @@ body{
 
   /*filter controls*/
 .search-div{
+<<<<<<< HEAD
   margin: 10px;
 }
 .search-form-field{
@@ -22,6 +35,18 @@ body{
   padding: 5px 10px;
   background-color: #f5f5f5;
   border-radius: 5px;
+=======
+  margin: 20px;
+}
+.search-form-field{
+  // float: right;
+  width: 100%;
+  
+  padding: 5px 10px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+ 
+>>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 }
 
 .search-form-field div.mat-form-field-underline{

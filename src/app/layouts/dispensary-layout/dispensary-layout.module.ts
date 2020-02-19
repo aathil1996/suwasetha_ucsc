@@ -23,11 +23,20 @@ import { BlogPostsComponent } from '../adminComponents/blog/blog-posts/blog-post
 import { SystemUsersListComponent } from 'app/systemUsers/system-users-list/system-users-list.component';
 import { SystemUsersComponent } from 'app/systemUsers/system-users/system-users.component';
 import { TestingComponent } from 'app/testing/testing.component';
+<<<<<<< HEAD
+=======
+import { HomeComponent } from 'app/home/home.component';
+import { PrescriptionComponent } from 'app/prescription/prescription.component';
+>>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 
 
 
 @NgModule({
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
   imports: [
     CommonModule,
     RouterModule.forChild(DispensaryLayoutRoutes),
@@ -50,7 +59,12 @@ import { TestingComponent } from 'app/testing/testing.component';
     UserProfileComponent,
     BlogPostsComponent,
     SystemUsersListComponent,
+<<<<<<< HEAD
     SystemUsersComponent
+=======
+    SystemUsersComponent,
+   PrescriptionComponent
+>>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 
    /* TableListComponent,
     TypographyComponent,

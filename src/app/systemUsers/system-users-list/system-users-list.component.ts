@@ -16,12 +16,19 @@ export class SystemUsersListComponent implements OnInit {
 
   constructor(private service: SystemUsersService,
     private dialog: MatDialog,
+<<<<<<< HEAD
     private notificationService: NotificationsService,
+=======
+>>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
     private dialogService: DialogService
     ) { }
 
   listData: MatTableDataSource<any>;
+<<<<<<< HEAD
   displayedColumns: string[] = ['userName', 'fullName', 'email', 'tellNo', 'nic', 'role', 'actions'];
+=======
+  displayedColumns: string[] = ['userName', 'fullName', 'email', 'tellNo', 'nic','actions'];
+>>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 
   @ViewChild(MatSort, {static:true}) sort: MatSort;
   @ViewChild(MatPaginator, {static:true}) paginator: MatPaginator;
@@ -78,7 +85,11 @@ export class SystemUsersListComponent implements OnInit {
     .afterClosed().subscribe(res => {
       if(res){
         this.service.deleteSystemUsers($key);
+<<<<<<< HEAD
         this.notificationService.warn('Deleted Successfully');
+=======
+        
+>>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
       }
     });
      

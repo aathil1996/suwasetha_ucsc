@@ -1,3 +1,86 @@
+<<<<<<< HEAD
 <p>
   sign-in works!
 </p>
+=======
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Login - Suwasetha.lk</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  
+</head>
+
+<body>
+    <!-- <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
+        <div class="container"><a class="navbar-brand" [routerLink]="['/']">Suwasetha.lk</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"></button>
+            <div class="collapse navbar-collapse" id="navcol-1"><a class="btn btn-primary ml-auto" role="button" [routerLink]="['/contact']">Contact Us</a></div>
+        </div>
+    </nav> -->
+    <!-- Start: Login Form Dark -->
+    <div class="login-dark">
+        <form (ngSubmit)="login(loginForm.value)" [formGroup]="loginForm">
+            <h2 class="sr-only">Login Form</h2>
+            <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+            <div class="form-group">
+                <input class="form-control" type="email" name="email" formControlName="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" name="password" formControlName="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-block" type="submit" [disabled]="!loginForm.valid">Log In</button>
+                <button class="btn btn-warning btn-block" type="submit" [routerLink]="['/']">Back to Home</button>
+            </div>
+            <a class="forgot" href="#">Forgot your email or password?</a></form>
+           
+    </div>
+    <!-- End: Login Form Dark -->
+    <!-- Start: Footer Dark -->
+    <!-- <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <!-- Start: About 
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Login</h3>
+                        <ul>
+                            <li><a [routerLink]="['/']">Home</a></li>
+                            <li><a [routerLink]="['/about']">About Us</a></li>
+                            <li><a [routerLink]="['/contact']">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <!-- End: About -->
+                    <!-- Start: Footer Text 
+                    <div class="col-md-6 item text">
+                        <h3>Suwasetha.lk</h3>
+                        <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                    </div>
+                    <!-- End: Footer Text -->
+                    <!-- Start: Social Icons 
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-github"></i></a></div>
+                    <!-- End: Social Icons 
+                </div>
+                <!-- Start: Copyright 
+                <p class="copyright">Suwasetha.lk © 2020</p>
+                <!-- End: Copyright 
+            </div>
+        </footer>
+    </div> -->
+    <!-- End: Footer Dark -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+</body>
+
+</html>
+>>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e

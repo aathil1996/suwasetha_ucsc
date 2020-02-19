@@ -3,6 +3,10 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { BlogService } from 'app/shared/services/blog.service';
 import { Post } from '../blog';
 import { AuthService } from 'app/shared/services/auth.service';
+<<<<<<< HEAD
+=======
+import { ToastrService } from 'ngx-toastr';
+>>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 
 @Component({
   selector: 'app-articles',
@@ -18,7 +22,12 @@ export class ArticlesComponent implements OnInit {
     private route: ActivatedRoute,
     private service: BlogService,
     private router: Router,
+<<<<<<< HEAD
     public auth: AuthService
+=======
+    public auth: AuthService,
+    private toastr: ToastrService
+>>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 
 
   ) { }
@@ -45,13 +54,22 @@ export class ArticlesComponent implements OnInit {
     };
     const id = this.route.snapshot.paramMap.get('id')
     this.service.update(id,formData)
+<<<<<<< HEAD
+=======
+    this.toastr.success("Post Updated")
+>>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
     this.editing = false;
   }
 
   delete(){
     const id = this.route.snapshot.paramMap.get('id')
     this.service.delete(id)
+<<<<<<< HEAD
     this.router.navigate(["/blog-posts"])
+=======
+    this.toastr.error("Post Deleted")
+    this.router.navigate(['systemAdmin/systemAdmin/blog-posts'])
+>>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
   }
 
 

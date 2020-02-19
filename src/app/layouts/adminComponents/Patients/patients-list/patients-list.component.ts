@@ -2,7 +2,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { PatientService } from 'app/shared/services/patient.service';
 import { MatDialog, MatTableDataSource, MatSort, MatPaginator, MatDialogConfig } from '@angular/material';
 import { DialogService } from 'app/shared/services/dialog.service';
+<<<<<<< HEAD
 import { NotificationsService } from 'app/shared/services/notifications.service';
+=======
+>>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 import { PatientsComponent } from '../patients/patients.component';
 
 @Component({
@@ -17,8 +20,12 @@ export class PatientsListComponent implements OnInit {
 
   constructor(private service: PatientService,
     private dialog: MatDialog,
+<<<<<<< HEAD
     private notificationService: NotificationsService,
     private dialogService: DialogService
+=======
+     private dialogService: DialogService
+>>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
     ) { }
 
   listData: MatTableDataSource<any>;
@@ -80,7 +87,11 @@ export class PatientsListComponent implements OnInit {
     .afterClosed().subscribe(res => {
       if(res){
         this.service.deletePatients($key);
+<<<<<<< HEAD
         this.notificationService.warn('Deleted Successfully');
+=======
+        
+>>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
       }
     });
      

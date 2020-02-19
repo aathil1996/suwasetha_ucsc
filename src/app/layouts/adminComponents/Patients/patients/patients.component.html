@@ -3,6 +3,7 @@
   <span class="fill-remaining-space"></span>
   <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon >clear</mat-icon></button>
 </mat-toolbar>
+<<<<<<< HEAD
                 
 <form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()"> 
                     
@@ -48,10 +49,19 @@
   </div></div>  -->
   <div class="controls-container">
                           <!-- <input type="hidden" formControlName="$key"> -->
+=======
+         
+<form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()"> 
+                    
+
+  <div class="controls-container">
+                          <input type="hidden" formControlName="$key">
+>>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
                           <mat-form-field>
                             <input formControlName="userName" matInput placeholder="User Name*">
                             <mat-error> This is field is mandatory.</mat-error>
                           </mat-form-field>
+<<<<<<< HEAD
                           <!-- <mat-form-field formGroupName="profileImage">
                             <img [src]="imageSource" width="350px" height="250px">
                             <label for="profileImage">Profile Image</label>
@@ -59,6 +69,9 @@
                             <input formControlName="profileImage" id="md-input-file" type="file" name="profileImage" >
                             <mat-error> This is field is mandatory.</mat-error>
                           </mat-form-field> -->
+=======
+                         
+>>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
                           <mat-form-field>
                             <input formControlName="fullName" matInput placeholder="Full Name*">
                             <mat-error> This is field is mandatory.</mat-error>

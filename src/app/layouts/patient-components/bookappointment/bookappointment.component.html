@@ -1,0 +1,66 @@
+<mat-toolbar>
+  <span>{{service.form.controls['$key'].value?"Modify Appointment":"New Appointment"}}</span>
+  <span class="fill-remaining-space"></span>
+  <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon >clear</mat-icon></button>
+</mat-toolbar>
+                
+<form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()">
+                    
+    <div class="controls-container">
+                          <input type="hidden" formControlName="$key">
+                          <mat-form-field>
+                            <input formControlName="firstName" matInput placeholder="First Name*">
+                            <mat-error> This is field is mandatory.</mat-error>
+                            <!-- <mat-error *ngIf="service.form.controls['nic'].errors?.minlength"> Minimum 10 characters should be entered.</mat-error>
+                            <mat-error *ngIf="service.form.controls['nic'].errors?.maxlength"> Maximum 12 characters should be entered.</mat-error> -->
+                          </mat-form-field>
+                        
+                          <mat-form-field>
+                            <input formControlName="secondName" matInput placeholder="Second Name*">
+                            <mat-error *ngIf="service.form.controls['secondName'].errors?.required"> This is field is mandatory.</mat-error>
+
+                          </mat-form-field>
+                          <mat-form-field>
+                            <input type="number" formControlName="age" matInput placeholder="Age*" required maxlength="120" minlength="0" >
+              <mat-error *ngIf="service.form.controls['age'].errors?.required"> This is field is mandatory.</mat-error>
+              <mat-error *ngIf="service.form.controls['age'].errors?.minlength"> Minimum age is 0 years.</mat-error>
+                            <mat-error *ngIf="service.form.controls['age'].errors?.maxlength"> Maximum age is 120 years.</mat-error>
+            </mat-form-field>
+            
+            <mat-form-field>
+              <input formControlName="nic" matInput placeholder="NIC*" required minlength="10" maxlength="12">
+              <mat-error *ngIf="service.form.controls['nic'].errors?.minlength"> Minimum 10 characters should be entered.</mat-error>
+                            <mat-error *ngIf="service.form.controls['nic'].errors?.maxlength"> Maximum 12 characters should be entered.</mat-error>
+              <mat-error *ngIf="service.form.controls['nic'].errors?.required"> This is field is mandatory.</mat-error>
+              </mat-form-field>
+
+              <!-- <mat-form-field>
+              <input matInput [matDatepicker]="date">
+              <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
+              <mat-datepicker #date></mat-datepicker>
+              </mat-form-field> -->
+
+              <mat-form-field>
+              <input type="date" formControlName="date" matInput placeholder="Date*">
+              <mat-error *ngIf="service.form.controls['date'].errors?.required"> This is field is mandatory.</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+              <input formControlName="hospital" matInput placeholder="Hospital*">
+              <mat-error *ngIf="service.form.controls['hospital'].errors?.required"> This is field is mandatory.</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+              <input formControlName="clinic" matInput placeholder="Clinic*">
+              <mat-error *ngIf="service.form.controls['clinic'].errors?.required"> This is field is mandatory.</mat-error>
+              </mat-form-field>
+
+                  
+                          <div class="button-row">
+                            <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid">Submit</button>
+                            <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
+                          </div>
+    </div>
+                   
+</form>
+  

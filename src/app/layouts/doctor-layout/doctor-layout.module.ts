@@ -26,6 +26,11 @@ import { DashboardComponent } from 'app/layouts/doctor-components/dashboard/dash
 import { UserProfileComponent} from 'app/layouts/doctor-components/user-profile/user-profile.component';
 import { PrescriptionsListComponent} from 'app/layouts/doctor-components/prescription/prescriptions-list/prescriptions-list.component';
 import { AdminLayoutModule } from '../admin-layout/admin-layout.module';
+<<<<<<< HEAD
+=======
+import { PatientdetailsComponent} from 'app/layouts/doctor-components/patientdetails/patientdetails.component';
+
+>>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 
 @NgModule({
   imports: [
@@ -50,7 +55,13 @@ import { AdminLayoutModule } from '../admin-layout/admin-layout.module';
     UserProfileComponent,
     BlogPostsComponent,
     PrescriptionsComponent,
+<<<<<<< HEAD
     PrescriptionsListComponent
+=======
+    PrescriptionsListComponent,
+    PatientdetailsComponent
+   
+>>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 
   
 
