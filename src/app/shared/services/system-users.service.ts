@@ -2,12 +2,10 @@ import { Injectable } from '@angular/core';
 import {AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import * as _ from 'lodash';
-import { SystemUsers } from '../system-users.model';
-import { Scheduler, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { ToastrService } from 'ngx-toastr';
+import { NotificationsService } from './notifications.service';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +16,8 @@ export class SystemUsersService {
   constructor(private firebase: AngularFireDatabase,
     private afAuth: AngularFireAuth,
     private firestore: AngularFirestore,
-    private toastr: ToastrService) {
+    private toastr: ToastrService,
+    private notification: NotificationsService) {
     
    }
 
@@ -66,7 +65,8 @@ export class SystemUsersService {
      // role: systemUser.role
 
      });
-     this.toastr.success("System Admin Added");
+     this.notification.success("System Admin Added")
+    //  this.toastr.success("System Admin Added");
 
     
 
@@ -79,19 +79,6 @@ export class SystemUsersService {
        const password = systemUser.password;
 
        try{
-         const resp = await this.afAuth.auth.createUserWithEmailAndPassword(email,password)
-          .then((userResponse)=>{
-            let user = {
-              id: userResponse.user.uid,
-              email: userResponse.user.email,
-              role: "systemAdmin"
-
-            }
-
-            this.firestore.collection("users").add(user);
-            this.toastr.success("User Account Created")
-            
-          })
 
          
        } catch(error){
@@ -113,13 +100,15 @@ export class SystemUsersService {
         password: systemUser.password,
         //role: systemUser.role,
       });
-      this.toastr.success("Successfully Updated");
+      this.notification.success("Successfully Updated");
+      // this.toastr.success("Successfully Updated");
 
     }
 
     deleteSystemUsers($key: string){
       this.systemAdminsList.remove($key);
-      this.toastr.warning("Details Deleted!")
+      this.notification.warn("Details Deleted!");
+      // this.toastr.warning("Details Deleted!")
     }
 
     populateForm(systemUser){

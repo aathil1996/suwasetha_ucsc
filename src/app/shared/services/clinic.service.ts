@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import * as _ from 'lodash';
-import { app } from 'firebase';
 
 @Injectable({
     providedIn: 'root'

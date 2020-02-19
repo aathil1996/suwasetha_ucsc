@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { NotificationsService } from './notifications.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HospitalService {
 
-  constructor(private firebase: AngularFireDatabase) { }
+  constructor(private firebase: AngularFireDatabase,
+    private notification: NotificationsService) { }
 
   hospitalsList: AngularFireList<any>;
 
@@ -52,6 +54,7 @@ insertHospital(hospital){
     hospitalDistrict: hospital.hospitalDistrict
 
   });
+  this.notification.success("Hospital added successfully");
 
   }
 
@@ -67,10 +70,13 @@ insertHospital(hospital){
       hospitalDistrict: hospital.hospitalDistrict
     });
 
+    this.notification.success("Successfully Updated")
+
   }
 
   deleteHospital($key: string){
     this.hospitalsList.remove($key);
+    this.notification.warn("Hospital Deleted")
   }
 
   populateForm(hospital){

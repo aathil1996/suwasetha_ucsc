@@ -20,7 +20,7 @@ export class PatientService {
 
   constructor(private firebase: AngularFireDatabase,
     private afAuth: AngularFireAuth,
-    public notificationService: NotificationsService,
+    public notification: NotificationsService,
     private toastr: ToastrService,
     private firestore: AngularFirestore
 
@@ -92,7 +92,7 @@ insertPatient(patient){
    
      })
     
-     this.toastr.success("Patient Added");
+     this.notification.success("Patient Added");
    // this.patientsCollection.add(data)
 
     // this.form.reset();
@@ -117,7 +117,7 @@ insertPatient(patient){
         }
 
         this.firestore.collection("users").add(user);
-        this.toastr.success("User Account Created")
+        this.notification.success("User Account Created")
       })
     } catch(error){
       this.toastr.error(error.message);
@@ -140,13 +140,13 @@ insertPatient(patient){
      //profileImage: patient.profileImage
     
    });
-   this.toastr.success("Successfully Updated");
+   this.notification.success("Successfully Updated");
 
  }
 
  deletePatients($key: string){
    this.patientsList.remove($key);
-   this.toastr.warning("Details Deleted!")
+   this.notification.warn("Details Deleted!")
  }
 
  populateForm(patient){

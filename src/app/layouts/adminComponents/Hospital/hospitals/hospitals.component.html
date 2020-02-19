@@ -31,7 +31,13 @@
                             <mat-error> This is field is mandatory.</mat-error>
                           </mat-form-field>
                           <mat-form-field>
-                            <input formControlName="hospitalProvince" matInput placeholder="Province*">
+                            <mat-label>Province</mat-label>
+                            <mat-select formControlName="hospitalProvince">
+                              <mat-option *ngFor="let province of provinces" [value]="province.value">
+                                {{province.viewValue}}
+                              </mat-option>
+                            </mat-select>
+                            <!-- <input formControlName="hospitalProvince" matInput placeholder="Province*"> -->
                             <mat-error> This is field is mandatory.</mat-error>
                           </mat-form-field>
                          <mat-form-field>

@@ -43,4 +43,13 @@ export class BookingComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  bookingOpd(){
+    var total = 50;
+    while(total<=1){
+      
+      total--;
+
+    }
+  }
+
 }

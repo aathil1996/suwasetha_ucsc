@@ -4,6 +4,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { ToastrService } from 'ngx-toastr';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { NotificationsService } from './notifications.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,8 @@ export class HospitalAdminService {
     private firebase: AngularFireDatabase,
     private afAuth: AngularFireAuth,
     private firestore: AngularFirestore,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private notification: NotificationsService
   ) { }
 
   hospitalAdminsList: AngularFireList<any>;
@@ -64,7 +66,8 @@ export class HospitalAdminService {
      // role: hospitalAdmin.role
 
      });
-     this.toastr.success("Hospital Admin Added");
+
+     this.notification.success("Hospital Admin Added");
 
     
 
@@ -87,7 +90,7 @@ export class HospitalAdminService {
             }
 
             this.firestore.collection("users").add(user);
-            this.toastr.success("User Account Created")
+            this.notification.success("User Account Created")
             
           })
 
@@ -112,13 +115,13 @@ export class HospitalAdminService {
         password: hospitalAdmin.password,
         //role: hospitalAdmin.role,
       });
-      this.toastr.success("Successfully Updated");
+      this.notification.success("Successfully Updated");
 
     }
 
     deleteHospitalAdmin($key: string){
       this.hospitalAdminsList.remove($key);
-      this.toastr.warning("Details Deleted!")
+      this.notification.warn("Details Deleted!")
     }
 
     populateForm(hospitalAdmin){

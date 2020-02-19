@@ -1,12 +1,10 @@
 import { Injectable } from '@angular/core';
-import { AngularFireList, AngularFireDatabase } from '@angular/fire/database';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { Post } from '../../layouts/adminComponents/blog/blog'
-import { data } from 'jquery';
 import {map} from 'rxjs/operators/map';
 import { AngularFirestoreCollection, AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { NotificationsService } from './notifications.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +15,7 @@ export class BlogService {
   postDoc: AngularFirestoreDocument<Post>
 
   constructor( private firebase: AngularFirestore,
-    private toastr: ToastrService,
+    private notification: NotificationsService,
     private router: Router,
    ) {
       this.postsCollection = this.firebase.collection('posts', ref =>
@@ -53,7 +51,8 @@ export class BlogService {
   
     create(data: Post) {
       this.postsCollection.add(data);
-      this.toastr.success("Post Created");
+      this.notification.success("Post Created")
+      // this.toastr.success("Post Created");
       this.router.navigate(['systemAdmin/systemAdmin/blog-posts']);
     }
   
@@ -63,7 +62,8 @@ export class BlogService {
   
     update(id: string, formData) {
       return this.getPost(id).update(formData);
-      this.toastr.success("Post Updated");
+      this.notification.success("Post Updated")
+     
     }
   
   

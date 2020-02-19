@@ -4,6 +4,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { ToastrService } from 'ngx-toastr';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { NotificationsService } from './notifications.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,8 @@ export class DoctorsService {
     private firebase: AngularFireDatabase,
     private afAuth: AngularFireAuth,
     private firestore: AngularFirestore,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService,
+    private notification: NotificationsService) { }
 
     doctorsList: AngularFireList<any>;
 
@@ -62,7 +64,8 @@ insertDoctor(doctor){
   // role: doctor.role
 
   });
-  this.toastr.success("Doctor Added");
+  this.notification.success("Doctor Added");
+  // this.toastr.success("Doctor Added");
 }
 async addCredential(doctor){
   const email  = doctor.email;
@@ -79,7 +82,8 @@ async addCredential(doctor){
        }
 
        this.firestore.collection("users").add(user);
-       this.toastr.success("User Account Created")
+       this.notification.success("User Account Created")
+      //  this.toastr.success("User Account Created")
        
      })
 
@@ -104,13 +108,15 @@ updateDoctors(doctor){
    password: doctor.password,
    //role: doctor.role,
  });
- this.toastr.success("Successfully Updated");
+ this.notification.success("Successfully Updated")
+//  this.toastr.success("Successfully Updated");
 
 }
 
 deleteDoctors($key: string){
  this.doctorsList.remove($key);
- this.toastr.warning("Details Deleted!")
+ this.notification.warn("Details Deleted!");
+//  this.toastr.warning("Details Deleted!")
 }
 
 populateForm(doctor){

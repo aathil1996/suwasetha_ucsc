@@ -11,13 +11,6 @@ export class BookingOpdService {
 
   bookingList: AngularFireList<any>;
 
-  form: FormGroup = new FormGroup({
-    $key: new FormControl(null),
-    hospitalName:new FormControl('', Validators.required),
-    hosCategory: new FormControl('', Validators.required),
-    hospitalAddress:new FormControl('', Validators.required),
-    
-    
-  });
+  
 
 }
