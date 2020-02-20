@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-import { Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
-import * as firebase from 'firebase/app'
-=======
 import { Injectable, NgZone } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app'
@@ -11,7 +6,6 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { ToastrService } from 'ngx-toastr';
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 
 @Injectable({
   providedIn: 'root'
@@ -19,10 +13,6 @@ import { ToastrService } from 'ngx-toastr';
 export class AuthService {
 
   authState : any = null
-<<<<<<< HEAD
-
-  constructor(public afAuth: AngularFireAuth) {
-=======
   public currentUser: any;
   public userStatus: string;
   public userStatusChanges: BehaviorSubject<string> = new BehaviorSubject<string>(this.userStatus)
@@ -39,7 +29,6 @@ export class AuthService {
      private firestore: AngularFirestore,
      private ngZone: NgZone,
      private toastr: ToastrService) {
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
     this.afAuth.authState.subscribe(data => this.authState = data)
    }
 
@@ -51,10 +40,6 @@ export class AuthService {
      return this.authenticated ? this.authState.uid: null
    }
 
-<<<<<<< HEAD
-  login(){
-    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider)
-=======
 
   login(email: string, password: string){
     this.afAuth.auth.signInWithEmailAndPassword(email, password)
@@ -95,13 +80,10 @@ export class AuthService {
     }). catch((err) =>{
       this.toastr.error(err);
     })
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
   }
 
   logout(){
     this.afAuth.auth.signOut()
-<<<<<<< HEAD
-=======
     .then(()=>{
       this.toastr.success("user signed Out successfully");
       
@@ -156,6 +138,5 @@ export class AuthService {
         })
       }
     })
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
   }
 }

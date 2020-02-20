@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-import { Component, OnInit } from '@angular/core';
-=======
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AppointmentsService } from 'app/shared/services/appointments.service';
 import { NotificationsService } from 'app/shared/services/notifications.service';
@@ -10,7 +7,6 @@ import { DialogService } from 'app/shared/services/dialog.service';
 
 
 
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 
 @Component({
   selector: 'app-appointments',
@@ -19,14 +15,6 @@ import { DialogService } from 'app/shared/services/dialog.service';
 })
 export class AppointmentsComponent implements OnInit {
 
-<<<<<<< HEAD
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
-=======
   searchKey: string;
   array: any;
 
@@ -73,4 +61,3 @@ export class AppointmentsComponent implements OnInit {
   }
 
 
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e

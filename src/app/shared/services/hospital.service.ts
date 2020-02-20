@@ -1,22 +1,15 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-<<<<<<< HEAD
-=======
 import { NotificationsService } from './notifications.service';
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 
 @Injectable({
   providedIn: 'root'
 })
 export class HospitalService {
 
-<<<<<<< HEAD
-  constructor(private firebase: AngularFireDatabase) { }
-=======
   constructor(private firebase: AngularFireDatabase,
     private notification: NotificationsService) { }
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 
   hospitalsList: AngularFireList<any>;
 
@@ -61,10 +54,7 @@ insertHospital(hospital){
     hospitalDistrict: hospital.hospitalDistrict
 
   });
-<<<<<<< HEAD
-=======
   this.notification.success("Hospital added successfully");
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 
   }
 
@@ -80,19 +70,13 @@ insertHospital(hospital){
       hospitalDistrict: hospital.hospitalDistrict
     });
 
-<<<<<<< HEAD
-=======
     this.notification.success("Successfully Updated")
 
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
   }
 
   deleteHospital($key: string){
     this.hospitalsList.remove($key);
-<<<<<<< HEAD
-=======
     this.notification.warn("Hospital Deleted")
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
   }
 
   populateForm(hospital){

@@ -6,10 +6,7 @@ import { AuthService } from 'app/shared/services/auth.service';
 import { Observable } from 'rxjs';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { finalize } from 'rxjs/operators';
-<<<<<<< HEAD
-=======
 import { ToastrService } from 'ngx-toastr';
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 
 @Component({
   selector: 'app-blog-posts',
@@ -30,12 +27,8 @@ export class BlogPostsComponent implements OnInit {
   constructor(
     private service: BlogService,
     private auth: AuthService,
-<<<<<<< HEAD
-    private storage: AngularFireStorage
-=======
     private storage: AngularFireStorage,
     private toastr: ToastrService
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
   ) { }
 
   ngOnInit() {
@@ -51,18 +44,11 @@ export class BlogPostsComponent implements OnInit {
       title: this.title
     };
     this.service.create(data)
-<<<<<<< HEAD
-    this.title = ''
-    this.content = ''
-    this.buttonText = "Post Created"
-    setTimeout(() => (this.buttonText = "Create Post"), 3000);
-=======
     this.image = ''
     this.title = ''
     this.content = ''
     
     
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
   }
 
   uploadImage(event) {

@@ -10,9 +10,10 @@
                           <input type="hidden" formControlName="$key">
                           <mat-form-field>
                             <input formControlName="nic" matInput placeholder="NIC of Staff Member*">
-                            <mat-error> This is field is mandatory.</mat-error>
-                            <!-- <mat-error *ngIf="service.form.controls['nic'].errors?.minlength"> Minimum 10 characters should be entered.</mat-error>
-                            <mat-error *ngIf="service.form.controls['nic'].errors?.maxlength"> Maximum 12 characters should be entered.</mat-error> -->
+                            <!-- <mat-error> This is field is mandatory.</mat-error> -->
+                            <mat-error *ngIf="service.form.controls['nic'].errors?.minlength"> Minimum 10 characters should be entered.</mat-error>
+                              <mat-error *ngIf="service.form.controls['nic'].errors?.maxlength"> Maximum 12 characters should be entered.</mat-error>
+                                <!-- <mat-error *ngIf="service.form.controls['nic'].errors?.required"> This is field is mandatory.</mat-error> -->
                           </mat-form-field>
                         
                           <mat-form-field>

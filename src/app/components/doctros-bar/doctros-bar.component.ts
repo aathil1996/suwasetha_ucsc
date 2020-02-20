@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-=======
 import { AuthService } from 'app/shared/services/auth.service';
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 declare const $: any;
 declare interface RouteInfo {
     path: string;
@@ -36,11 +33,7 @@ export class DoctrosBarComponent implements OnInit {
 
   menuItems: any[];
 
-<<<<<<< HEAD
-  constructor() { }
-=======
   constructor(private auth: AuthService) { }
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
@@ -53,12 +46,9 @@ export class DoctrosBarComponent implements OnInit {
     return true;
 };
 
-<<<<<<< HEAD
-=======
 logout(){
   this.auth.logout();
 }
 
 
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 }

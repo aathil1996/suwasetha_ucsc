@@ -1,20 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-=======
 import { AuthService } from 'app/shared/services/auth.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
-<<<<<<< HEAD
-  styleUrls: ['./sign-in.component.scss']
-})
-export class SignInComponent implements OnInit {
-
-  constructor() { }
-=======
   
   styleUrls: ['./sign-in.component.scss',
 
@@ -40,7 +30,6 @@ export class SignInComponent implements OnInit {
   login(formData: FormData){
     this.auth.login(formData["email"], formData["password"]);
   }
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 
   ngOnInit() {
   }

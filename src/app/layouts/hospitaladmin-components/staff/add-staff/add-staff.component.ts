@@ -16,7 +16,7 @@ interface Designation{
 export class StaffComponent implements OnInit {
   
   designations:Designation[]=[
-    {value:'medical assistant', viewValue:'Medical Assistant'},
+    {value:'medical-assistant', viewValue:'Medical-Assistant'},
     {value:'pharmacist', viewValue:'Pharmacist'},
     {value:'physician', viewValue:'Physician'},
     {value:'hospitalist', viewValue:'Hospitalist'},

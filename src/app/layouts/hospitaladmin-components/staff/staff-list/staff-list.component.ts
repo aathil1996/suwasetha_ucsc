@@ -21,7 +21,7 @@ export class StaffListComponent implements OnInit {
     ) { }
 
   listData: MatTableDataSource<any>;
-  displayedColumns: string[] = ['nic', 'name', 'telno','actions'];
+  displayedColumns: string[] = ['nic', 'name', 'telno','designation','actions'];
 
   @ViewChild(MatSort, {static:true}) sort: MatSort;
   @ViewChild(MatPaginator, {static:true}) paginator: MatPaginator;
@@ -68,7 +68,7 @@ export class StaffListComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = true;
-    dialogConfig.width = "40%";
+    dialogConfig.width = "50%";
     this.dialog.open(StaffComponent, dialogConfig);
   }
 

@@ -12,10 +12,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
-<<<<<<< HEAD
 import { HosAdminBarComponent } from './hosadmin-bar/hosadmin-bar.component';
 import { HosAdminSidebarComponent } from '../../app/hosadmin-bars/hosadmin-sidebar/hosadmin-sidebar.component';
-=======
 
 import { BannerComponent } from 'app/banner/banner.component';
 import { HeaderComponent } from 'app/header/header.component';
@@ -34,17 +32,13 @@ import { StaffSidebarComponent} from 'app/staff-bars/staff-sidbar/staff-sidebar.
 import { StafBarComponent} from './staf-bar/staf-bar.component';
 
 
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-<<<<<<< HEAD
-=======
     FormsModule,
     ReactiveFormsModule,
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
   ],
   declarations: [
     FooterComponent,
@@ -53,8 +47,6 @@ import { StafBarComponent} from './staf-bar/staf-bar.component';
     DispensaryBarComponent,
     DoctorSidebarComponent,
     DoctrosBarComponent,
-<<<<<<< HEAD
-=======
 
     BannerComponent,
     HeaderComponent,
@@ -69,7 +61,6 @@ import { StafBarComponent} from './staf-bar/staf-bar.component';
     
     StafBarComponent,
 
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
    
   //  DoctrosBarComponent,
     SignInComponent,
@@ -77,10 +68,8 @@ import { StafBarComponent} from './staf-bar/staf-bar.component';
     ForgotPasswordComponent,
     VerifyEmailComponent,
     DoctorSidebarComponent,
-<<<<<<< HEAD
     HosAdminBarComponent,
-    HosAdminSidebarComponent
-=======
+    HosAdminSidebarComponent,
 
     PateintBarComponent,
     
@@ -89,21 +78,18 @@ import { StafBarComponent} from './staf-bar/staf-bar.component';
     LoginComponent,
     
 
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
   ],
   exports: [
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
     DispensaryBarComponent,
-    DoctorSidebarComponent,
+    
     DoctrosBarComponent,
-<<<<<<< HEAD
   //  DoctrosBarComponent,
-    DoctorSidebarComponent,
+   
     HosAdminBarComponent,
-    HosAdminSidebarComponent
-=======
+    HosAdminSidebarComponent,
 
   //  DoctrosBarComponent,
     DoctorSidebarComponent,
@@ -117,13 +103,12 @@ import { StafBarComponent} from './staf-bar/staf-bar.component';
     PateintBarComponent,
 
 
-    DoctorSidebarComponent,
+    
     TitleBarComponent,
     LoginComponent,
     StafBarComponent,
     StaffSidebarComponent
 
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
    
   ]
 })

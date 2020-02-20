@@ -29,15 +29,12 @@ import { PatientsComponent } from '../adminComponents/Patients/patients/patients
 import { PatientsListComponent } from '../adminComponents/Patients/patients-list/patients-list.component';
 import { BlogListComponent } from '../adminComponents/blog/blog-list/blog-list.component';
 import { ArticlesComponent } from '../adminComponents/blog/articles/articles.component';
-<<<<<<< HEAD
-=======
 import { DoctorsListComponent } from '../adminComponents/doctors-list/doctors-list.component';
 import { DoctorsComponent } from '../adminComponents/doctors/doctors.component';
 import { HospitalAdminComponent } from '../adminComponents/hospital-admin/hospital-admin.component';
 import { HospitalAdminListComponent } from '../adminComponents/hospital-admin-list/hospital-admin-list.component';
 import { ClinicAdminComponent } from '../adminComponents/clinic-admin/clinic-admin.component';
 import { ClinicAdminListComponent } from '../adminComponents/clinic-admin-list/clinic-admin-list.component';
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 @NgModule({
   imports: [
     CommonModule,
@@ -70,15 +67,12 @@ import { ClinicAdminListComponent } from '../adminComponents/clinic-admin-list/c
     HospitalListComponent,
     PatientsComponent,
     PatientsListComponent,
-<<<<<<< HEAD
-=======
     DoctorsListComponent,
     DoctorsComponent,
     HospitalAdminComponent,
     HospitalAdminListComponent,
     ClinicAdminComponent,
     ClinicAdminListComponent
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
     
 
    /* TableListComponent,
@@ -89,11 +83,7 @@ import { ClinicAdminListComponent } from '../adminComponents/clinic-admin-list/c
     UpgradeComponent,*/
   ],
   entryComponents: [SystemUsersComponent, HospitalsComponent, PatientsComponent, BlogPostsComponent, BlogListComponent,
-<<<<<<< HEAD
-    ArticlesComponent,]
-=======
     ArticlesComponent,DoctorsComponent, HospitalAdminComponent, ClinicAdminComponent]
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
   
 })
 

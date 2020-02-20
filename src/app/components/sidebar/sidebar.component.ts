@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-=======
 import { AuthService } from 'app/shared/services/auth.service';
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 
 declare const $: any;
 declare interface RouteInfo {
@@ -12,22 +9,6 @@ declare interface RouteInfo {
     class: string;
 }
 export const ROUTES: RouteInfo[] = [
-<<<<<<< HEAD
-  { path: 'systemAdmin/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
-  { path: 'systemAdmin/patients-list', title:'Patients', icon:'person', class:''},
-  { path: 'systemAdmin/system-users-list', title:'System Users', icon:'person', class:''},
-  { path: 'systemAdmin/hospitals', title: 'Hospitals',  icon:'person', class: '' },
-  { path: 'systemAdmin/blog-posts', title: 'Blog Posts',  icon:'person', class: '' },
-   { path: 'systemAdmin/user-profile', title: 'User Profile',  icon:'person', class: '' },
-    // { path: '/testing', title: 'Testing',  icon:'person', class: '' },
-    
-   /* { path: '/table-list', title: 'Table List',  icon:'content_paste', class: '' },
-    { path: '/typography', title: 'Typography',  icon:'library_books', class: '' },
-    { path: '/icons', title: 'Icons',  icon:'bubble_chart', class: '' },
-    { path: '/maps', title: 'Maps',  icon:'location_on', class: '' },
-    { path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },
-    { path: '/upgrade', title: 'Upgrade to PRO',  icon:'unarchive', class: 'active-pro' },*/
-=======
   // { path: 'systemAdmin/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
   { path: 'systemAdmin/patients-list', title:'Patients', icon:'accessible', class:''},
   { path: 'systemAdmin/system-users-list', title:'System Admin', icon:'build', class:''},
@@ -39,7 +20,6 @@ export const ROUTES: RouteInfo[] = [
   //  { path: 'systemAdmin/user-profile', title: 'User Profile',  icon:'person', class: '' },
     // { path: '/testing', title: 'Testing',  icon:'person', class: '' },
   
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 ];
 
 @Component({
@@ -50,11 +30,7 @@ export const ROUTES: RouteInfo[] = [
 export class SidebarComponent implements OnInit {
   menuItems: any[];
 
-<<<<<<< HEAD
-  constructor() { }
-=======
   constructor(private auth: AuthService) { }
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
@@ -65,12 +41,9 @@ export class SidebarComponent implements OnInit {
       }
       return true;
   };
-<<<<<<< HEAD
-=======
 
   logout(){
     this.auth.logout();
   }
 
->>>>>>> 93865be78d0dd6cf9dab62de4d7b62b84b8e7b8e
 }
